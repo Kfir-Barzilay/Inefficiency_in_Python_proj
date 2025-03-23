@@ -120,8 +120,117 @@ def get_Cache_perf(path_to_bm):
     return results
 
 
+def get_Memory_perf(path_to_bm):
+    """
+    Run 'perf stat' on a Python script located at path_to_bm
+    and parse the counters for memory performance:
+
+    - dTLB-loads: Number of data Translation Lookaside Buffer (TLB) loads
+    - dTLB-load-misses: Number of TLB load misses
+    - context-switches: Number of context switches (task switching)
+    - page-faults: Number of page faults
+
+    Returns a dictionary with the parsed counters.
+    """
+    
+    # Define the perf events for memory performance
+    perf_events = "dTLB-loads,dTLB-load-misses,context-switches,page-faults"
+    
+    # Build the perf command:
+    command = [
+        "sudo", "perf", "stat",
+        "-e", perf_events,
+        "python3", path_to_bm
+    ]
+    
+    # Run the command, capturing stdout and stderr.
+    process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    stdout, stderr = process.communicate()
+    
+    # Prepare a dictionary for storing the parsed results
+    results = {
+        "dTLB-loads": None,
+        "dTLB-load-misses": None,
+        "context-switches": None,
+        "page-faults": None
+    }
+    
+    # Parse the output from stderr (perf prints statistics there)
+    for line in stderr.splitlines():
+        line = line.strip()
+        
+        for counter in results.keys():
+            if counter in line:
+                # A regex to capture a number (with commas) in the line:
+                match = re.search(r'(\d[\d,\.]*)\s+' + counter, line)
+                if match:
+                    value_str = match.group(1).replace(',', '')
+                    try:
+                        value = int(value_str)
+                    except ValueError:
+                        value = float(value_str)  # If needed
+                    results[counter] = value
+    
+    return results
+
+
+def get_Scheduler_perf(path_to_bm):
+    """
+    Run 'perf stat' on a Python script located at path_to_bm
+    and parse the counters for scheduler and system call performance:
+
+    - task-clock: Total time the CPU spent on a task
+    - context-switches: Number of times the CPU switched processes
+    - cpu-migrations: Number of times a process moved between CPU cores
+    - syscalls: Number of system calls executed
+
+    Returns a dictionary with the parsed counters.
+    """
+    
+    # Define the perf events for scheduler and system call performance
+    perf_events = "task-clock,context-switches,cpu-migrations,syscalls"
+    
+    # Build the perf command:
+    command = [
+        "sudo", "perf", "stat",
+        "-e", perf_events,
+        "python3", path_to_bm
+    ]
+    
+    # Run the command, capturing stdout and stderr.
+    process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    stdout, stderr = process.communicate()
+    
+    # Prepare a dictionary for storing the parsed results
+    results = {
+        "task-clock": None,
+        "context-switches": None,
+        "cpu-migrations": None,
+        "syscalls": None
+    }
+    
+    # Parse the output from stderr (perf prints statistics there)
+    for line in stderr.splitlines():
+        line = line.strip()
+        
+        for counter in results.keys():
+            if counter in line:
+                # A regex to capture a number (with commas) in the line:
+                match = re.search(r'(\d[\d,\.]*)\s+' + counter, line)
+                if match:
+                    value_str = match.group(1).replace(',', '')
+                    try:
+                        value = int(value_str)
+                    except ValueError:
+                        value = float(value_str)  # If needed
+                    results[counter] = value
+    
+    return results
+
 # Example usage:
 if __name__ == "__main__":
     path_to_script = "/pyperformance/benchmarks/bm_nbody/run_benchmark.py"
+    print("CPU stats:", get_CPU_perf(path_to_script))
     print("Cache stats:" ,get_Cache_perf(path_to_script))
-    print("Perf Data:", get_CPU_perf(path_to_script))
+    print("Memory stats:", get_Memory_perf(path_to_script))
+    print(" stats:",get_Scheduler_perf(path_to_script))
