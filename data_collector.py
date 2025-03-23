@@ -211,6 +211,7 @@ def get_Scheduler_perf(path_to_bm):
     
     # Parse the output from stderr (perf prints statistics there)
     for line in stderr.splitlines():
+        print(line)
         line = line.strip()
         
         # Fix syscalls parsing since it's named differently
