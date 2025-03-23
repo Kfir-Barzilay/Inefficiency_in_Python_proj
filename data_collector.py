@@ -211,8 +211,8 @@ def get_Scheduler_perf(path_to_bm):
     
     # Parse the output from stderr (perf prints statistics there)
     for line in stderr.splitlines():
+        print(line)
         line = line.strip()
-        
         for counter in results.keys():
             if counter in line:
                 # A regex to capture a number (with commas) in the line:
@@ -233,4 +233,4 @@ if __name__ == "__main__":
     print("CPU stats:", get_CPU_perf(path_to_script))
     print("Cache stats:" ,get_Cache_perf(path_to_script))
     print("Memory stats:", get_Memory_perf(path_to_script))
-    print(" stats:",get_Scheduler_perf(path_to_script))
+    print("Scheduler stats:",get_Scheduler_perf(path_to_script))
