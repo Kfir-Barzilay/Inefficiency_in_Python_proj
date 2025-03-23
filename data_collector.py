@@ -41,7 +41,6 @@ def get_CPU_perf(path_to_bm):
     # We'll use a regex to extract the numeric values.
     for line in stderr.splitlines():
         # Remove any extra whitespace at the ends
-        print(line)
         line = line.strip()
         
         # For each counter in our dictionary, check if it's in the line:
@@ -62,8 +61,67 @@ def get_CPU_perf(path_to_bm):
     
     return results
 
+
+def get_Cache_perf(path_to_bm):
+    """
+    Run 'perf stat' on a Python script located at path_to_bm
+    and parse the counters for cache performance:
+    
+    - cache-references: Number of cache accesses (L1, L2, L3)
+    - cache-misses: Number of cache misses
+    - L1-dcache-loads: Number of L1 data cache loads
+    - L1-dcache-load-misses: Number of L1 data cache load misses
+    - LLC-loads: Number of last-level cache (L3) loads
+    - LLC-load-misses: Number of L3 cache misses
+
+    Returns a dictionary with the parsed counters.
+    """
+    
+    # Define the perf events to track cache performance
+    perf_events = "cache-references,cache-misses,L1-dcache-loads,L1-dcache-load-misses,LLC-loads,LLC-load-misses"
+    
+    # Build the perf command:
+    command = [
+        "sudo", "perf", "stat",
+        "-e", perf_events,
+        "python3", path_to_bm
+    ]
+    
+    # Run the command, capturing stdout and stderr.
+    process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    stdout, stderr = process.communicate()
+    
+    # Prepare a dictionary for storing the parsed results
+    results = {
+        "cache-references": None,
+        "cache-misses": None,
+        "L1-dcache-loads": None,
+        "L1-dcache-load-misses": None,
+        "LLC-loads": None,
+        "LLC-load-misses": None
+    }
+    
+    # Parse the output from stderr (perf prints statistics there)
+    for line in stderr.splitlines():
+        line = line.strip()
+        
+        for counter in results.keys():
+            if counter in line:
+                # A regex to capture a number (with commas) in the line:
+                match = re.search(r'(\d[\d,\.]*)\s+' + counter, line)
+                if match:
+                    value_str = match.group(1).replace(',', '')
+                    try:
+                        value = int(value_str)
+                    except ValueError:
+                        value = float(value_str)  # If needed
+                    results[counter] = value
+    
+    return results
+
+
 # Example usage:
 if __name__ == "__main__":
     path_to_script = "/pyperformance/benchmarks/bm_nbody/run_benchmark.py"
-    perf_data = get_CPU_perf(path_to_script)
-    print("Perf Data:", perf_data)
+    print("Cache stats:" ,get_Cache_perf(path_to_script))
+    print("Perf Data:", get_CPU_perf(path_to_script))
