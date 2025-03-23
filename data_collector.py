@@ -174,6 +174,9 @@ def get_Memory_perf(path_to_bm):
     return results
 
 
+import subprocess
+import re
+
 def get_Scheduler_perf(path_to_bm):
     """
     Run 'perf stat' on a Python script located at path_to_bm
@@ -182,13 +185,13 @@ def get_Scheduler_perf(path_to_bm):
     - task-clock: Total time the CPU spent on a task
     - context-switches: Number of times the CPU switched processes
     - cpu-migrations: Number of times a process moved between CPU cores
-    - syscalls: Number of system calls executed
+    - syscall:sys_enter: Number of system calls executed
 
     Returns a dictionary with the parsed counters.
     """
     
     # Define the perf events for scheduler and system call performance
-    perf_events = "task-clock,context-switches,cpu-migrations,syscalls"
+    perf_events = "task-clock,context-switches,cpu-migrations,syscall:sys_enter"
     
     # Build the perf command:
     command = [
@@ -211,21 +214,30 @@ def get_Scheduler_perf(path_to_bm):
     
     # Parse the output from stderr (perf prints statistics there)
     for line in stderr.splitlines():
-        print(line)
         line = line.strip()
-        for counter in results.keys():
-            if counter in line:
-                # A regex to capture a number (with commas) in the line:
-                match = re.search(r'(\d[\d,\.]*)\s+' + counter, line)
-                if match:
-                    value_str = match.group(1).replace(',', '')
-                    try:
-                        value = int(value_str)
-                    except ValueError:
-                        value = float(value_str)  # If needed
-                    results[counter] = value
+        
+        # Fix syscalls parsing since it's named differently
+        if "syscall:sys_enter" in line:
+            counter_name = "syscalls"
+        else:
+            counter_name = None
+            for counter in results.keys():
+                if counter in line:
+                    counter_name = counter
+                    break
+
+        if counter_name:
+            match = re.search(r'(\d[\d,\.]*)\s+' + (counter_name if counter_name != "syscalls" else "syscall:sys_enter"), line)
+            if match:
+                value_str = match.group(1).replace(',', '')
+                try:
+                    value = int(value_str)
+                except ValueError:
+                    value = float(value_str)  # If needed
+                results[counter_name] = value
     
     return results
+
 
 # Example usage:
 if __name__ == "__main__":
