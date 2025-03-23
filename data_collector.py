@@ -41,6 +41,7 @@ def get_CPU_perf(path_to_bm):
     # We'll use a regex to extract the numeric values.
     for line in stderr.splitlines():
         # Remove any extra whitespace at the ends
+        print(line)
         line = line.strip()
         
         # For each counter in our dictionary, check if it's in the line:
