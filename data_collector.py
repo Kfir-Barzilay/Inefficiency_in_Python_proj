@@ -15,7 +15,7 @@ def get_CPU_perf(path_to_bm):
     
     # Build the perf command:
     command = [
-        "perf", "stat",
+        "sudo","perf", "stat",
         "-e", perf_events,
         "python3", path_to_bm
     ]
