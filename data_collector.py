@@ -174,9 +174,6 @@ def get_Memory_perf(path_to_bm):
     return results
 
 
-import subprocess
-import re
-
 def get_Scheduler_perf(path_to_bm):
     """
     Run 'perf stat' on a Python script located at path_to_bm
