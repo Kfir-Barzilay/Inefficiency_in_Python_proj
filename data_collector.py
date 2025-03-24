@@ -236,11 +236,94 @@ def get_Scheduler_perf(path_to_bm):
     
     return results
 
+import re
+import subprocess
+
+def get_lib_breakdown(path_to_bm, event="cpu-clock"):
+    """
+    Run 'perf record' to sample performance while executing 'path_to_bm'.
+    Then run 'perf report' to parse the overhead for each library (DSO).
+
+    :param path_to_bm: Path to the Python script to benchmark.
+    :param event: Perf sampling event (default: cpu-clock). 
+                  Could also be 'cycles', 'instructions', etc.
+    :return: A dictionary mapping { library_name: cumulative_overhead_percent }.
+    """
+    perf_data_file = "perf.data"
+    
+    # 1. Record the samples
+    #    --call-graph can be helpful if you want stack traces, but you can omit it if you only want top-level distribution.
+    command_record = [
+        "sudo", "perf", "record",
+        "-o", perf_data_file,
+        "-e", event,
+        # Uncomment if you want call-graph info:
+        # "--call-graph", "dwarf",
+        "python3", path_to_bm
+    ]
+    print("Recording perf data...")
+    subprocess.run(command_record, check=True)
+    
+    # 2. Report the data in text form
+    #    '-n' groups by symbol but won't collapse everything. 
+    #    '-g none' avoids grouping by call-graph so that each line is a single symbol or library.
+    command_report = [
+        "perf", "report",
+        "--stdio",
+        "-n",
+        "-g", "none",
+        "-i", perf_data_file
+    ]
+    print("Generating perf report...")
+    process = subprocess.Popen(command_report, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    stdout, stderr = process.communicate()
+
+    # 3. Parse the overhead lines
+    # Typical lines look like:
+    #
+    #   Overhead  Shared Object       Symbol
+    #   14.20%    libpython3.9.so.1.0 [.] _PyEval_EvalFrameDefault
+    #    2.01%    libc-2.31.so        [.] __GI___libc_malloc
+    #    1.99%    python3             [.] main
+    #
+    # We'll capture the "Overhead" and the "Shared Object" columns.
+    #
+    # You can confirm the column alignment with `perf report --stdio`.
+    
+    lib_pattern = re.compile(
+        r"^\s*([\d\.]+%)\s+([^\s]+)\s+.*$"
+    )
+    
+    library_usage = {}
+    
+    for line in stdout.splitlines():
+        line = line.strip()
+        match = lib_pattern.match(line)
+        if match:
+            overhead_str = match.group(1)   # e.g. "14.20%"
+            library_name = match.group(2)  # e.g. "libpython3.9.so.1.0"
+            try:
+                overhead = float(overhead_str.replace("%", ""))
+            except ValueError:
+                continue
+            
+            # Aggregate overhead for each library
+            if library_name not in library_usage:
+                library_usage[library_name] = 0.0
+            library_usage[library_name] += overhead
+    
+    return library_usage
+
 
 # Example usage:
 if __name__ == "__main__":
-    path_to_script = "/pyperformance/benchmarks/bm_nbody/run_benchmark.py"
-    print("CPU stats:", get_CPU_perf(path_to_script))
-    print("Cache stats:" ,get_Cache_perf(path_to_script))
-    print("Memory stats:", get_Memory_perf(path_to_script))
-    print("Scheduler stats:",get_Scheduler_perf(path_to_script))
+    path_to_benchmark = "/pyperformance/benchmarks/bm_nbody/run_benchmark.py"
+    print("CPU stats:", get_CPU_perf(path_to_benchmark))
+    print("Cache stats:" ,get_Cache_perf(path_to_benchmark))
+    print("Memory stats:", get_Memory_perf(path_to_benchmark))
+    print("Scheduler stats:",get_Scheduler_perf(path_to_benchmark))
+
+    breakdown = get_lib_breakdown(path_to_benchmark)
+    print("\nPer-library overhead breakdown (by sampled cycles):")
+    for lib, overhead in breakdown.items():
+        print(f"{lib}: {overhead:.2f}%")
