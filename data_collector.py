@@ -214,14 +214,12 @@ def get_Scheduler_perf(path_to_bm):
         line = line.strip()
         
         # Fix syscalls parsing since it's named differently
-        if "syscall:sys_enter" in line:
-            counter_name = "syscalls"
-        else:
-            counter_name = None
-            for counter in results.keys():
-                if counter in line:
-                    counter_name = counter
-                    break
+        
+        counter_name = None
+        for counter in results.keys():
+            if counter in line:
+                counter_name = counter
+                break
 
         if counter_name:
             match = re.search(r'(\d[\d,\.]*)\s+' + (counter_name if counter_name != "syscalls" else "syscall:sys_enter"), line)
