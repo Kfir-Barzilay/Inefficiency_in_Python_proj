@@ -153,7 +153,7 @@ def get_perf_stats(path_to_bm):
 
 # Example usage:
 if __name__ == "__main__":
-    if(sys.argc == 1):
+    if(len(sys.argv) == 1):
         str = "bm_nbody"
     else:
         str = sys.argv[1]
