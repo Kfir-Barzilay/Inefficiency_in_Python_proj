@@ -312,7 +312,7 @@ def get_lib_breakdown(path_to_bm, event="cpu-clock"):
 
 # Example usage:
 if __name__ == "__main__":
-    path_to_benchmark = "/pyperformance/benchmarks/bm_nbody/run_benchmark.py"
+    path_to_benchmark = "pyperformance/benchmarks/bm_nbody/run_benchmark.py"
     print("CPU stats:", get_CPU_perf(path_to_benchmark))
     print("Cache stats:" ,get_Cache_perf(path_to_benchmark))
     print("Memory stats:", get_Memory_perf(path_to_benchmark))
