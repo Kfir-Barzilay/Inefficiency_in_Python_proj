@@ -29,11 +29,11 @@ def analyze_library_time(path_to_bm):
       }
     """
     # 1. Record the execution with call graph (-g)
-    record_cmd = ["sudo", "perf", "record", "-g", "--", "python3", path_to_bm]
+    record_cmd = ["perf", "record", "-g", "--", "python3", path_to_bm]
     subprocess.run(record_cmd, check=True)
     
     # 2. Use perf script to convert the binary recording into text
-    script_cmd = ["sudo", "perf", "script"]
+    script_cmd = ["perf", "script"]
     script_output = subprocess.check_output(script_cmd, text=True)
     
     # 3. Parse the output to count samples per library.
@@ -152,12 +152,14 @@ def get_perf_stats(path_to_bm):
 
 # Example usage:
 if __name__ == "__main__":
-    benchmark_script = "pyperformance/benchmarks/bm_nbody/run_benchmark.py"  # Replace with your benchmark script path
+    benchmark_script = "pyperformance/benchmarks/bm_nbody/run_benchmark.py"
     perf_results = get_perf_stats(benchmark_script)
-    percentages = analyze_library_time(benchmark_script)
-    for lib, percent in percentages.items():
-        print(f"{lib}: {percent:.2f}%")
     for group, metrics in perf_results.items():
         print(f"{group} events:")
         for event, value in metrics.items():
             print(f"  {event}: {value}")
+
+    percentages = analyze_library_time(benchmark_script)
+    for lib, percent in percentages.items():
+        print(f"{lib}: {percent:.2f}%")
+    
