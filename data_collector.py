@@ -29,7 +29,7 @@ def analyze_library_time(path_to_bm):
       }
     """
     # 1. Record the execution with call graph (-g)
-    record_cmd = ["perf", "record", "-g", "--", "python3", path_to_bm]
+    record_cmd = ["perf", "record","--call-graph=dwarf", "-g", "--", "python3", path_to_bm]
     subprocess.run(record_cmd, check=True)
     
     # 2. Use perf script to convert the binary recording into text
