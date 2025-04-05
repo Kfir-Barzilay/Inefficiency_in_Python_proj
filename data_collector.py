@@ -81,7 +81,8 @@ def get_perf_stats_with_libraries(path_to_bm):
 
     return results
 
-if _name_ == "_main_":
+# Example usage:
+if __name__ == "__main__":
     benchmark_script = "pyperformance/benchmarks/bm_nbody/run_benchmark.py"  # Replace with your benchmark script path
     perf_results = get_perf_stats(benchmark_script)
     for group, metrics in perf_results.items():
