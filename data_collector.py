@@ -222,7 +222,7 @@ def get_Scheduler_perf(path_to_bm):
                 break
 
         if counter_name:
-            match = re.search(r'(\d[\d,\.]*)\s+', line)
+            match = re.search(r'(\d[\d,\.]*)\s+' + counter_name , line)
             if match:
                 value_str = match.group(1).replace(',', '')
                 try:
