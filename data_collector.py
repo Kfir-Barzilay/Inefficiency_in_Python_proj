@@ -2,7 +2,7 @@ import subprocess
 import re
 from collections import defaultdict
 
-def get_perf_stats_with_libraries(path_to_bm):
+def get_perf_stats(path_to_bm):
     """
     Runs perf stat and perf record+script to collect:
       - CPU/cache/memory/scheduler events
