@@ -152,7 +152,11 @@ def get_perf_stats(path_to_bm):
 
 # Example usage:
 if __name__ == "__main__":
-    benchmark_script = "pyperformance/benchmarks/bm_nbody/run_benchmark.py"
+    if(sys.argc == 1):
+        str = "bm_nbody"
+    else:
+        str = sys.argv[1]
+    benchmark_script = "pyperformance/benchmarks/" + str + "/run_benchmark.py"
     perf_results = get_perf_stats(benchmark_script)
     for group, metrics in perf_results.items():
         print(f"{group} events:")
