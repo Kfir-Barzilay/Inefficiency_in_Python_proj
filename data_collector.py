@@ -188,7 +188,7 @@ def get_Scheduler_perf(path_to_bm):
     """
     
     # Define the perf events for scheduler and system call performance
-    perf_events = "task-clock,context-switches,cpu-migrations,syscall:sys_enter"
+    perf_events = "task-clock,context-switches,cpu-migrations"
     
     # Build the perf command:
     command = [
@@ -205,8 +205,7 @@ def get_Scheduler_perf(path_to_bm):
     results = {
         "task-clock": None,
         "context-switches": None,
-        "cpu-migrations": None,
-        "syscalls": None
+        "cpu-migrations": None
     }
     
     # Parse the output from stderr (perf prints statistics there)
@@ -236,8 +235,6 @@ def get_Scheduler_perf(path_to_bm):
     
     return results
 
-import re
-import subprocess
 
 def get_lib_breakdown(path_to_bm, event="cpu-clock"):
     """
