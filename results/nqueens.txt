@@ -1,0 +1,50 @@
+.....................
+WARNING: the benchmark result may be unstable
+* Not enough samples to get a stable result (95% certainly of less than 1% variation)
+
+Try to rerun the benchmark with more runs, values and/or loops.
+Run 'python3 -m pyperf system tune' command to reduce the system jitter.
+Use pyperf stats, pyperf dump and pyperf hist to analyze results.
+Use --quiet option to hide these warnings.
+
+nqueens: Mean +- std dev: 213 ms +- 3 ms
+CPU events:
+  cycles: 449356822
+  instructions: 446793306
+  branches: 94789327
+  branch-misses: 4488211
+Cache events:
+  cache-references: 6330997
+  cache-misses: 506782
+  L1-dcache-loads: 116458436
+  L1-dcache-load-misses: 8062998
+  LLC-loads: 3841686
+  LLC-load-misses: 299134
+Memory events:
+  dTLB-loads: 114881833
+  dTLB-load-misses: 708549
+  page-faults: 4438
+Scheduler events:
+  task-clock: None
+  context-switches: 21
+  cpu-migrations: 0
+ITLB events:
+  iTLB-loads: 138057
+  iTLB-load-misses: 147930
+Libraries events:
+[unknown]: 52.48%
+(/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2): 1.84%
+(/usr/lib/x86_64-linux-gnu/libc.so.6): 44.06%
+(/usr/lib/python3.12/lib-dynload/_decimal.cpython-312-x86_64-linux-gnu.so): 0.07%
+(/csl/roy.zoulty/venv/lib/python3.12/site-packages/psutil/_psutil_posix.abi3.so): 0.00%
+(/usr/lib/x86_64-linux-gnu/libm.so.6): 0.00%
+(/usr/lib/python3.12/lib-dynload/resource.cpython-312-x86_64-linux-gnu.so): 0.00%
+(/usr/lib/x86_64-linux-gnu/libmagic.so.1.0.0): 1.51%
+(/usr/lib/x86_64-linux-gnu/libexpat.so.1.9.1): 0.00%
+(/usr/lib/python3.12/lib-dynload/_json.cpython-312-x86_64-linux-gnu.so): 0.02%
+(/usr/lib/x86_64-linux-gnu/liblzma.so.5.4.5): 0.00%
+(/csl/roy.zoulty/venv/lib/python3.12/site-packages/psutil/_psutil_linux.abi3.so): 0.00%
+(/usr/lib/python3.12/lib-dynload/_lzma.cpython-312-x86_64-linux-gnu.so): 0.00%
+(/usr/lib/x86_64-linux-gnu/libz.so.1.3): 0.00%
+(/usr/lib/python3.12/lib-dynload/_bz2.cpython-312-x86_64-linux-gnu.so): 0.00%
+(/usr/lib/x86_64-linux-gnu/libbz2.so.1.0.4): 0.00%
