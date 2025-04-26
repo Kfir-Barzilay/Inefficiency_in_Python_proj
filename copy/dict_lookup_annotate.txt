@@ -1,0 +1,407 @@
+ Percent |	Source code & Disassembly of python3.12 for cycles:P (72 samples, percent: local period)
+--------------------------------------------------------------------------------------------------------
+         :
+         :
+         :
+         : 3      Disassembly of section .text:
+         :
+         : 5      0000000000572670 <_Py_dict_lookup>:
+    4.18 :   572670: endbr64
+    1.40 :   572674: push   %rbp
+    0.00 :   572675: mov    $0x1,%r9d
+    1.40 :   57267b: mov    %rsp,%rbp
+    0.00 :   57267e: push   %r15
+    0.00 :   572680: push   %r14
+    4.18 :   572682: mov    %rsi,%r14
+    1.40 :   572685: push   %r13
+    1.40 :   572687: push   %r12
+    0.00 :   572689: mov    %rdx,%r12
+    1.40 :   57268c: push   %rbx
+    0.00 :   57268d: sub    $0x58,%rsp
+    0.00 :   572691: mov    %rcx,-0x40(%rbp)
+    0.00 :   572695: mov    0x20(%rdi),%r13
+    2.80 :   572699: mov    %r9,%rax
+    0.00 :   57269c: mov    %r9,%r15
+    1.40 :   57269f: mov    %r12,%r8
+    1.40 :   5726a2: mov    %r12,-0x38(%rbp)
+    0.00 :   5726a6: movzbl 0x9(%r13),%ecx
+    0.00 :   5726ab: movzbl 0x8(%r13),%r10d
+    1.40 :   5726b0: movzbl 0xa(%r13),%r11d
+    0.00 :   5726b5: shl    %cl,%rax
+    0.00 :   5726b8: mov    %r10d,%ecx
+    2.79 :   5726bb: shl    %cl,%r15
+    0.00 :   5726be: sub    $0x1,%r15
+    1.40 :   5726c2: and    %r15,%r8
+    0.00 :   5726c5: test   %r11d,%r11d
+    1.40 :   5726c8: je     572888 <_Py_dict_lookup+0x218>
+    1.40 :   5726ce: cmpq   $0xa462c0,0x8(%r14)
+    0.00 :   5726d6: jne    572b79 <_Py_dict_lookup+0x509>
+    1.40 :   5726dc: lea    0x20(%r13),%rcx
+    0.00 :   5726e0: mov    %r11d,-0x48(%rbp)
+    0.00 :   5726e4: mov    %rdi,%r11
+    0.00 :   5726e7: lea    (%rcx,%rax,1),%r9
+    0.00 :   5726eb: cmp    $0x7,%r10d
+    2.79 :   5726ef: jg     572790 <_Py_dict_lookup+0x120>
+    5.59 :   5726f5: movsbq (%rcx,%r8,1),%rbx
+    0.00 :   5726fa: test   %rbx,%rbx
+    0.85 :   5726fd: js     572808 <_Py_dict_lookup+0x198>
+    0.00 :   572703: mov    %rbx,%rax
+    0.00 :   572706: shl    $0x4,%rax
+    2.79 :   57270a: mov    (%r9,%rax,1),%rax
+    0.00 :   57270e: cmp    %rax,%r14
+    0.00 :   572711: je     5727b8 <_Py_dict_lookup+0x148>
+    0.00 :   572717: cmp    0x18(%rax),%r12
+    1.40 :   57271b: je     572950 <_Py_dict_lookup+0x2e0>
+    0.00 :   572721: mov    -0x38(%rbp),%rax
+    0.00 :   572725: lea    (%r8,%r8,4),%rdx
+    0.00 :   572729: shr    $0x5,%rax
+    0.00 :   57272d: lea    0x1(%rdx,%rax,1),%rax
+    0.00 :   572732: and    %r15,%rax
+    0.00 :   572735: mov    %rax,%r8
+    0.00 :   572738: cmp    $0x7,%r10d
+    0.00 :   57273c: jg     572848 <_Py_dict_lookup+0x1d8>
+    0.00 :   572742: movsbq (%rcx,%r8,1),%rbx
+    0.00 :   572747: test   %rbx,%rbx
+    0.00 :   57274a: js     572860 <_Py_dict_lookup+0x1f0>
+    0.00 :   572750: mov    %rbx,%rax
+    0.00 :   572753: shl    $0x4,%rax
+    0.00 :   572757: mov    (%r9,%rax,1),%rax
+    0.00 :   57275b: cmp    %rax,%r14
+    1.40 :   57275e: je     572918 <_Py_dict_lookup+0x2a8>
+    0.00 :   572764: cmp    0x18(%rax),%r12
+    0.00 :   572768: je     572aa0 <_Py_dict_lookup+0x430>
+    0.00 :   57276e: shrq   $0xa,-0x38(%rbp)
+    0.00 :   572773: mov    -0x38(%rbp),%rdx
+    0.00 :   572777: lea    (%r8,%r8,4),%rax
+    0.00 :   57277b: lea    0x1(%rdx,%rax,1),%r8
+    0.00 :   572780: and    %r15,%r8
+    0.00 :   572783: cmp    $0x7,%r10d
+    0.00 :   572787: jle    5726f5 <_Py_dict_lookup+0x85>
+    0.00 :   57278d: nopl   (%rax)
+    0.00 :   572790: cmp    $0xf,%r10d
+    0.00 :   572794: jg     572b5d <_Py_dict_lookup+0x4ed>
+    0.00 :   57279a: movswq (%rcx,%r8,2),%rbx
+    0.00 :   57279f: test   %rbx,%rbx
+    0.00 :   5727a2: jns    572703 <_Py_dict_lookup+0x93>
+    0.00 :   5727a8: cmp    $0xffffffffffffffff,%rbx
+    0.00 :   5727ac: jne    57282a <_Py_dict_lookup+0x1ba>
+    0.00 :   5727ae: xchg   %ax,%ax
+    0.00 :   5727b0: xor    %eax,%eax
+    2.79 :   5727b2: jmp    5727e8 <_Py_dict_lookup+0x178>
+    0.00 :   5727b4: nopl   0x0(%rax)
+    0.00 :   5727b8: mov    %r11,%rdi
+    0.00 :   5727bb: mov    -0x48(%rbp),%r11d
+    0.00 :   5727bf: cmp    $0x2,%r11d
+    0.00 :   5727c3: je     572a00 <_Py_dict_lookup+0x390>
+    0.00 :   5727c9: movzbl 0x9(%r13),%ecx
+    0.00 :   5727ce: mov    $0x1,%eax
+    1.40 :   5727d3: shl    %cl,%rax
+    0.00 :   5727d6: mov    %rax,%rdx
+    2.79 :   5727d9: mov    %rbx,%rax
+    0.00 :   5727dc: shl    $0x4,%rax
+    1.39 :   5727e0: add    %r13,%rax
+    0.00 :   5727e3: mov    0x28(%rdx,%rax,1),%rax
+    0.00 :   5727e8: mov    -0x40(%rbp),%rsi
+    0.00 :   5727ec: mov    %rax,(%rsi)
+    0.00 :   5727ef: add    $0x58,%rsp
+    0.00 :   5727f3: mov    %rbx,%rax
+    0.00 :   5727f6: pop    %rbx
+    1.40 :   5727f7: pop    %r12
+    1.40 :   5727f9: pop    %r13
+    1.40 :   5727fb: pop    %r14
+    0.00 :   5727fd: pop    %r15
+    0.00 :   5727ff: pop    %rbp
+    1.40 :   572800: ret
+    0.00 :   572801: nopl   0x0(%rax)
+    0.00 :   572808: cmp    $0xffffffffffffffff,%rbx
+    1.40 :   57280c: je     5727b0 <_Py_dict_lookup+0x140>
+    0.00 :   57280e: mov    -0x38(%rbp),%rdx
+    0.00 :   572812: lea    (%r8,%r8,4),%rax
+    0.00 :   572816: shr    $0x5,%rdx
+    0.00 :   57281a: lea    0x1(%rdx,%rax,1),%rax
+    0.00 :   57281f: and    %r15,%rax
+    0.00 :   572822: mov    %rax,%r8
+    0.00 :   572825: jmp    572742 <_Py_dict_lookup+0xd2>
+    0.00 :   57282a: mov    -0x38(%rbp),%rdx
+    0.00 :   57282e: lea    (%r8,%r8,4),%rax
+    0.00 :   572832: shr    $0x5,%rdx
+    0.00 :   572836: lea    0x1(%rdx,%rax,1),%rax
+    0.00 :   57283b: and    %r15,%rax
+    0.00 :   57283e: mov    %rax,%r8
+    0.00 :   572841: nopl   0x0(%rax)
+    0.00 :   572848: cmp    $0xf,%r10d
+    0.00 :   57284c: jg     572bc3 <_Py_dict_lookup+0x553>
+    0.00 :   572852: movswq (%rcx,%r8,2),%rbx
+    0.00 :   572857: test   %rbx,%rbx
+    0.00 :   57285a: jns    572750 <_Py_dict_lookup+0xe0>
+    0.00 :   572860: cmp    $0xffffffffffffffff,%rbx
+    0.00 :   572864: je     5727b0 <_Py_dict_lookup+0x140>
+    0.00 :   57286a: shrq   $0xa,-0x38(%rbp)
+    0.00 :   57286f: mov    -0x38(%rbp),%rsi
+    0.00 :   572873: lea    (%r8,%r8,4),%rax
+    0.00 :   572877: lea    0x1(%rsi,%rax,1),%r8
+    0.00 :   57287c: and    %r15,%r8
+    0.00 :   57287f: jmp    5726eb <_Py_dict_lookup+0x7b>
+    0.00 :   572884: nopl   0x0(%rax)
+    0.00 :   572888: mov    %rdi,-0x48(%rbp)
+    0.00 :   57288c: mov    %r15,%rcx
+    0.00 :   57288f: mov    %r14,%rsi
+    0.00 :   572892: lea    0x20(%r13),%r11
+    0.00 :   572896: mov    %rax,%r14
+    0.00 :   572899: mov    %r12,%r15
+    0.00 :   57289c: mov    %r10d,%eax
+    0.00 :   57289f: cmp    $0x7,%eax
+    0.00 :   5728a2: jg     572938 <_Py_dict_lookup+0x2c8>
+    0.00 :   5728a8: movsbq (%r11,%r8,1),%rbx
+    0.00 :   5728ad: test   %rbx,%rbx
+    0.00 :   5728b0: js     572928 <_Py_dict_lookup+0x2b8>
+    0.00 :   5728b2: lea    (%rbx,%rbx,2),%rdx
+    0.00 :   5728b6: lea    0x0(,%rdx,8),%r10
+    1.40 :   5728be: lea    (%r10,%r14,1),%r12
+    1.40 :   5728c2: add    %r11,%r12
+    9.78 :   5728c5: mov    0x8(%r12),%rdi
+    0.00 :   5728ca: cmp    %rdi,%rsi
+    0.00 :   5728cd: je     5728f0 <_Py_dict_lookup+0x280>
+    0.00 :   5728cf: cmp    (%r12),%r15
+    1.40 :   5728d3: je     572a0d <_Py_dict_lookup+0x39d>
+    0.00 :   5728d9: shrq   $0x5,-0x38(%rbp)
+    0.00 :   5728de: mov    -0x38(%rbp),%rdx
+    0.00 :   5728e2: lea    0x1(%r8,%r8,4),%r8
+    0.00 :   5728e7: add    %rdx,%r8
+    0.00 :   5728ea: and    %rcx,%r8
+    0.00 :   5728ed: jmp    57289f <_Py_dict_lookup+0x22f>
+    0.00 :   5728ef: nop
+    0.00 :   5728f0: test   %rbx,%rbx
+    0.00 :   5728f3: js     5727b0 <_Py_dict_lookup+0x140>
+    0.00 :   5728f9: movzbl 0x9(%r13),%ecx
+    0.00 :   5728fe: mov    $0x1,%eax
+    0.00 :   572903: add    %r10,%r11
+    0.00 :   572906: shl    %cl,%rax
+    1.40 :   572909: mov    0x10(%rax,%r11,1),%rax
+    0.00 :   57290e: jmp    5727e8 <_Py_dict_lookup+0x178>
+    0.00 :   572913: nopl   0x0(%rax,%rax,1)
+    0.00 :   572918: mov    %r11,%rdi
+    0.00 :   57291b: mov    -0x48(%rbp),%r11d
+    0.00 :   57291f: jmp    5727bf <_Py_dict_lookup+0x14f>
+    0.00 :   572924: nopl   0x0(%rax)
+    0.00 :   572928: cmp    $0xffffffffffffffff,%rbx
+    0.00 :   57292c: jne    5728d9 <_Py_dict_lookup+0x269>
+    0.00 :   57292e: xor    %eax,%eax
+    0.00 :   572930: jmp    5727e8 <_Py_dict_lookup+0x178>
+    0.00 :   572935: nopl   (%rax)
+    0.00 :   572938: cmp    $0xf,%eax
+    2.79 :   57293b: jg     572b4b <_Py_dict_lookup+0x4db>
+    0.00 :   572941: movswq (%r11,%r8,2),%rbx
+    0.00 :   572946: jmp    5728ad <_Py_dict_lookup+0x23d>
+    0.00 :   57294b: nopl   0x0(%rax,%rax,1)
+    0.00 :   572950: mov    0x10(%rax),%rsi
+    0.00 :   572954: cmp    0x10(%r14),%rsi
+    0.00 :   572958: jne    456b01 <_Py_dict_lookup.cold+0x12b>
+    0.00 :   57295e: test   %rsi,%rsi
+    0.00 :   572961: je     572c81 <_Py_dict_lookup+0x611>
+    0.00 :   572967: movzbl 0x20(%rax),%edi
+    0.00 :   57296b: movzbl 0x20(%r14),%edx
+    0.00 :   572970: xor    %edi,%edx
+    0.00 :   572972: and    $0x1c,%edx
+    0.00 :   572975: jne    456b01 <_Py_dict_lookup.cold+0x12b>
+    0.00 :   57297b: mov    %edi,%edx
+    0.00 :   57297d: shr    $0x2,%dl
+    0.00 :   572980: and    $0x7,%edx
+    0.00 :   572983: imul   %rsi,%rdx
+    0.00 :   572987: movzbl 0x20(%r14),%esi
+    0.00 :   57298c: test   $0x20,%sil
+    0.00 :   572990: je     456b27 <_Py_dict_lookup.cold+0x151>
+    0.00 :   572996: and    $0x40,%esi
+    0.00 :   572999: je     572bdf <_Py_dict_lookup+0x56f>
+    0.00 :   57299f: lea    0x28(%r14),%rsi
+    0.00 :   5729a3: test   $0x20,%dil
+    0.00 :   5729a7: je     456ace <_Py_dict_lookup.cold+0xf8>
+    0.00 :   5729ad: and    $0x40,%edi
+    0.00 :   5729b0: je     572bd6 <_Py_dict_lookup+0x566>
+    0.00 :   5729b6: lea    0x28(%rax),%rdi
+    0.00 :   5729ba: mov    %r10d,-0x70(%rbp)
+    0.00 :   5729be: mov    %r11,-0x68(%rbp)
+    0.00 :   5729c2: mov    %r9,-0x60(%rbp)
+    0.00 :   5729c6: mov    %rcx,-0x58(%rbp)
+    0.00 :   5729ca: mov    %r8,-0x50(%rbp)
+    0.00 :   5729ce: call   4217f0 <memcmp@plt>
+    0.00 :   5729d3: mov    -0x50(%rbp),%r8
+    0.00 :   5729d7: mov    -0x58(%rbp),%rcx
+    0.00 :   5729db: test   %eax,%eax
+    0.00 :   5729dd: mov    -0x60(%rbp),%r9
+    0.00 :   5729e1: mov    -0x68(%rbp),%r11
+    0.00 :   5729e5: mov    -0x70(%rbp),%r10d
+    0.00 :   5729e9: jne    456b01 <_Py_dict_lookup.cold+0x12b>
+    0.00 :   5729ef: mov    %r11,%rdi
+    0.00 :   5729f2: mov    -0x48(%rbp),%r11d
+    0.00 :   5729f6: jmp    5727bf <_Py_dict_lookup+0x14f>
+    0.00 :   5729fb: nopl   0x0(%rax,%rax,1)
+    0.00 :   572a00: mov    0x28(%rdi),%rax
+    0.00 :   572a04: mov    (%rax,%rbx,8),%rax
+    0.00 :   572a08: jmp    5727e8 <_Py_dict_lookup+0x178>
+    0.00 :   572a0d: mov    (%rdi),%eax
+    0.00 :   572a0f: add    $0x1,%eax
+    0.00 :   572a12: je     572a16 <_Py_dict_lookup+0x3a6>
+    0.00 :   572a14: mov    %eax,(%rdi)
+    0.00 :   572a16: mov    $0x2,%edx
+    0.00 :   572a1b: mov    %r10,-0x78(%rbp)
+    0.00 :   572a1f: mov    %rcx,-0x70(%rbp)
+    0.00 :   572a23: mov    %r11,-0x68(%rbp)
+    0.00 :   572a27: mov    %r8,-0x60(%rbp)
+    0.00 :   572a2b: mov    %rsi,-0x58(%rbp)
+    0.00 :   572a2f: mov    %rdi,-0x50(%rbp)
+    0.00 :   572a33: call   5853d0 <PyObject_RichCompareBool>
+    0.00 :   572a38: mov    -0x50(%rbp),%rdi
+    0.00 :   572a3c: mov    -0x58(%rbp),%rsi
+    0.00 :   572a40: mov    $0x1,%r9d
+    0.00 :   572a46: mov    %eax,%edx
+    0.00 :   572a48: mov    -0x60(%rbp),%r8
+    0.00 :   572a4c: mov    -0x68(%rbp),%r11
+    0.00 :   572a50: mov    (%rdi),%rax
+    0.00 :   572a53: mov    -0x70(%rbp),%rcx
+    0.00 :   572a57: mov    -0x78(%rbp),%r10
+    0.00 :   572a5b: test   %eax,%eax
+    0.00 :   572a5d: js     572a6c <_Py_dict_lookup+0x3fc>
+    0.00 :   572a5f: sub    $0x1,%rax
+    0.00 :   572a63: mov    %rax,(%rdi)
+    0.00 :   572a66: je     4569d6 <_Py_dict_lookup.cold>
+    0.00 :   572a6c: test   %edx,%edx
+    0.00 :   572a6e: js     456b4b <_Py_dict_lookup.cold+0x175>
+    0.00 :   572a74: mov    -0x48(%rbp),%rax
+    0.00 :   572a78: cmp    0x20(%rax),%r13
+    0.00 :   572a7c: jne    572c8d <_Py_dict_lookup+0x61d>
+    0.00 :   572a82: cmp    0x8(%r12),%rdi
+    0.00 :   572a87: jne    572c9c <_Py_dict_lookup+0x62c>
+    0.00 :   572a8d: test   %edx,%edx
+    0.00 :   572a8f: jne    5728f0 <_Py_dict_lookup+0x280>
+    0.00 :   572a95: movzbl 0x8(%r13),%eax
+    0.00 :   572a9a: jmp    5728d9 <_Py_dict_lookup+0x269>
+    0.00 :   572a9f: nop
+    0.00 :   572aa0: mov    0x10(%rax),%rsi
+    0.00 :   572aa4: cmp    0x10(%r14),%rsi
+    0.00 :   572aa8: jne    57286a <_Py_dict_lookup+0x1fa>
+    0.00 :   572aae: test   %rsi,%rsi
+    0.00 :   572ab1: je     572c75 <_Py_dict_lookup+0x605>
+    0.00 :   572ab7: movzbl 0x20(%rax),%edi
+    0.00 :   572abb: movzbl 0x20(%r14),%edx
+    0.00 :   572ac0: xor    %edi,%edx
+    0.00 :   572ac2: and    $0x1c,%edx
+    0.00 :   572ac5: jne    57286a <_Py_dict_lookup+0x1fa>
+    0.00 :   572acb: mov    %edi,%edx
+    0.00 :   572acd: shr    $0x2,%dl
+    0.00 :   572ad0: and    $0x7,%edx
+    0.00 :   572ad3: imul   %rsi,%rdx
+    0.00 :   572ad7: movzbl 0x20(%r14),%esi
+    0.00 :   572adc: test   $0x20,%sil
+    0.00 :   572ae0: je     456ae0 <_Py_dict_lookup.cold+0x10a>
+    0.00 :   572ae6: and    $0x40,%esi
+    0.00 :   572ae9: je     572c4d <_Py_dict_lookup+0x5dd>
+    0.00 :   572aef: lea    0x28(%r14),%rsi
+    0.00 :   572af3: test   $0x20,%dil
+    0.00 :   572af7: je     456ae9 <_Py_dict_lookup.cold+0x113>
+    0.00 :   572afd: and    $0x40,%edi
+    0.00 :   572b00: je     572c56 <_Py_dict_lookup+0x5e6>
+    0.00 :   572b06: lea    0x28(%rax),%rdi
+    0.00 :   572b0a: mov    %r10d,-0x70(%rbp)
+    0.00 :   572b0e: mov    %r11,-0x68(%rbp)
+    0.00 :   572b12: mov    %r9,-0x60(%rbp)
+    0.00 :   572b16: mov    %rcx,-0x58(%rbp)
+    0.00 :   572b1a: mov    %r8,-0x50(%rbp)
+    0.00 :   572b1e: call   4217f0 <memcmp@plt>
+    0.00 :   572b23: mov    -0x50(%rbp),%r8
+    0.00 :   572b27: mov    -0x58(%rbp),%rcx
+    0.00 :   572b2b: test   %eax,%eax
+    0.00 :   572b2d: mov    -0x60(%rbp),%r9
+    0.00 :   572b31: mov    -0x68(%rbp),%r11
+    0.00 :   572b35: mov    -0x70(%rbp),%r10d
+    0.00 :   572b39: jne    57286a <_Py_dict_lookup+0x1fa>
+    0.00 :   572b3f: mov    %r11,%rdi
+    0.00 :   572b42: mov    -0x48(%rbp),%r11d
+    0.00 :   572b46: jmp    5727bf <_Py_dict_lookup+0x14f>
+    0.00 :   572b4b: cmp    $0x1f,%eax
+    0.00 :   572b4e: jg     456b30 <_Py_dict_lookup.cold+0x15a>
+   20.95 :   572b54: movslq (%r11,%r8,4),%rbx
+    0.00 :   572b58: jmp    5728ad <_Py_dict_lookup+0x23d>
+    0.00 :   572b5d: cmp    $0x1f,%r10d
+    0.00 :   572b61: jg     456b42 <_Py_dict_lookup.cold+0x16c>
+    0.00 :   572b67: movslq (%rcx,%r8,4),%rbx
+    0.00 :   572b6b: test   %rbx,%rbx
+    0.00 :   572b6e: jns    572703 <_Py_dict_lookup+0x93>
+    0.00 :   572b74: jmp    5727a8 <_Py_dict_lookup+0x138>
+    0.00 :   572b79: lea    0x20(%r13),%rsi
+    0.00 :   572b7d: mov    %r11d,-0x60(%rbp)
+    0.00 :   572b81: mov    %r13,%rbx
+    0.00 :   572b84: mov    %rsi,-0x48(%rbp)
+    0.00 :   572b88: mov    %rax,-0x70(%rbp)
+    0.00 :   572b8c: mov    %r15,-0x78(%rbp)
+    0.00 :   572b90: mov    %rdi,-0x50(%rbp)
+    0.00 :   572b94: mov    %r12,-0x58(%rbp)
+    0.00 :   572b98: mov    %r8,%r12
+    0.00 :   572b9b: mov    -0x48(%rbp),%rax
+    0.00 :   572b9f: cmp    $0x7,%r10d
+    0.00 :   572ba3: jg     572c39 <_Py_dict_lookup+0x5c9>
+    0.00 :   572ba9: movsbq (%rax,%r12,1),%r13
+    0.00 :   572bae: test   %r13,%r13
+    0.00 :   572bb1: jns    572be8 <_Py_dict_lookup+0x578>
+    0.00 :   572bb3: cmp    $0xffffffffffffffff,%r13
+    0.00 :   572bb7: jne    572c17 <_Py_dict_lookup+0x5a7>
+    0.00 :   572bb9: mov    %r13,%rbx
+    0.00 :   572bbc: xor    %eax,%eax
+    0.00 :   572bbe: jmp    5727e8 <_Py_dict_lookup+0x178>
+    0.00 :   572bc3: cmp    $0x1f,%r10d
+    0.00 :   572bc7: jg     456ad7 <_Py_dict_lookup.cold+0x101>
+    0.00 :   572bcd: movslq (%rcx,%r8,4),%rbx
+    0.00 :   572bd1: jmp    572857 <_Py_dict_lookup+0x1e7>
+    0.00 :   572bd6: lea    0x38(%rax),%rdi
+    0.00 :   572bda: jmp    5729ba <_Py_dict_lookup+0x34a>
+    0.00 :   572bdf: lea    0x38(%r14),%rsi
+    0.00 :   572be3: jmp    5729a3 <_Py_dict_lookup+0x333>
+    0.00 :   572be8: mov    -0x70(%rbp),%rsi
+    0.00 :   572bec: mov    %r13,%rax
+    0.00 :   572bef: shl    $0x4,%rax
+    0.00 :   572bf3: add    %rsi,%rax
+    0.00 :   572bf6: mov    -0x48(%rbp),%rsi
+    0.00 :   572bfa: add    %rsi,%rax
+    0.00 :   572bfd: mov    (%rax),%r15
+    0.00 :   572c00: mov    %rax,-0x68(%rbp)
+    0.00 :   572c04: cmp    %r15,%r14
+    0.00 :   572c07: je     572c5f <_Py_dict_lookup+0x5ef>
+    0.00 :   572c09: mov    -0x58(%rbp),%rax
+    0.00 :   572c0d: cmp    0x18(%r15),%rax
+    0.00 :   572c11: je     456a1c <_Py_dict_lookup.cold+0x46>
+    0.00 :   572c17: shrq   $0x5,-0x38(%rbp)
+    0.00 :   572c1c: mov    -0x38(%rbp),%rax
+    0.00 :   572c20: lea    (%r12,%r12,4),%r8
+    0.00 :   572c24: movzbl %cl,%r10d
+    0.00 :   572c28: lea    0x1(%rax,%r8,1),%r8
+    0.00 :   572c2d: and    -0x78(%rbp),%r8
+    0.00 :   572c31: mov    %r8,%r12
+    0.00 :   572c34: jmp    572b9b <_Py_dict_lookup+0x52b>
+    0.00 :   572c39: cmp    $0xf,%r10d
+    0.00 :   572c3d: jg     456af2 <_Py_dict_lookup.cold+0x11c>
+    0.00 :   572c43: movswq (%rax,%r12,2),%r13
+    0.00 :   572c48: jmp    572bae <_Py_dict_lookup+0x53e>
+    0.00 :   572c4d: lea    0x38(%r14),%rsi
+    0.00 :   572c51: jmp    572af3 <_Py_dict_lookup+0x483>
+    0.00 :   572c56: lea    0x38(%rax),%rdi
+    0.00 :   572c5a: jmp    572b0a <_Py_dict_lookup+0x49a>
+    0.00 :   572c5f: mov    %r13,%rax
+    0.00 :   572c62: mov    -0x60(%rbp),%r11d
+    0.00 :   572c66: mov    %rbx,%r13
+    0.00 :   572c69: mov    -0x50(%rbp),%rdi
+    0.00 :   572c6d: mov    %rax,%rbx
+    0.00 :   572c70: jmp    5727bf <_Py_dict_lookup+0x14f>
+    0.00 :   572c75: mov    %r11,%rdi
+    0.00 :   572c78: mov    -0x48(%rbp),%r11d
+    0.00 :   572c7c: jmp    5727bf <_Py_dict_lookup+0x14f>
+    0.00 :   572c81: mov    %r11,%rdi
+    0.00 :   572c84: mov    -0x48(%rbp),%r11d
+    0.00 :   572c88: jmp    5727bf <_Py_dict_lookup+0x14f>
+    0.00 :   572c8d: mov    -0x48(%rbp),%rdi
+    0.00 :   572c91: mov    %rsi,%r14
+    0.00 :   572c94: mov    %r15,%r12
+    0.00 :   572c97: jmp    572695 <_Py_dict_lookup+0x25>
+    0.00 :   572c9c: mov    -0x48(%rbp),%rdi
+    0.00 :   572ca0: mov    %rsi,%r14
+    0.00 :   572ca3: mov    %r15,%r12
+    0.00 :   572ca6: jmp    572695 <_Py_dict_lookup+0x25>

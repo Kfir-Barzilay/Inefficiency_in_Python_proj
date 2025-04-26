@@ -1,0 +1,38 @@
+.....................
+regex_dna: Mean +- std dev: 290 ms +- 1 ms
+CPU events:
+  cycles: 456340757
+  instructions: 446670559
+  branches: 92886206
+  branch-misses: 4306211
+Cache events:
+  cache-references: 6538358
+  cache-misses: 578010
+  L1-dcache-loads: 117559217
+  L1-dcache-load-misses: 8058171
+  LLC-loads: 3782876
+  LLC-load-misses: 208184
+Memory events:
+  dTLB-loads: 119603634
+  dTLB-load-misses: 667191
+  page-faults: 4451
+Scheduler events:
+  task-clock: None
+  context-switches: 21
+  cpu-migrations: 0
+ITLB events:
+  iTLB-loads: 136095
+  iTLB-load-misses: 149620
+Libraries events:
+[unknown]: 1.47%
+(/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2): 1.04%
+(/usr/lib/x86_64-linux-gnu/libc.so.6): 96.09%
+(/usr/lib/python3.12/lib-dynload/_decimal.cpython-312-x86_64-linux-gnu.so): 0.04%
+(/usr/lib/x86_64-linux-gnu/libm.so.6): 0.45%
+(/usr/lib/x86_64-linux-gnu/libmagic.so.1.0.0): 0.90%
+(/usr/lib/python3.12/lib-dynload/resource.cpython-312-x86_64-linux-gnu.so): 0.01%
+(/usr/lib/python3.12/lib-dynload/_json.cpython-312-x86_64-linux-gnu.so): 0.00%
+(/usr/lib/python3.12/lib-dynload/_bz2.cpython-312-x86_64-linux-gnu.so): 0.00%
+(/usr/lib/python3.12/lib-dynload/_lzma.cpython-312-x86_64-linux-gnu.so): 0.00%
+(/usr/lib/x86_64-linux-gnu/libz.so.1.3): 0.00%
+(/usr/lib/x86_64-linux-gnu/libbz2.so.1.0.4): 0.00%
