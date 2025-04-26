@@ -1,0 +1,19 @@
+,Children %,Self %,Binary,Library,Function
+8,4.56,1.35,python3,python3.12,[.] _PyDict_GetItem_KnownHash
+13,1.98,1.19,python3,python3.12,[.] _Py_hashtable_get
+15,0.97,0.97,python3,python3.12,[.] _Py_HashBytes
+67,1.04,0.24,python3,python3.12,[.] hashtable_unicode_hash
+598,1.77,0.0,python3,python3.12,[.] _Py_hashtable_get_entry_generic (inlined)
+757,0.97,0.0,python3,_hashlib.cpython-312-x86_64-linux-gnu.so,[.] hashlib_md_meth_names
+808,0.79,0.0,python3,python3.12,[.] unicode_hash (inlined)
+866,0.61,0.0,python3,python3.12,[.] pysiphash (inlined)
+867,0.61,0.0,python3,python3.12,[.] siphash13 (inlined)
+1086,0.3,0.0,python3,python3.12,[.] unicode_hash
+1240,0.22,0.0,python3,ld-linux-x86-64.so.2,[.] _dl_new_hash (inlined)
+1302,0.18,0.0,python3,python3.12,[.] _PyDict_DelItem_KnownHash (inlined)
+1367,0.16,0.0,python3,python3.12,[.] _Py_hashtable_set
+1570,0.12,0.0,python3,python3.12,[.] _Py_hashtable_destroy
+1830,0.11,0.0,python3,_hashlib.cpython-312-x86_64-linux-gnu.so,[.] hashlib_init_hashtable
+1831,0.11,0.0,python3,_hashlib.cpython-312-x86_64-linux-gnu.so,[.] py_hashentry_table_new (inlined)
+2026,0.06,0.0,python3,python3.12,[.] overrides_hash (inlined)
+2043,0.06,0.0,python3,python3.12,[.] hashtable_rehash
