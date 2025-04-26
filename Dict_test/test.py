@@ -24,4 +24,13 @@ for _ in range(100000):
 val = 0
 for key in my_keys:
     val ^= my_dict[key]  # XOR
+
+for key in my_keys:
+    val += my_dict[key]  # XOR
+
+for key in my_keys:
+    val ^= my_dict[key]  # XOR
+
+for key in my_keys:
+    val += my_dict[key]  # XOR   
 print (val)
