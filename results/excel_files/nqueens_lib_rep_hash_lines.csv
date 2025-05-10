@@ -1,0 +1,29 @@
+,Children %,Self %,Binary,Library,Function
+11,4.82,1.24,python3,python3.12,[.] _PyDict_GetItem_KnownHash
+24,1.52,0.68,python3,python3.12,[.] _Py_hashtable_get
+25,0.68,0.68,python3,python3.12,[.] _Py_HashBytes
+37,0.4,0.4,python3,python3.12,[.] PyObject_Hash
+99,0.18,0.13,python3,python3.12,[.] code_hash
+140,0.17,0.12,python3,python3.12,[.] _PyDict_DelItem_KnownHash
+176,0.12,0.12,python3,python3.12,[.] long_hash
+258,0.12,0.12,python3,python3.12,[.] hashtable_unicode_compare
+270,0.11,0.11,python3,libcrypto.so.3,[.] OPENSSL_LH_strhash
+308,0.75,0.07,python3,python3.12,[.] hashtable_unicode_hash
+341,0.31,0.06,python3,python3.12,[.] tuplehash
+344,0.19,0.06,python3,python3.12,[.] hashtable_rehash
+624,1.3,0.0,python3,python3.12,[.] _Py_hashtable_get_entry_generic (inlined)
+676,0.97,0.0,python3,_hashlib.cpython-312-x86_64-linux-gnu.so,[.] hashlib_md_meth_names
+753,0.68,0.0,python3,python3.12,[.] unicode_hash (inlined)
+754,0.68,0.0,python3,python3.12,[.] pysiphash (inlined)
+755,0.68,0.0,python3,python3.12,[.] siphash13 (inlined)
+840,0.47,0.0,python3,python3.12,[.] _PyDict_DelItem_KnownHash (inlined)
+1007,0.28,0.0,python3,ld-linux-x86-64.so.2,[.] _dl_new_hash (inlined)
+1041,0.25,0.0,python3,python3.12,[.] _Py_hashtable_set
+1508,0.12,0.0,python3,python3.12,[.] unicode_get_hash (inlined)
+1731,0.11,0.0,python3,python3.12,[.] unicode_hash
+1756,0.11,0.0,python3,_hashlib.cpython-312-x86_64-linux-gnu.so,[.] _hashlib_openssl_md5
+1757,0.11,0.0,python3,_hashlib.cpython-312-x86_64-linux-gnu.so,[.] _hashlib_openssl_md5_impl (inlined)
+1758,0.11,0.0,python3,_hashlib.cpython-312-x86_64-linux-gnu.so,[.] py_evp_fromname
+1759,0.11,0.0,python3,_hashlib.cpython-312-x86_64-linux-gnu.so,[.] py_digest_by_name (inlined)
+2105,0.06,0.0,python3,python3.12,[.] overrides_hash (inlined)
+2118,0.06,0.0,python3,python3.12,[.] unicode_get_hash (inlined)

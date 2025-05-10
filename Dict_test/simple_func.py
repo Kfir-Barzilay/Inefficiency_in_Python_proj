@@ -5,7 +5,10 @@ def my_add_function(x , y):
         return x + 2 * y
     else:
         return x + y
-    
-print (my_add_function(5 , 3))
-print (my_add_function(3 , 5))
-print (my_add_function(4 , 4))
+sum = 0    
+for i in range (10**5):
+    sum += my_add_function(i , i)
+    sum += my_add_function(i , i+1)
+    sum += my_add_function(i+1 , i)
+
+print("My sum is:" + sum)
