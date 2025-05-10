@@ -34,4 +34,3 @@ total_time_ns = end_test_ns - start_test_ns
 print(f"Total time: {total_time_ns / 1e6:.3f} ms")
 print(f"Total insertion time: {insert_time_ns / 1e6:.3f} ms")
 print(f"Average time per insertion: {average_time_ns:.2f} ns")
-#print(f"Approximate CPU cycles per insertion: {average_cycles:.0f} cycles")
