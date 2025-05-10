@@ -3,7 +3,7 @@ import os
 start_test_ns = time.perf_counter_ns()
 
 # Set the number of insertions
-NUM_INSERTS = 100_000
+NUM_INSERTS = 1000000
 
 # Estimate your CPU frequency in GHz (adjust if needed)
 CPU_FREQ_GHZ = 3.0  # You can check your actual CPU frequency via `lscpu` or similar

@@ -6,7 +6,7 @@ def generate_random_key(length=10):
     return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
 
 # Setup
-NUM_INSERTS = 100_000
+NUM_INSERTS = 1000000
 CPU_FREQ_GHZ = 3.0
 
 d = {}
