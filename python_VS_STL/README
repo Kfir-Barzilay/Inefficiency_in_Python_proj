@@ -1,0 +1,8 @@
+To run c python TB
+gcc -O3 bench_py_dict.c -I$(python3-config --includes) \
+    $(python3-config --ldflags) -o bench_py_dict
+./bench_py_dict
+
+To run STL TB
+g++ -std=c++17 -O3 bench_unordered_map.cpp -o bench_um
+./bench_um
