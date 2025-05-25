@@ -1,0 +1,76 @@
+=== 🧪 C++ unordered_map Benchmark ===
+🔗 Shared libraries used by C++ binary:
+	linux-vdso.so.1 (0x00007ffe58bb7000)
+	libstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x0000765f75a00000)
+	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x0000765f75cf5000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x0000765f75600000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x0000765f75917000)
+	/lib64/ld-linux-x86-64.so.2 (0x0000765f75d32000)
+🏃 Running dict_cpp with perf...
+C++ unordered_map insert time: 0.171156s
+C++ unordered_map lookup time: 0.0189705s
+📊 perf report for C++ (summary):
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 893  of event 'cycles:P'
+# Event count (approx.): 412879477
+#
+# Children      Self  Command   Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                            
+# ........  ........  ........  ....................  ..................................................................................................................................................................................................................................................................................................................................................................................
+#
+    81.83%     0.00%  dict_cpp  [unknown]             [.] 0x0000000100000001
+            |
+            ---0x100000001
+               |          
+               |--49.29%--0x556ec19e4360
+               |          |          
+               |          |--32.91%--0x1614f1
+               |          |          |          
+               |          |          |--21.19%--std::__detail::_Map_base<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)
+
+=== 🧪 Python dict Benchmark ===
+🔗 Shared libraries used by Python:
+	linux-vdso.so.1 (0x00007fffb714d000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x0000711605986000)
+	libz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x000071160596a000)
+	libexpat.so.1 => /lib/x86_64-linux-gnu/libexpat.so.1 (0x000071160593e000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x0000711605600000)
+	/lib64/ld-linux-x86-64.so.2 (0x0000711605a79000)
+🏃 Running dict.py with py-spy...
+py-spy> Sampling process 100 times a second. Press Control-C to exit.
+
+Python dict insert time: 0.36212381441146135
+Python dict lookup time: 0.22501165792346
+
+py-spy> Stopped sampling because process exited
+py-spy> Wrote flamegraph data to 'profile_py.svg'. Samples: 53 Errors: 0
+📊 py-spy flamegraph saved as profile_py.svg
+🏃 Running dict.py with perf...
+Python dict insert time: 0.29305689316242933
+Python dict lookup time: 0.20512485317885876
+📊 perf report for Python (summary):
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 2K of event 'cycles:P'
+# Event count (approx.): 1214659650
+#
+# Children      Self  Command  Shared Object         Symbol                                    
+# ........  ........  .......  ....................  ..........................................
+#
+    99.67%     0.00%  python3  python3.12            [.] _start
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               Py_BytesMain
+               |          
+               |--96.58%--Py_RunMain
+               |          |          
+
+✅ Done. View 'profile_py.svg' in a browser for Python flamegraph.

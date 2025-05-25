@@ -1,16 +1,25 @@
 import time
 
-N = 1_000_000
-d = {}
+def insert_benchmark(d, N):
+    for i in range(N):
+        d[i] = i
 
-# Insert
-start = time.perf_counter()
-for i in range(N):
-    d[i] = i
-print("Python dict insert time:", time.perf_counter() - start)
+def lookup_benchmark(d, N):
+    for i in range(N):
+        _ = d[i]
 
-# Lookup
-start = time.perf_counter()
-for i in range(N):
-    _ = d[i]
-print("Python dict lookup time:", time.perf_counter() - start)
+def main():
+    N = 1_000_000
+    d = {}
+
+    start = time.time()
+    insert_benchmark(d, N)
+    mid = time.time()
+    lookup_benchmark(d, N)
+    end = time.time()
+
+    print(f"Python dict insert time: {mid - start}")
+    print(f"Python dict lookup time: {end - mid}")
+
+if __name__ == "__main__":
+    main()
