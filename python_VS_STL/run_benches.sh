@@ -3,7 +3,7 @@
 set -e  # Exit if any command fails
 
 echo "🔧 Compiling Python C API testbench..."
-gcc -O3 bench_py_dict.c -I$(python3-config --includes) $(python3-config --ldflags) -o bench_py_dict
+gcc -O3 bench_py_dict.c $(python3-config --includes) $(python3-config --ldflags --embed) -o bench_py_dict
 echo "🚀 Running Python C API testbench..."
 ./bench_py_dict
 
