@@ -1,0 +1,84 @@
+=== 🧪 C++ unordered_map Benchmark ===
+🔨 Compiling dict.cpp with -g for symbols...
+🔗 Shared libraries used by C++ binary:
+	linux-vdso.so.1 (0x00007fffb88c3000)
+	libstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x0000763931600000)
+	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x0000763931995000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x0000763931200000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007639318ac000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007639319d2000)
+🏃 Running dict_cpp with perf...
+C++ unordered_map insert time: 0.169332s
+C++ unordered_map lookup time: 0.0189524s
+📊 perf report for C++ (summary):
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 888  of event 'cycles:P'
+# Event count (approx.): 413891260
+#
+# Children      Self  Command   Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                            
+# ........  ........  ........  ....................  ..................................................................................................................................................................................................................................................................................................................................................................................
+#
+    80.81%     0.00%  dict_cpp  [unknown]             [.] 0x0000000100000001
+            |
+            ---0x100000001
+               |          
+               |--50.58%--0x59d5a470c360
+               |          |          
+               |          |--32.94%--0x1614f1
+               |          |          |          
+               |          |          |--22.11%--std::__detail::_Map_base<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)
+📌 For full symbol names, run:
+    perf annotate
+    perf script | c++filt
+
+=== 🧪 Python dict Benchmark ===
+🔗 Shared libraries used by Python:
+	linux-vdso.so.1 (0x00007ffe823f0000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x000073f385d7c000)
+	libz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x000073f385d60000)
+	libexpat.so.1 => /lib/x86_64-linux-gnu/libexpat.so.1 (0x000073f385d34000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x000073f385a00000)
+	/lib64/ld-linux-x86-64.so.2 (0x000073f385e6f000)
+🏃 Running dict.py with py-spy...
+py-spy> Sampling process 100 times a second. Press Control-C to exit.
+
+Python dict insert time: 0.22476816177368164
+Python dict lookup time: 0.1083991527557373
+
+py-spy> Stopped sampling because process exited
+py-spy> Wrote flamegraph data to 'profile_py.svg'. Samples: 45 Errors: 0
+📊 py-spy flamegraph saved as profile_py.svg
+🖼️  Open this file in your browser to explore performance
+🏃 Running dict.py with perf...
+Python dict insert time: 0.19815945625305176
+Python dict lookup time: 0.0929715633392334
+📊 perf report for Python (summary):
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'cycles:P'
+# Event count (approx.): 732592884
+#
+# Children      Self  Command  Shared Object         Symbol                                    
+# ........  ........  .......  ....................  ..........................................
+#
+    99.59%     0.00%  python3  python3.12            [.] _start
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               Py_BytesMain
+               |          
+               |--94.36%--Py_RunMain
+               |          |          
+📌 For full breakdown, run:
+    perf annotate
+    perf script
+
+✅ All done! Use the SVG for Python flamegraph, and perf tools for C++ deep dive.
