@@ -73,23 +73,23 @@ def get_perf_stats(path_to_bm):
     Run 'perf stat' on a Python script and collect performance counters.
     """
     event_groups = {
-        "CPU": ["cycles", "instructions", "branches", "branch-misses"],
-        "Cache": [
-            "cache-references", "cache-misses",
-            "L1-dcache-loads", "L1-dcache-load-misses",
-            "LLC-loads", "LLC-load-misses",
-            "L2_rqsts.code_rd",               # L2 instruction fetches
-            "L2_rqsts.code_rd_miss"          # L2 instruction cache misses
-        ],
-        "Memory": ["dTLB-loads", "dTLB-load-misses", "page-faults"],
-        "Scheduler": ["task-clock", "context-switches", "cpu-migrations"],
-        "ITLB": ["iTLB-loads", "iTLB-load-misses", "itlb-misses"],
-        "ICache": [                          # New group for instruction cache
-            "L1-icache-loads",              # If supported
-            "L1-icache-load-misses"         # If supported
-        ],
-        "Libraries": []
-    }
+    "CPU": ["cycles", "instructions", "branches", "branch-misses"],
+    "Cache": [
+        "cache-references", "cache-misses",
+        "L1-dcache-loads", "L1-dcache-load-misses",
+        "LLC-loads", "LLC-load-misses"
+    ],
+    "Memory": ["dTLB-loads", "dTLB-load-misses", "page-faults"],
+    "Scheduler": ["task-clock", "context-switches", "cpu-migrations"],
+    "ITLB": ["iTLB-loads", "iTLB-load-misses", "itlb-misses"],
+    "ICache": [
+        "cycle_activity.stalls_icache",
+        "frontend_retired.icache_stall",
+        "icache_64b.iftag_miss"
+    ],
+    "Libraries": []
+}
+
 
     all_events = []
     for events in event_groups.values():
