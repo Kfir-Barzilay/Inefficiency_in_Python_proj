@@ -74,12 +74,20 @@ def get_perf_stats(path_to_bm):
     """
     event_groups = {
         "CPU": ["cycles", "instructions", "branches", "branch-misses"],
-        "Cache": ["cache-references", "cache-misses",
-                  "L1-dcache-loads", "L1-dcache-load-misses",
-                  "LLC-loads", "LLC-load-misses"],
+        "Cache": [
+            "cache-references", "cache-misses",
+            "L1-dcache-loads", "L1-dcache-load-misses",
+            "LLC-loads", "LLC-load-misses",
+            "L2_rqsts.code_rd",               # L2 instruction fetches
+            "L2_rqsts.code_rd_miss"          # L2 instruction cache misses
+        ],
         "Memory": ["dTLB-loads", "dTLB-load-misses", "page-faults"],
         "Scheduler": ["task-clock", "context-switches", "cpu-migrations"],
-        "ITLB": ["iTLB-loads", "iTLB-load-misses"],
+        "ITLB": ["iTLB-loads", "iTLB-load-misses", "itlb-misses"],
+        "ICache": [                          # New group for instruction cache
+            "L1-icache-loads",              # If supported
+            "L1-icache-load-misses"         # If supported
+        ],
         "Libraries": []
     }
 
