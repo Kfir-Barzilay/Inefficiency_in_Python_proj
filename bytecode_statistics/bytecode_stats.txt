@@ -1,0 +1,142 @@
+FULL BYTECODE DISASSEMBLY:
+  1           0 LOAD_CONST               0 (<code object add at 0x000001B2AB268A80, file "add.py", line 1>)
+              2 LOAD_CONST               1 ('add')
+              4 MAKE_FUNCTION            0
+              6 STORE_NAME               0 (add)
+
+  4           8 LOAD_CONST               2 (<code object main at 0x000001B2AB268B30, file "add.py", line 4>)
+             10 LOAD_CONST               3 ('main')
+             12 MAKE_FUNCTION            0
+             14 STORE_NAME               1 (main)
+
+  9          16 LOAD_NAME                2 (__name__)
+             18 LOAD_CONST               4 ('__main__')
+             20 COMPARE_OP               2 (==)
+             22 POP_JUMP_IF_FALSE       17 (to 34)
+
+ 10          24 LOAD_NAME                1 (main)
+             26 CALL_FUNCTION            0
+             28 POP_TOP
+             30 LOAD_CONST               5 (None)
+             32 RETURN_VALUE
+
+  9     >>   34 LOAD_CONST               5 (None)
+             36 RETURN_VALUE
+
+Disassembly of <code object add at 0x000001B2AB268A80, file "add.py", line 1>:
+  2           0 LOAD_FAST                0 (a)
+              2 LOAD_FAST                1 (b)
+              4 BINARY_ADD
+              6 RETURN_VALUE
+
+Disassembly of <code object main at 0x000001B2AB268B30, file "add.py", line 4>:
+  5           0 LOAD_GLOBAL              0 (print)
+              2 LOAD_GLOBAL              1 (add)
+              4 LOAD_CONST               1 (4)
+              6 LOAD_CONST               2 (5)
+              8 CALL_FUNCTION            2
+             10 CALL_FUNCTION            1
+             12 POP_TOP
+
+  6          14 LOAD_GLOBAL              0 (print)
+             16 LOAD_GLOBAL              1 (add)
+             18 LOAD_CONST               3 (6)
+             20 LOAD_CONST               4 (7)
+             22 CALL_FUNCTION            2
+             24 CALL_FUNCTION            1
+             26 POP_TOP
+
+  7          28 LOAD_GLOBAL              0 (print)
+             30 LOAD_GLOBAL              1 (add)
+             32 LOAD_CONST               5 (8)
+             34 LOAD_CONST               6 (9)
+             36 CALL_FUNCTION            2
+             38 CALL_FUNCTION            1
+             40 POP_TOP
+             42 LOAD_CONST               0 (None)
+             44 RETURN_VALUE
+
+STATIC OPCODE COUNTS (appearance in byte-code):
+LOAD_CONST           14 times
+CALL_FUNCTION        7 times
+LOAD_GLOBAL          6 times
+POP_TOP              4 times
+RETURN_VALUE         4 times
+MAKE_FUNCTION        2 times
+STORE_NAME           2 times
+LOAD_NAME            2 times
+LOAD_FAST            2 times
+COMPARE_OP           1 times
+POP_JUMP_IF_FALSE    1 times
+BINARY_ADD           1 times
+
+DYNAMIC EXECUTION COUNTS PER INSTRUCTION:
+  1              0 LOAD_CONST          <code object add at 0x000001B2AB268D40, file "add.py", line 1> | 1 times
+                 2 LOAD_CONST          'add'                    | 1 times
+                 4 MAKE_FUNCTION                                | 1 times
+                 6 STORE_NAME          add                      | 1 times
+  4              8 LOAD_CONST          <code object main at 0x000001B2AB268DF0, file "add.py", line 4> | 1 times
+                10 LOAD_CONST          'main'                   | 1 times
+                12 MAKE_FUNCTION                                | 1 times
+                14 STORE_NAME          main                     | 1 times
+  9             16 LOAD_NAME           __name__                 | 1 times
+                18 LOAD_CONST          '__main__'               | 1 times
+                20 COMPARE_OP          ==                       | 1 times
+                22 POP_JUMP_IF_FALSE   to 34                    | 0 times
+ 10             24 LOAD_NAME           main                     | 1 times
+                26 CALL_FUNCTION                                | 1 times
+                28 POP_TOP                                      | 1 times
+                30 LOAD_CONST          None                     | 1 times
+                32 RETURN_VALUE                                 | 1 times
+  9             34 LOAD_CONST          None                     | 0 times
+                36 RETURN_VALUE                                 | 0 times
+  2              0 LOAD_FAST           a                        | 3 times
+                 2 LOAD_FAST           b                        | 3 times
+                 4 BINARY_ADD                                   | 3 times
+                 6 RETURN_VALUE                                 | 3 times
+  5              0 LOAD_GLOBAL         print                    | 1 times
+                 2 LOAD_GLOBAL         add                      | 1 times
+                 4 LOAD_CONST          4                        | 1 times
+                 6 LOAD_CONST          5                        | 1 times
+                 8 CALL_FUNCTION                                | 1 times
+                10 CALL_FUNCTION                                | 1 times
+                12 POP_TOP                                      | 1 times
+  6             14 LOAD_GLOBAL         print                    | 1 times
+                16 LOAD_GLOBAL         add                      | 1 times
+                18 LOAD_CONST          6                        | 1 times
+                20 LOAD_CONST          7                        | 1 times
+                22 CALL_FUNCTION                                | 1 times
+                24 CALL_FUNCTION                                | 1 times
+                26 POP_TOP                                      | 1 times
+  7             28 LOAD_GLOBAL         print                    | 1 times
+                30 LOAD_GLOBAL         add                      | 1 times
+                32 LOAD_CONST          8                        | 1 times
+                34 LOAD_CONST          9                        | 1 times
+                36 CALL_FUNCTION                                | 1 times
+                38 CALL_FUNCTION                                | 1 times
+                40 POP_TOP                                      | 1 times
+                42 LOAD_CONST          None                     | 1 times
+                44 RETURN_VALUE                                 | 1 times
+
+DYNAMIC OPCODE EXECUTION COUNTS:
+LOAD_CONST           13 times
+CALL_FUNCTION        7 times
+LOAD_GLOBAL          6 times
+LOAD_FAST            6 times
+RETURN_VALUE         5 times
+POP_TOP              4 times
+BINARY_ADD           3 times
+MAKE_FUNCTION        2 times
+STORE_NAME           2 times
+LOAD_NAME            2 times
+COMPARE_OP           1 times
+
+DYNAMIC SOURCE-LINE EXECUTION COUNTS:
+Line   1: executed      4 times | def add(a, b):
+Line   2: executed     12 times |     return a + b
+Line   4: executed      4 times | def main():
+Line   5: executed      7 times |     print(add(4, 5))
+Line   6: executed      7 times |     print(add(6, 7))
+Line   7: executed      9 times |     print(add(8, 9))
+Line   9: executed      3 times | if __name__ == '__main__':
+Line  10: executed      5 times |     main()
