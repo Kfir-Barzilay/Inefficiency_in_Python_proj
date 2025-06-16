@@ -1,0 +1,27 @@
+Benchmarking 10000 (LOAD_CONST + POP_TOP) operations, repeated by timeit.
+
+--- Direct LOAD_CONST + POP_TOP (using expression statement '0') ---
+Min total time for 1000 runs of 10000 pairs: 0.136527 seconds
+Average time per run: 0.0001365270 seconds
+Average time per (LOAD_CONST + POP_TOP) pair: 0.000000013653 seconds
+
+--- Empty Loop Overhead ---
+Min total time for 1000 runs of 10000 'pass' iterations: 0.115619 seconds
+Average time per run: 0.0001156188 seconds
+Average time per 'pass' iteration (loop overhead estimate): 0.000000011562 seconds
+
+--- Estimated Time (with overhead subtraction attempt) ---
+Estimated time for (LOAD_CONST + POP_TOP) excluding loop overhead: 0.000000002091 seconds
+Estimated time per single stack op (push or pop, assuming they are similar): 0.000000001045 seconds
+
+--- Bytecode for the core of the direct push/pop loop ('0') ---
+  0           0 RESUME                   0
+
+  1           2 LOAD_CONST               0 (0)
+              4 RETURN_VALUE
+
+--- Bytecode for 'pass' (for overhead reference) ---
+  0           0 RESUME                   0
+
+  1           2 LOAD_CONST               0 (None)
+              4 RETURN_VALUE

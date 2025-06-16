@@ -97,8 +97,10 @@ def get_perf_stats(path_to_bm):
         "Memory": ["dTLB-loads", "dTLB-load-misses", "page-faults"],
         "Scheduler": ["task-clock", "context-switches", "cpu-migrations"],
         "ITLB": ["iTLB-loads", "iTLB-load-misses"],
-        "Libraries": []  # Placeholder: add library-specific events as needed
+        "InstructionCache": ["instruction-cache-refs", "instruction-cache-misses"],
+        "Libraries": []  # Placeholder
     }
+
     
     # Flatten all events into a single list for the perf stat command.
     all_events = []

@@ -30,7 +30,8 @@ int main(int argc, char *argv[]) {
         key = PyLong_FromLong(keys[i]);
         value = PyLong_FromLong(keys[i]);
         PyDict_SetItem(dict, key, value);
-        Py_DECREF(key); Py_DECREF(value);
+        Py_DECREF(key); 
+        Py_DECREF(value);
     }
     clock_gettime(CLOCK_MONOTONIC, &t1);
     printf(" insert: %.4f seconds", elapsed(t0, t1));
