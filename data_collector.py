@@ -80,7 +80,6 @@ def get_perf_stats(path_to_bm):
         "Memory": ["dTLB-loads", "dTLB-load-misses", "page-faults"],
         "Scheduler": ["task-clock", "context-switches", "cpu-migrations"],
         "ITLB": ["iTLB-loads", "iTLB-load-misses"],
-        "InstructionCache": ['''"instruction-cache-refs", "instruction-cache-misses"'''],
         "Libraries": []
     }
 
