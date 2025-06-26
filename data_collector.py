@@ -83,9 +83,9 @@ def get_perf_stats(path_to_bm):
     "Scheduler": ["task-clock", "context-switches", "cpu-migrations"],
     "ITLB": ["iTLB-loads", "iTLB-load-misses", "iTLB-misses"],
     "ICache": [
-        "cycle_activity.stalls_icache",
-        "frontend_retired.icache_stall",
-        "icache_64b.iftag_miss"
+        "L1-icache-load-misses", #cpu/L1-icache-load-misses/
+        "iTLB-loads", # OR cpu/iTLB-loads/
+        "iTLB-load-misses" # OR cpu/iTLB-load-misses/
     ],
     "Libraries": []
 }

@@ -1,0 +1,635 @@
+FULL BYTECODE DISASSEMBLY:
+  0           0 RESUME                   0
+
+  2           2 LOAD_CONST               0 ('\nStandalone version of the regex-dna benchmark from\nThe Computer Language Benchmarks Game.\n')
+              4 STORE_NAME               0 (__doc__)
+
+  7           6 LOAD_CONST               1 (0)
+              8 LOAD_CONST               2 (None)
+             10 IMPORT_NAME              1 (bisect)
+             12 STORE_NAME               1 (bisect)
+
+  8          14 LOAD_CONST               1 (0)
+             16 LOAD_CONST               2 (None)
+             18 IMPORT_NAME              2 (re)
+             20 STORE_NAME               2 (re)
+
+  9          22 LOAD_CONST               1 (0)
+             24 LOAD_CONST               2 (None)
+             26 IMPORT_NAME              3 (time)
+             28 STORE_NAME               3 (time)
+
+ 11          30 LOAD_CONST               3 (100000)
+             32 STORE_NAME               4 (DEFAULT_INIT_LEN)
+
+ 12          34 LOAD_CONST               4 (42)
+             36 STORE_NAME               5 (DEFAULT_RNG_SEED)
+
+ 15          38 LOAD_CONST               5 ('GGCCGGGCGCGGTGGCTCACGCCTGTAATCCCAGCACTTTGGGAGGCCGAGGCGGGCGGATCACCTGAGGTCAGGAGTTCGAGACCAGCCTGGCCAACATGGTGAAACCCCGTCTCTACTAAAAATACAAAAATTAGCCGGGCGTGGTGGCGCGCGCCTGTAATCCCAGCTACTCGGGAGGCTGAGGCAGGAGAATCGCTTGAACCCGGGAGGCGGAGGTTGCAGTGAGCCGAGATCGCGCCACTGCACTCCAGCCTGGGCGACAGAGCGAGACTCCGTCTCAAAAA')
+
+ 14          40 STORE_NAME               6 (ALU)
+
+ 24          42 PUSH_NULL
+             44 LOAD_NAME                7 (list)
+             46 PUSH_NULL
+             48 LOAD_NAME                8 (zip)
+             50 LOAD_CONST               6 ('acgtBDHKMNRSVWY')
+             52 BUILD_LIST               0
+             54 LOAD_CONST               7 ((0.27, 0.12, 0.12, 0.27))
+             56 LIST_EXTEND              1
+             58 LOAD_CONST               8 (0.02)
+             60 BUILD_LIST               1
+             62 LOAD_CONST               9 (11)
+             64 BINARY_OP                5 (*)
+             68 BINARY_OP                0 (+)
+             72 PRECALL                  2
+             76 CALL                     2
+             86 PRECALL                  1
+             90 CALL                     1
+            100 STORE_NAME               9 (IUB)
+
+ 26         102 BUILD_LIST               0
+            104 LOAD_CONST              10 ((('a', 0.302954942668), ('c', 0.1979883004921), ('g', 0.1975473066391), ('t', 0.3015094502008)))
+            106 LIST_EXTEND              1
+            108 STORE_NAME              10 (HOMOSAPIENS)
+
+ 34         110 LOAD_CONST              11 (<code object make_cumulative at 0x000001B6E185E550, file "bm_regex_dna_noperf.py", line 34>)
+            112 MAKE_FUNCTION            0
+            114 STORE_NAME              11 (make_cumulative)
+
+ 44         116 LOAD_CONST              12 (<code object repeat_fasta at 0x000001B6E1C0E5B0, file "bm_regex_dna_noperf.py", line 44>)
+            118 MAKE_FUNCTION            0
+            120 STORE_NAME              12 (repeat_fasta)
+
+ 52         122 LOAD_CONST              13 (<code object random_fasta at 0x000001B6E1DAD590, file "bm_regex_dna_noperf.py", line 52>)
+            124 MAKE_FUNCTION            0
+            126 STORE_NAME              13 (random_fasta)
+
+ 79         128 LOAD_CONST              14 (<code object init_benchmarks at 0x000001B6E17923D0, file "bm_regex_dna_noperf.py", line 79>)
+            130 MAKE_FUNCTION            0
+            132 STORE_NAME              14 (init_benchmarks)
+
+ 95         134 LOAD_CONST              15 ((b'agggtaaa|tttaccct', b'[cgt]gggtaaa|tttaccc[acg]', b'a[act]ggtaaa|tttacc[agt]t', b'ag[act]gtaaa|tttac[agt]ct', b'agg[act]taaa|ttta[agt]cct', b'aggg[acg]aaa|ttt[cgt]ccct', b'agggt[cgt]aa|tt[acg]accct', b'agggta[cgt]a|t[acg]taccct', b'agggtaa[cgt]|[acg]ttaccct'))
+            136 STORE_NAME              15 (VARIANTS)
+
+107         138 LOAD_CONST              16 (((b'B', b'(c|g|t)'), (b'D', b'(a|g|t)'), (b'H', b'(a|c|t)'), (b'K', b'(g|t)'), (b'M', b'(a|c)'), (b'N', b'(a|c|g|t)'), (b'R', b'(a|g)'), (b'S', b'(c|g)'), (b'V', b'(a|c|g)'), (b'W', b'(a|t)'), (b'Y', b'(c|t)')))
+            140 STORE_NAME              16 (SUBST)
+
+115         142 LOAD_CONST              17 (<code object run_benchmarks at 0x000001B6E1816870, file "bm_regex_dna_noperf.py", line 115>)
+            144 MAKE_FUNCTION            0
+            146 STORE_NAME              17 (run_benchmarks)
+
+128         148 LOAD_CONST              18 (<code object main at 0x000001B6E1DBF300, file "bm_regex_dna_noperf.py", line 128>)
+            150 MAKE_FUNCTION            0
+            152 STORE_NAME              18 (main)
+
+150         154 LOAD_NAME               19 (__name__)
+            156 LOAD_CONST              19 ('__main__')
+            158 COMPARE_OP               2 (==)
+            164 POP_JUMP_FORWARD_IF_FALSE    12 (to 190)
+
+151         166 PUSH_NULL
+            168 LOAD_NAME               18 (main)
+            170 PRECALL                  0
+            174 CALL                     0
+            184 POP_TOP
+            186 LOAD_CONST               2 (None)
+            188 RETURN_VALUE
+
+150     >>  190 LOAD_CONST               2 (None)
+            192 RETURN_VALUE
+
+Disassembly of <code object make_cumulative at 0x000001B6E185E550, file "bm_regex_dna_noperf.py", line 34>:
+ 34           0 RESUME                   0
+
+ 35           2 BUILD_LIST               0
+              4 BUILD_LIST               0
+              6 STORE_FAST               2 (chars)
+              8 STORE_FAST               1 (probs)
+
+ 36          10 LOAD_CONST               1 (0.0)
+             12 STORE_FAST               3 (total)
+
+ 37          14 LOAD_FAST                0 (table)
+             16 GET_ITER
+        >>   18 FOR_ITER                65 (to 150)
+             20 UNPACK_SEQUENCE          2
+             24 STORE_FAST               4 (char)
+             26 STORE_FAST               5 (p)
+
+ 38          28 LOAD_FAST                3 (total)
+             30 LOAD_FAST                5 (p)
+             32 BINARY_OP               13 (+=)
+             36 STORE_FAST               3 (total)
+
+ 39          38 LOAD_FAST                1 (probs)
+             40 LOAD_METHOD              0 (append)
+             62 LOAD_FAST                3 (total)
+             64 PRECALL                  1
+             68 CALL                     1
+             78 POP_TOP
+
+ 40          80 LOAD_FAST                2 (chars)
+             82 LOAD_METHOD              0 (append)
+            104 LOAD_GLOBAL              3 (NULL + ord)
+            116 LOAD_FAST                4 (char)
+            118 PRECALL                  1
+            122 CALL                     1
+            132 PRECALL                  1
+            136 CALL                     1
+            146 POP_TOP
+            148 JUMP_BACKWARD           66 (to 18)
+
+ 41     >>  150 LOAD_FAST                1 (probs)
+            152 LOAD_FAST                2 (chars)
+            154 BUILD_TUPLE              2
+            156 RETURN_VALUE
+
+Disassembly of <code object repeat_fasta at 0x000001B6E1C0E5B0, file "bm_regex_dna_noperf.py", line 44>:
+ 44           0 RESUME                   0
+
+ 45           2 LOAD_CONST               1 (60)
+              4 STORE_FAST               3 (width)
+
+ 46           6 LOAD_GLOBAL              1 (NULL + len)
+             18 LOAD_FAST                0 (src)
+             20 PRECALL                  1
+             24 CALL                     1
+             34 STORE_FAST               4 (line_len)
+
+ 47          36 LOAD_FAST                0 (src)
+             38 LOAD_FAST                1 (n)
+             40 LOAD_FAST                4 (line_len)
+             42 BINARY_OP                2 (//)
+             46 LOAD_CONST               2 (2)
+             48 BINARY_OP                0 (+)
+             52 BINARY_OP                5 (*)
+             56 LOAD_CONST               0 (None)
+             58 LOAD_FAST                1 (n)
+             60 BUILD_SLICE              2
+             62 BINARY_SUBSCR
+             72 STORE_FAST               5 (extended)
+
+ 48          74 LOAD_GLOBAL              3 (NULL + range)
+             86 LOAD_CONST               3 (0)
+             88 LOAD_FAST                1 (n)
+             90 LOAD_FAST                3 (width)
+             92 PRECALL                  3
+             96 CALL                     3
+            106 GET_ITER
+        >>  108 FOR_ITER                46 (to 202)
+            110 STORE_FAST               6 (i)
+
+ 49         112 PUSH_NULL
+            114 LOAD_FAST                2 (nprint)
+            116 LOAD_FAST                5 (extended)
+            118 LOAD_FAST                6 (i)
+            120 LOAD_FAST                6 (i)
+            122 LOAD_FAST                3 (width)
+            124 BINARY_OP                0 (+)
+            128 BUILD_SLICE              2
+            130 BINARY_SUBSCR
+            140 LOAD_METHOD              2 (encode)
+            162 LOAD_CONST               4 ('ascii')
+            164 PRECALL                  1
+            168 CALL                     1
+            178 LOAD_CONST               5 (b'\n')
+            180 BINARY_OP                0 (+)
+            184 PRECALL                  1
+            188 CALL                     1
+            198 POP_TOP
+            200 JUMP_BACKWARD           47 (to 108)
+
+ 48     >>  202 LOAD_CONST               0 (None)
+            204 RETURN_VALUE
+
+Disassembly of <code object random_fasta at 0x000001B6E1DAD590, file "bm_regex_dna_noperf.py", line 52>:
+ 52           0 RESUME                   0
+
+ 53           2 LOAD_CONST               1 (60)
+              4 STORE_FAST               4 (width)
+
+ 54           6 LOAD_GLOBAL              1 (NULL + make_cumulative)
+             18 LOAD_FAST                0 (table)
+             20 PRECALL                  1
+             24 CALL                     1
+             34 UNPACK_SEQUENCE          2
+             38 STORE_FAST               5 (probs)
+             40 STORE_FAST               6 (chars)
+
+ 55          42 LOAD_GLOBAL              3 (NULL + bytearray)
+             54 LOAD_FAST                4 (width)
+             56 LOAD_CONST               2 (1)
+             58 BINARY_OP                0 (+)
+             62 PRECALL                  1
+             66 CALL                     1
+             76 STORE_FAST               7 (line)
+
+ 56          78 LOAD_CONST               3 (139968.0)
+             80 STORE_FAST               8 (im)
+
+ 57          82 LOAD_GLOBAL              5 (NULL + float)
+             94 LOAD_FAST                2 (seed)
+             96 PRECALL                  1
+            100 CALL                     1
+            110 STORE_FAST               2 (seed)
+
+ 59         112 LOAD_FAST                1 (n)
+            114 LOAD_FAST                4 (width)
+            116 BINARY_OP                2 (//)
+            120 STORE_FAST               9 (full_lines)
+
+ 60         122 LOAD_FAST                1 (n)
+            124 LOAD_FAST                4 (width)
+            126 BINARY_OP                6 (%)
+            130 STORE_FAST              10 (leftover)
+
+ 61         132 LOAD_GLOBAL              6 (bisect)
+            144 LOAD_ATTR                3 (bisect)
+            154 STORE_FAST              11 (bb)
+
+ 63         156 LOAD_GLOBAL              9 (NULL + range)
+            168 LOAD_FAST                9 (full_lines)
+            170 PRECALL                  1
+            174 CALL                     1
+            184 GET_ITER
+        >>  186 FOR_ITER                71 (to 330)
+            188 STORE_FAST              12 (_)
+
+ 64         190 LOAD_GLOBAL              9 (NULL + range)
+            202 LOAD_FAST                4 (width)
+            204 PRECALL                  1
+            208 CALL                     1
+            218 GET_ITER
+        >>  220 FOR_ITER                37 (to 296)
+            222 STORE_FAST              13 (i)
+
+ 65         224 LOAD_FAST                2 (seed)
+            226 LOAD_CONST               4 (3877.0)
+            228 BINARY_OP                5 (*)
+            232 LOAD_CONST               5 (29573.0)
+            234 BINARY_OP                0 (+)
+            238 LOAD_FAST                8 (im)
+            240 BINARY_OP                6 (%)
+            244 STORE_FAST               2 (seed)
+
+ 66         246 LOAD_FAST                6 (chars)
+            248 PUSH_NULL
+            250 LOAD_FAST               11 (bb)
+            252 LOAD_FAST                5 (probs)
+            254 LOAD_FAST                2 (seed)
+            256 LOAD_FAST                8 (im)
+            258 BINARY_OP               11 (/)
+            262 PRECALL                  2
+            266 CALL                     2
+            276 BINARY_SUBSCR
+            286 LOAD_FAST                7 (line)
+            288 LOAD_FAST               13 (i)
+            290 STORE_SUBSCR
+            294 JUMP_BACKWARD           38 (to 220)
+
+ 67     >>  296 LOAD_CONST               6 (10)
+            298 LOAD_FAST                7 (line)
+            300 LOAD_CONST               1 (60)
+            302 STORE_SUBSCR
+
+ 68         306 PUSH_NULL
+            308 LOAD_FAST                3 (nprint)
+            310 LOAD_FAST                7 (line)
+            312 PRECALL                  1
+            316 CALL                     1
+            326 POP_TOP
+            328 JUMP_BACKWARD           72 (to 186)
+
+ 70     >>  330 LOAD_FAST               10 (leftover)
+            332 POP_JUMP_FORWARD_IF_FALSE    75 (to 484)
+
+ 71         334 LOAD_GLOBAL              9 (NULL + range)
+            346 LOAD_FAST               10 (leftover)
+            348 PRECALL                  1
+            352 CALL                     1
+            362 GET_ITER
+        >>  364 FOR_ITER                37 (to 440)
+            366 STORE_FAST              13 (i)
+
+ 72         368 LOAD_FAST                2 (seed)
+            370 LOAD_CONST               4 (3877.0)
+            372 BINARY_OP                5 (*)
+            376 LOAD_CONST               5 (29573.0)
+            378 BINARY_OP                0 (+)
+            382 LOAD_FAST                8 (im)
+            384 BINARY_OP                6 (%)
+            388 STORE_FAST               2 (seed)
+
+ 73         390 LOAD_FAST                6 (chars)
+            392 PUSH_NULL
+            394 LOAD_FAST               11 (bb)
+            396 LOAD_FAST                5 (probs)
+            398 LOAD_FAST                2 (seed)
+            400 LOAD_FAST                8 (im)
+            402 BINARY_OP               11 (/)
+            406 PRECALL                  2
+            410 CALL                     2
+            420 BINARY_SUBSCR
+            430 LOAD_FAST                7 (line)
+            432 LOAD_FAST               13 (i)
+            434 STORE_SUBSCR
+            438 JUMP_BACKWARD           38 (to 364)
+
+ 74     >>  440 PUSH_NULL
+            442 LOAD_FAST                3 (nprint)
+            444 LOAD_FAST                7 (line)
+            446 LOAD_CONST               0 (None)
+            448 LOAD_FAST               10 (leftover)
+            450 BUILD_SLICE              2
+            452 BINARY_SUBSCR
+            462 LOAD_CONST               7 (b'\n')
+            464 BINARY_OP                0 (+)
+            468 PRECALL                  1
+            472 CALL                     1
+            482 POP_TOP
+
+ 76     >>  484 LOAD_FAST                2 (seed)
+            486 RETURN_VALUE
+
+Disassembly of <code object init_benchmarks at 0x000001B6E17923D0, file "bm_regex_dna_noperf.py", line 79>:
+ 79           0 RESUME                   0
+
+ 80           2 LOAD_GLOBAL              1 (NULL + bytearray)
+             14 PRECALL                  0
+             18 CALL                     0
+             28 STORE_FAST               2 (output)
+
+ 81          30 LOAD_FAST                2 (output)
+             32 LOAD_ATTR                1 (extend)
+             42 STORE_FAST               3 (out)
+
+ 83          44 PUSH_NULL
+             46 LOAD_FAST                3 (out)
+             48 LOAD_CONST               1 (b'>ONE Homo sapiens alu\n')
+             50 PRECALL                  1
+             54 CALL                     1
+             64 POP_TOP
+
+ 84          66 LOAD_GLOBAL              5 (NULL + repeat_fasta)
+             78 LOAD_GLOBAL              6 (ALU)
+             90 LOAD_FAST                0 (n)
+             92 LOAD_CONST               2 (2)
+             94 BINARY_OP                5 (*)
+             98 LOAD_FAST                3 (out)
+            100 PRECALL                  3
+            104 CALL                     3
+            114 POP_TOP
+
+ 86         116 PUSH_NULL
+            118 LOAD_FAST                3 (out)
+            120 LOAD_CONST               3 (b'>TWO IUB ambiguity codes\n')
+            122 PRECALL                  1
+            126 CALL                     1
+            136 POP_TOP
+
+ 87         138 LOAD_GLOBAL              9 (NULL + random_fasta)
+            150 LOAD_GLOBAL             10 (IUB)
+            162 LOAD_FAST                0 (n)
+            164 LOAD_CONST               4 (3)
+            166 BINARY_OP                5 (*)
+            170 LOAD_FAST                1 (rng_seed)
+            172 LOAD_FAST                3 (out)
+            174 PRECALL                  4
+            178 CALL                     4
+            188 STORE_FAST               4 (seed)
+
+ 89         190 PUSH_NULL
+            192 LOAD_FAST                3 (out)
+            194 LOAD_CONST               5 (b'>THREE Homo sapiens frequency\n')
+            196 PRECALL                  1
+            200 CALL                     1
+            210 POP_TOP
+
+ 90         212 LOAD_GLOBAL              9 (NULL + random_fasta)
+            224 LOAD_GLOBAL             12 (HOMOSAPIENS)
+            236 LOAD_FAST                0 (n)
+            238 LOAD_CONST               6 (5)
+            240 BINARY_OP                5 (*)
+            244 LOAD_FAST                4 (seed)
+            246 LOAD_FAST                3 (out)
+            248 PRECALL                  4
+            252 CALL                     4
+            262 POP_TOP
+
+ 92         264 LOAD_GLOBAL             15 (NULL + bytes)
+            276 LOAD_FAST                2 (output)
+            278 PRECALL                  1
+            282 CALL                     1
+            292 RETURN_VALUE
+
+Disassembly of <code object run_benchmarks at 0x000001B6E1816870, file "bm_regex_dna_noperf.py", line 115>:
+              0 MAKE_CELL                0 (seq)
+
+115           2 RESUME                   0
+
+116           4 LOAD_GLOBAL              1 (NULL + len)
+             16 LOAD_DEREF               0 (seq)
+             18 PRECALL                  1
+             22 CALL                     1
+             32 STORE_FAST               1 (initial_len)
+
+117          34 LOAD_GLOBAL              3 (NULL + re)
+             46 LOAD_ATTR                2 (sub)
+             56 LOAD_CONST               1 (b'>.*\n|\n')
+             58 LOAD_CONST               2 (b'')
+             60 LOAD_DEREF               0 (seq)
+             62 PRECALL                  3
+             66 CALL                     3
+             76 STORE_DEREF              0 (seq)
+
+118          78 LOAD_GLOBAL              1 (NULL + len)
+             90 LOAD_DEREF               0 (seq)
+             92 PRECALL                  1
+             96 CALL                     1
+            106 STORE_FAST               2 (cleaned_len)
+
+120         108 LOAD_CLOSURE             0 (seq)
+            110 BUILD_TUPLE              1
+            112 LOAD_CONST               3 (<code object <listcomp> at 0x000001B6E1C1D460, file "bm_regex_dna_noperf.py", line 120>)
+            114 MAKE_FUNCTION            8 (closure)
+            116 LOAD_GLOBAL              6 (VARIANTS)
+            128 GET_ITER
+            130 PRECALL                  0
+            134 CALL                     0
+            144 STORE_FAST               3 (results)
+
+122         146 LOAD_GLOBAL              8 (SUBST)
+            158 GET_ITER
+        >>  160 FOR_ITER                27 (to 216)
+            162 UNPACK_SEQUENCE          2
+            166 STORE_FAST               4 (f)
+            168 STORE_FAST               5 (r)
+
+123         170 LOAD_GLOBAL              3 (NULL + re)
+            182 LOAD_ATTR                2 (sub)
+            192 LOAD_FAST                4 (f)
+            194 LOAD_FAST                5 (r)
+            196 LOAD_DEREF               0 (seq)
+            198 PRECALL                  3
+            202 CALL                     3
+            212 STORE_DEREF              0 (seq)
+            214 JUMP_BACKWARD           28 (to 160)
+
+125     >>  216 LOAD_FAST                3 (results)
+            218 LOAD_FAST                1 (initial_len)
+            220 LOAD_FAST                2 (cleaned_len)
+            222 LOAD_GLOBAL              1 (NULL + len)
+            234 LOAD_DEREF               0 (seq)
+            236 PRECALL                  1
+            240 CALL                     1
+            250 BUILD_TUPLE              4
+            252 RETURN_VALUE
+
+Disassembly of <code object <listcomp> at 0x000001B6E1C1D460, file "bm_regex_dna_noperf.py", line 120>:
+              0 COPY_FREE_VARS           1
+
+120           2 RESUME                   0
+              4 BUILD_LIST               0
+              6 LOAD_FAST                0 (.0)
+        >>    8 FOR_ITER                36 (to 82)
+             10 STORE_FAST               1 (pat)
+             12 LOAD_GLOBAL              1 (NULL + len)
+             24 LOAD_GLOBAL              3 (NULL + re)
+             36 LOAD_ATTR                2 (findall)
+             46 LOAD_FAST                1 (pat)
+             48 LOAD_DEREF               2 (seq)
+             50 PRECALL                  2
+             54 CALL                     2
+             64 PRECALL                  1
+             68 CALL                     1
+             78 LIST_APPEND              2
+             80 JUMP_BACKWARD           37 (to 8)
+        >>   82 RETURN_VALUE
+
+Disassembly of <code object main at 0x000001B6E1DBF300, file "bm_regex_dna_noperf.py", line 128>:
+128           0 RESUME                   0
+
+129           2 LOAD_GLOBAL              0 (DEFAULT_INIT_LEN)
+             14 STORE_FAST               0 (fasta_length)
+
+130          16 LOAD_GLOBAL              2 (DEFAULT_RNG_SEED)
+             28 STORE_FAST               1 (rng_seed)
+
+132          30 LOAD_GLOBAL              5 (NULL + print)
+             42 LOAD_CONST               1 ('Generating FASTA input with length ')
+             44 LOAD_FAST                0 (fasta_length)
+             46 FORMAT_VALUE             0
+             48 LOAD_CONST               2 ('...')
+             50 BUILD_STRING             3
+             52 PRECALL                  1
+             56 CALL                     1
+             66 POP_TOP
+
+133          68 LOAD_GLOBAL              7 (NULL + init_benchmarks)
+             80 LOAD_FAST                0 (fasta_length)
+             82 LOAD_FAST                1 (rng_seed)
+             84 PRECALL                  2
+             88 CALL                     2
+             98 STORE_FAST               2 (seq)
+
+135         100 LOAD_GLOBAL              5 (NULL + print)
+            112 LOAD_CONST               3 ('Running regex DNA benchmark...')
+            114 PRECALL                  1
+            118 CALL                     1
+            128 POP_TOP
+
+136         130 LOAD_GLOBAL              9 (NULL + time)
+            142 LOAD_ATTR                5 (perf_counter)
+            152 PRECALL                  0
+            156 CALL                     0
+            166 STORE_FAST               3 (start)
+
+137         168 LOAD_GLOBAL             13 (NULL + run_benchmarks)
+            180 LOAD_FAST                2 (seq)
+            182 PRECALL                  1
+            186 CALL                     1
+            196 UNPACK_SEQUENCE          4
+            200 STORE_FAST               4 (results)
+            202 STORE_FAST               5 (ilen)
+            204 STORE_FAST               6 (clen)
+            206 STORE_FAST               7 (final_len)
+
+138         208 LOAD_GLOBAL              9 (NULL + time)
+            220 LOAD_ATTR                5 (perf_counter)
+            230 PRECALL                  0
+            234 CALL                     0
+            244 LOAD_FAST                3 (start)
+            246 BINARY_OP               10 (-)
+            250 STORE_FAST               8 (duration)
+
+140         252 LOAD_GLOBAL              5 (NULL + print)
+            264 LOAD_CONST               4 ('\nResults:')
+            266 PRECALL                  1
+            270 CALL                     1
+            280 POP_TOP
+
+141         282 LOAD_GLOBAL             15 (NULL + enumerate)
+            294 LOAD_FAST                4 (results)
+            296 LOAD_CONST               5 (1)
+            298 PRECALL                  2
+            302 CALL                     2
+            312 GET_ITER
+        >>  314 FOR_ITER                27 (to 370)
+            316 UNPACK_SEQUENCE          2
+            320 STORE_FAST               9 (i)
+            322 STORE_FAST              10 (count)
+
+142         324 LOAD_GLOBAL              5 (NULL + print)
+            336 LOAD_CONST               6 ('  Pattern ')
+            338 LOAD_FAST                9 (i)
+            340 FORMAT_VALUE             0
+            342 LOAD_CONST               7 (': ')
+            344 LOAD_FAST               10 (count)
+            346 FORMAT_VALUE             0
+            348 LOAD_CONST               8 (' matches')
+            350 BUILD_STRING             5
+            352 PRECALL                  1
+            356 CALL                     1
+            366 POP_TOP
+            368 JUMP_BACKWARD           28 (to 314)
+
+144     >>  370 LOAD_GLOBAL              5 (NULL + print)
+            382 LOAD_CONST               9 ('\nInitial FASTA length : ')
+            384 LOAD_FAST                5 (ilen)
+            386 FORMAT_VALUE             0
+            388 BUILD_STRING             2
+            390 PRECALL                  1
+            394 CALL                     1
+            404 POP_TOP
+
+145         406 LOAD_GLOBAL              5 (NULL + print)
+            418 LOAD_CONST              10 ('Stripped input length: ')
+            420 LOAD_FAST                6 (clen)
+            422 FORMAT_VALUE             0
+            424 BUILD_STRING             2
+            426 PRECALL                  1
+            430 CALL                     1
+            440 POP_TOP
+
+146         442 LOAD_GLOBAL              5 (NULL + print)
+            454 LOAD_CONST              11 ('Final expanded length: ')
+            456 LOAD_FAST                7 (final_len)
+            458 FORMAT_VALUE             0
+            460 BUILD_STRING             2
+            462 PRECALL                  1
+            466 CALL                     1
+            476 POP_TOP
+
+147         478 LOAD_GLOBAL              5 (NULL + print)
+            490 LOAD_CONST              12 ('Elapsed time         : ')
+            492 LOAD_FAST                8 (duration)
+            494 LOAD_CONST              13 ('.6f')
+            496 FORMAT_VALUE             4 (with format)
+            498 LOAD_CONST              14 (' seconds')
+            500 BUILD_STRING             3
+            502 PRECALL                  1
+            506 CALL                     1
+            516 POP_TOP
+            518 LOAD_CONST               0 (None)
+            520 RETURN_VALUE

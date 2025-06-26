@@ -1,0 +1,1276 @@
+FULL BYTECODE DISASSEMBLY:
+  0           0 RESUME                   0
+
+  1           2 LOAD_CONST               0 (0)
+              4 LOAD_CONST               1 (None)
+              6 IMPORT_NAME              0 (time)
+              8 STORE_NAME               0 (time)
+
+  4          10 LOAD_CONST               2 (3.141592653589793)
+             12 STORE_NAME               1 (PI)
+
+  5          14 LOAD_CONST               3 (4)
+             16 LOAD_NAME                1 (PI)
+             18 BINARY_OP                5 (*)
+             22 LOAD_NAME                1 (PI)
+             24 BINARY_OP                5 (*)
+             28 STORE_NAME               2 (SOLAR_MASS)
+
+  6          30 LOAD_CONST               4 (365.24)
+             32 STORE_NAME               3 (DAYS_PER_YEAR)
+
+  7          34 LOAD_CONST               5 (20000)
+             36 STORE_NAME               4 (DEFAULT_ITERATIONS)
+
+  8          38 LOAD_CONST               6 ('sun')
+             40 STORE_NAME               5 (DEFAULT_REFERENCE)
+
+ 10          42 LOAD_CONST               7 (<code object combinations at 0x7a64a64d6a30, file "bm_nbody_noperf.py", line 10>)
+             44 MAKE_FUNCTION            0
+             46 STORE_NAME               6 (combinations)
+
+ 19          48 BUILD_LIST               0
+             50 LOAD_CONST               8 ((0.0, 0.0, 0.0))
+             52 LIST_EXTEND              1
+             54 BUILD_LIST               0
+             56 LOAD_CONST               8 ((0.0, 0.0, 0.0))
+             58 LIST_EXTEND              1
+             60 LOAD_NAME                2 (SOLAR_MASS)
+             62 BUILD_TUPLE              3
+
+ 20          64 BUILD_LIST               0
+             66 LOAD_CONST               9 ((4.841431442464721, -1.1603200440274284, -0.10362204447112311))
+             68 LIST_EXTEND              1
+
+ 21          70 LOAD_CONST              10 (0.001660076642744037)
+             72 LOAD_NAME                3 (DAYS_PER_YEAR)
+             74 BINARY_OP                5 (*)
+
+ 22          78 LOAD_CONST              11 (0.007699011184197404)
+             80 LOAD_NAME                3 (DAYS_PER_YEAR)
+             82 BINARY_OP                5 (*)
+
+ 23          86 LOAD_CONST              12 (-6.90460016972063e-05)
+             88 LOAD_NAME                3 (DAYS_PER_YEAR)
+             90 BINARY_OP                5 (*)
+
+ 21          94 BUILD_LIST               3
+
+ 24          96 LOAD_CONST              13 (0.0009547919384243266)
+             98 LOAD_NAME                2 (SOLAR_MASS)
+            100 BINARY_OP                5 (*)
+
+ 20         104 BUILD_TUPLE              3
+
+ 25         106 BUILD_LIST               0
+            108 LOAD_CONST              14 ((8.34336671824458, 4.124798564124305, -0.4035234171143214))
+            110 LIST_EXTEND              1
+
+ 26         112 LOAD_CONST              15 (-0.002767425107268624)
+            114 LOAD_NAME                3 (DAYS_PER_YEAR)
+            116 BINARY_OP                5 (*)
+
+ 27         120 LOAD_CONST              16 (0.004998528012349172)
+            122 LOAD_NAME                3 (DAYS_PER_YEAR)
+            124 BINARY_OP                5 (*)
+
+ 28         128 LOAD_CONST              17 (2.3041729757376393e-05)
+            130 LOAD_NAME                3 (DAYS_PER_YEAR)
+            132 BINARY_OP                5 (*)
+
+ 26         136 BUILD_LIST               3
+
+ 29         138 LOAD_CONST              18 (0.0002858859806661308)
+            140 LOAD_NAME                2 (SOLAR_MASS)
+            142 BINARY_OP                5 (*)
+
+ 25         146 BUILD_TUPLE              3
+
+ 30         148 BUILD_LIST               0
+            150 LOAD_CONST              19 ((12.894369562139131, -15.111151401698631, -0.22330757889265573))
+            152 LIST_EXTEND              1
+
+ 31         154 LOAD_CONST              20 (0.002964601375647616)
+            156 LOAD_NAME                3 (DAYS_PER_YEAR)
+            158 BINARY_OP                5 (*)
+
+ 32         162 LOAD_CONST              21 (0.0023784717395948095)
+            164 LOAD_NAME                3 (DAYS_PER_YEAR)
+            166 BINARY_OP                5 (*)
+
+ 33         170 LOAD_CONST              22 (-2.9658956854023756e-05)
+            172 LOAD_NAME                3 (DAYS_PER_YEAR)
+            174 BINARY_OP                5 (*)
+
+ 31         178 BUILD_LIST               3
+
+ 34         180 LOAD_CONST              23 (4.366244043351563e-05)
+            182 LOAD_NAME                2 (SOLAR_MASS)
+            184 BINARY_OP                5 (*)
+
+ 30         188 BUILD_TUPLE              3
+
+ 35         190 BUILD_LIST               0
+            192 LOAD_CONST              24 ((15.379697114850917, -25.919314609987964, 0.17925877295037118))
+            194 LIST_EXTEND              1
+
+ 36         196 LOAD_CONST              25 (0.0026806777249038932)
+            198 LOAD_NAME                3 (DAYS_PER_YEAR)
+            200 BINARY_OP                5 (*)
+
+ 37         204 LOAD_CONST              26 (0.001628241700382423)
+            206 LOAD_NAME                3 (DAYS_PER_YEAR)
+            208 BINARY_OP                5 (*)
+
+ 38         212 LOAD_CONST              27 (-9.515922545197159e-05)
+            214 LOAD_NAME                3 (DAYS_PER_YEAR)
+            216 BINARY_OP                5 (*)
+
+ 36         220 BUILD_LIST               3
+
+ 39         222 LOAD_CONST              28 (5.1513890204661145e-05)
+            224 LOAD_NAME                2 (SOLAR_MASS)
+            226 BINARY_OP                5 (*)
+
+ 35         230 BUILD_TUPLE              3
+
+ 18         232 LOAD_CONST              29 (('sun', 'jupiter', 'saturn', 'uranus', 'neptune'))
+            234 BUILD_CONST_KEY_MAP      5
+            236 STORE_NAME               7 (BODIES)
+
+ 42         238 PUSH_NULL
+            240 LOAD_NAME                8 (list)
+            242 LOAD_NAME                7 (BODIES)
+            244 LOAD_ATTR               19 (NULL|self + values)
+            264 CALL                     0
+            272 CALL                     1
+            280 STORE_NAME              10 (SYSTEM)
+
+ 43         282 PUSH_NULL
+            284 LOAD_NAME                6 (combinations)
+            286 LOAD_NAME               10 (SYSTEM)
+            288 CALL                     1
+            296 STORE_NAME              11 (PAIRS)
+
+ 45         298 LOAD_NAME               10 (SYSTEM)
+            300 LOAD_NAME               11 (PAIRS)
+            302 BUILD_TUPLE              2
+            304 LOAD_CONST              30 (<code object advance at 0x14335c40, file "bm_nbody_noperf.py", line 45>)
+            306 MAKE_FUNCTION            1 (defaults)
+            308 STORE_NAME              12 (advance)
+
+ 66         310 LOAD_NAME               10 (SYSTEM)
+            312 LOAD_NAME               11 (PAIRS)
+            314 BUILD_TUPLE              2
+            316 LOAD_CONST              31 (<code object report_energy at 0x7a64a65346f0, file "bm_nbody_noperf.py", line 66>)
+            318 MAKE_FUNCTION            1 (defaults)
+            320 STORE_NAME              13 (report_energy)
+
+ 78         322 LOAD_NAME               10 (SYSTEM)
+            324 BUILD_TUPLE              1
+            326 LOAD_CONST              32 (<code object offset_momentum at 0x7a64a649a130, file "bm_nbody_noperf.py", line 78>)
+            328 MAKE_FUNCTION            1 (defaults)
+            330 STORE_NAME              14 (offset_momentum)
+
+ 89         332 LOAD_NAME               15 (__name__)
+            334 LOAD_CONST              33 ('__main__')
+            336 COMPARE_OP              40 (==)
+            340 POP_JUMP_IF_FALSE       99 (to 540)
+
+ 90         342 PUSH_NULL
+            344 LOAD_NAME               14 (offset_momentum)
+            346 LOAD_NAME                7 (BODIES)
+            348 LOAD_NAME                5 (DEFAULT_REFERENCE)
+            350 BINARY_SUBSCR
+            354 CALL                     1
+            362 POP_TOP
+
+ 92         364 PUSH_NULL
+            366 LOAD_NAME               16 (print)
+            368 LOAD_CONST              34 ('Initial energy:')
+            370 PUSH_NULL
+            372 LOAD_NAME               13 (report_energy)
+            374 CALL                     0
+            382 CALL                     2
+            390 POP_TOP
+
+ 93         392 PUSH_NULL
+            394 LOAD_NAME                0 (time)
+            396 LOAD_ATTR               34 (perf_counter)
+            416 CALL                     0
+            424 STORE_NAME              18 (start)
+
+ 94         426 PUSH_NULL
+            428 LOAD_NAME               12 (advance)
+            430 LOAD_CONST              35 (0.01)
+            432 LOAD_NAME                4 (DEFAULT_ITERATIONS)
+            434 CALL                     2
+            442 POP_TOP
+
+ 95         444 PUSH_NULL
+            446 LOAD_NAME                0 (time)
+            448 LOAD_ATTR               34 (perf_counter)
+            468 CALL                     0
+            476 LOAD_NAME               18 (start)
+            478 BINARY_OP               10 (-)
+            482 STORE_NAME              19 (duration)
+
+ 96         484 PUSH_NULL
+            486 LOAD_NAME               16 (print)
+            488 LOAD_CONST              36 ('Final energy:  ')
+            490 PUSH_NULL
+            492 LOAD_NAME               13 (report_energy)
+            494 CALL                     0
+            502 CALL                     2
+            510 POP_TOP
+
+ 97         512 PUSH_NULL
+            514 LOAD_NAME               16 (print)
+            516 LOAD_CONST              37 ('Elapsed time:  ')
+            518 LOAD_NAME               19 (duration)
+            520 LOAD_CONST              38 ('.6f')
+            522 FORMAT_VALUE             4 (with format)
+            524 LOAD_CONST              39 (' seconds')
+            526 BUILD_STRING             3
+            528 CALL                     1
+            536 POP_TOP
+            538 RETURN_CONST             1 (None)
+
+ 89     >>  540 RETURN_CONST             1 (None)
+
+Disassembly of <code object combinations at 0x7a64a64d6a30, file "bm_nbody_noperf.py", line 10>:
+ 10           0 RESUME                   0
+
+ 11           2 BUILD_LIST               0
+              4 STORE_FAST               1 (result)
+
+ 12           6 LOAD_GLOBAL              1 (NULL + range)
+             16 LOAD_GLOBAL              3 (NULL + len)
+             26 LOAD_FAST                0 (l)
+             28 CALL                     1
+             36 LOAD_CONST               1 (1)
+             38 BINARY_OP               10 (-)
+             42 CALL                     1
+             50 GET_ITER
+        >>   52 FOR_ITER                39 (to 134)
+             56 STORE_FAST               2 (x)
+
+ 13          58 LOAD_FAST                0 (l)
+             60 LOAD_FAST                2 (x)
+             62 LOAD_CONST               1 (1)
+             64 BINARY_OP                0 (+)
+             68 LOAD_CONST               0 (None)
+             70 BINARY_SLICE
+             72 STORE_FAST               3 (ls)
+
+ 14          74 LOAD_FAST                3 (ls)
+             76 GET_ITER
+        >>   78 FOR_ITER                24 (to 130)
+             82 STORE_FAST               4 (y)
+
+ 15          84 LOAD_FAST                1 (result)
+             86 LOAD_ATTR                5 (NULL|self + append)
+            106 LOAD_FAST                0 (l)
+            108 LOAD_FAST                2 (x)
+            110 BINARY_SUBSCR
+            114 LOAD_FAST                4 (y)
+            116 BUILD_TUPLE              2
+            118 CALL                     1
+            126 POP_TOP
+            128 JUMP_BACKWARD           26 (to 78)
+
+ 14     >>  130 END_FOR
+            132 JUMP_BACKWARD           41 (to 52)
+
+ 12     >>  134 END_FOR
+
+ 16         136 LOAD_FAST                1 (result)
+            138 RETURN_VALUE
+
+Disassembly of <code object advance at 0x14335c40, file "bm_nbody_noperf.py", line 45>:
+ 45           0 RESUME                   0
+
+ 46           2 LOAD_GLOBAL              1 (NULL + range)
+             12 LOAD_FAST                1 (n)
+             14 CALL                     1
+             22 GET_ITER
+        >>   24 FOR_ITER               235 (to 498)
+             28 STORE_FAST               4 (_)
+
+ 48          30 LOAD_FAST                3 (pairs)
+
+ 47          32 GET_ITER
+        >>   34 FOR_ITER               165 (to 368)
+             38 UNPACK_SEQUENCE          2
+             42 UNPACK_SEQUENCE          3
+             46 UNPACK_SEQUENCE          3
+             50 STORE_FAST               5 (x1)
+             52 STORE_FAST               6 (y1)
+             54 STORE_FAST               7 (z1)
+             56 STORE_FAST               8 (v1)
+             58 STORE_FAST               9 (m1)
+
+ 48          60 UNPACK_SEQUENCE          3
+             64 UNPACK_SEQUENCE          3
+             68 STORE_FAST              10 (x2)
+             70 STORE_FAST              11 (y2)
+             72 STORE_FAST              12 (z2)
+             74 STORE_FAST              13 (v2)
+             76 STORE_FAST              14 (m2)
+
+ 49          78 LOAD_FAST                5 (x1)
+             80 LOAD_FAST               10 (x2)
+             82 BINARY_OP               10 (-)
+             86 STORE_FAST              15 (dx)
+
+ 50          88 LOAD_FAST                6 (y1)
+             90 LOAD_FAST               11 (y2)
+             92 BINARY_OP               10 (-)
+             96 STORE_FAST              16 (dy)
+
+ 51          98 LOAD_FAST                7 (z1)
+            100 LOAD_FAST               12 (z2)
+            102 BINARY_OP               10 (-)
+            106 STORE_FAST              17 (dz)
+
+ 52         108 LOAD_FAST                0 (dt)
+            110 LOAD_FAST               15 (dx)
+            112 LOAD_FAST               15 (dx)
+            114 BINARY_OP                5 (*)
+            118 LOAD_FAST               16 (dy)
+            120 LOAD_FAST               16 (dy)
+            122 BINARY_OP                5 (*)
+            126 BINARY_OP                0 (+)
+            130 LOAD_FAST               17 (dz)
+            132 LOAD_FAST               17 (dz)
+            134 BINARY_OP                5 (*)
+            138 BINARY_OP                0 (+)
+            142 LOAD_CONST               1 (-1.5)
+            144 BINARY_OP                8 (**)
+            148 BINARY_OP                5 (*)
+            152 STORE_FAST              18 (mag)
+
+ 53         154 LOAD_FAST                9 (m1)
+            156 LOAD_FAST               18 (mag)
+            158 BINARY_OP                5 (*)
+            162 STORE_FAST              19 (b1m)
+
+ 54         164 LOAD_FAST               14 (m2)
+            166 LOAD_FAST               18 (mag)
+            168 BINARY_OP                5 (*)
+            172 STORE_FAST              20 (b2m)
+
+ 55         174 LOAD_FAST                8 (v1)
+            176 LOAD_CONST               2 (0)
+            178 COPY                     2
+            180 COPY                     2
+            182 BINARY_SUBSCR
+            186 LOAD_FAST               15 (dx)
+            188 LOAD_FAST               20 (b2m)
+            190 BINARY_OP                5 (*)
+            194 BINARY_OP               23 (-=)
+            198 SWAP                     3
+            200 SWAP                     2
+            202 STORE_SUBSCR
+
+ 56         206 LOAD_FAST                8 (v1)
+            208 LOAD_CONST               3 (1)
+            210 COPY                     2
+            212 COPY                     2
+            214 BINARY_SUBSCR
+            218 LOAD_FAST               16 (dy)
+            220 LOAD_FAST               20 (b2m)
+            222 BINARY_OP                5 (*)
+            226 BINARY_OP               23 (-=)
+            230 SWAP                     3
+            232 SWAP                     2
+            234 STORE_SUBSCR
+
+ 57         238 LOAD_FAST                8 (v1)
+            240 LOAD_CONST               4 (2)
+            242 COPY                     2
+            244 COPY                     2
+            246 BINARY_SUBSCR
+            250 LOAD_FAST               17 (dz)
+            252 LOAD_FAST               20 (b2m)
+            254 BINARY_OP                5 (*)
+            258 BINARY_OP               23 (-=)
+            262 SWAP                     3
+            264 SWAP                     2
+            266 STORE_SUBSCR
+
+ 58         270 LOAD_FAST               13 (v2)
+            272 LOAD_CONST               2 (0)
+            274 COPY                     2
+            276 COPY                     2
+            278 BINARY_SUBSCR
+            282 LOAD_FAST               15 (dx)
+            284 LOAD_FAST               19 (b1m)
+            286 BINARY_OP                5 (*)
+            290 BINARY_OP               13 (+=)
+            294 SWAP                     3
+            296 SWAP                     2
+            298 STORE_SUBSCR
+
+ 59         302 LOAD_FAST               13 (v2)
+            304 LOAD_CONST               3 (1)
+            306 COPY                     2
+            308 COPY                     2
+            310 BINARY_SUBSCR
+            314 LOAD_FAST               16 (dy)
+            316 LOAD_FAST               19 (b1m)
+            318 BINARY_OP                5 (*)
+            322 BINARY_OP               13 (+=)
+            326 SWAP                     3
+            328 SWAP                     2
+            330 STORE_SUBSCR
+
+ 60         334 LOAD_FAST               13 (v2)
+            336 LOAD_CONST               4 (2)
+            338 COPY                     2
+            340 COPY                     2
+            342 BINARY_SUBSCR
+            346 LOAD_FAST               17 (dz)
+            348 LOAD_FAST               19 (b1m)
+            350 BINARY_OP                5 (*)
+            354 BINARY_OP               13 (+=)
+            358 SWAP                     3
+            360 SWAP                     2
+            362 STORE_SUBSCR
+            366 JUMP_BACKWARD          167 (to 34)
+
+ 47     >>  368 END_FOR
+
+ 61         370 LOAD_FAST                2 (bodies)
+            372 GET_ITER
+        >>  374 FOR_ITER                58 (to 494)
+            378 UNPACK_SEQUENCE          3
+            382 STORE_FAST              21 (r)
+            384 UNPACK_SEQUENCE          3
+            388 STORE_FAST              22 (vx)
+            390 STORE_FAST              23 (vy)
+            392 STORE_FAST              24 (vz)
+            394 STORE_FAST               4 (_)
+
+ 62         396 LOAD_FAST               21 (r)
+            398 LOAD_CONST               2 (0)
+            400 COPY                     2
+            402 COPY                     2
+            404 BINARY_SUBSCR
+            408 LOAD_FAST                0 (dt)
+            410 LOAD_FAST               22 (vx)
+            412 BINARY_OP                5 (*)
+            416 BINARY_OP               13 (+=)
+            420 SWAP                     3
+            422 SWAP                     2
+            424 STORE_SUBSCR
+
+ 63         428 LOAD_FAST               21 (r)
+            430 LOAD_CONST               3 (1)
+            432 COPY                     2
+            434 COPY                     2
+            436 BINARY_SUBSCR
+            440 LOAD_FAST                0 (dt)
+            442 LOAD_FAST               23 (vy)
+            444 BINARY_OP                5 (*)
+            448 BINARY_OP               13 (+=)
+            452 SWAP                     3
+            454 SWAP                     2
+            456 STORE_SUBSCR
+
+ 64         460 LOAD_FAST               21 (r)
+            462 LOAD_CONST               4 (2)
+            464 COPY                     2
+            466 COPY                     2
+            468 BINARY_SUBSCR
+            472 LOAD_FAST                0 (dt)
+            474 LOAD_FAST               24 (vz)
+            476 BINARY_OP                5 (*)
+            480 BINARY_OP               13 (+=)
+            484 SWAP                     3
+            486 SWAP                     2
+            488 STORE_SUBSCR
+            492 JUMP_BACKWARD           60 (to 374)
+
+ 61     >>  494 END_FOR
+            496 JUMP_BACKWARD          237 (to 24)
+
+ 46     >>  498 END_FOR
+            500 RETURN_CONST             0 (None)
+
+Disassembly of <code object report_energy at 0x7a64a65346f0, file "bm_nbody_noperf.py", line 66>:
+ 66           0 RESUME                   0
+
+ 67           2 LOAD_CONST               1 (0.0)
+              4 STORE_FAST               2 (e)
+
+ 69           6 LOAD_FAST                1 (pairs)
+
+ 68           8 GET_ITER
+        >>   10 FOR_ITER                65 (to 144)
+             14 UNPACK_SEQUENCE          2
+             18 UNPACK_SEQUENCE          3
+             22 UNPACK_SEQUENCE          3
+             26 STORE_FAST               3 (x1)
+             28 STORE_FAST               4 (y1)
+             30 STORE_FAST               5 (z1)
+             32 STORE_FAST               6 (_)
+             34 STORE_FAST               7 (m1)
+
+ 69          36 UNPACK_SEQUENCE          3
+             40 UNPACK_SEQUENCE          3
+             44 STORE_FAST               8 (x2)
+             46 STORE_FAST               9 (y2)
+             48 STORE_FAST              10 (z2)
+             50 STORE_FAST               6 (_)
+             52 STORE_FAST              11 (m2)
+
+ 70          54 LOAD_FAST                3 (x1)
+             56 LOAD_FAST                8 (x2)
+             58 BINARY_OP               10 (-)
+             62 STORE_FAST              12 (dx)
+
+ 71          64 LOAD_FAST                4 (y1)
+             66 LOAD_FAST                9 (y2)
+             68 BINARY_OP               10 (-)
+             72 STORE_FAST              13 (dy)
+
+ 72          74 LOAD_FAST                5 (z1)
+             76 LOAD_FAST               10 (z2)
+             78 BINARY_OP               10 (-)
+             82 STORE_FAST              14 (dz)
+
+ 73          84 LOAD_FAST                2 (e)
+             86 LOAD_FAST                7 (m1)
+             88 LOAD_FAST               11 (m2)
+             90 BINARY_OP                5 (*)
+             94 LOAD_FAST               12 (dx)
+             96 LOAD_FAST               12 (dx)
+             98 BINARY_OP                5 (*)
+            102 LOAD_FAST               13 (dy)
+            104 LOAD_FAST               13 (dy)
+            106 BINARY_OP                5 (*)
+            110 BINARY_OP                0 (+)
+            114 LOAD_FAST               14 (dz)
+            116 LOAD_FAST               14 (dz)
+            118 BINARY_OP                5 (*)
+            122 BINARY_OP                0 (+)
+            126 LOAD_CONST               2 (0.5)
+            128 BINARY_OP                8 (**)
+            132 BINARY_OP               11 (/)
+            136 BINARY_OP               23 (-=)
+            140 STORE_FAST               2 (e)
+            142 JUMP_BACKWARD           67 (to 10)
+
+ 68     >>  144 END_FOR
+
+ 74         146 LOAD_FAST                0 (bodies)
+            148 GET_ITER
+        >>  150 FOR_ITER                36 (to 226)
+            154 UNPACK_SEQUENCE          3
+            158 STORE_FAST               6 (_)
+            160 UNPACK_SEQUENCE          3
+            164 STORE_FAST              15 (vx)
+            166 STORE_FAST              16 (vy)
+            168 STORE_FAST              17 (vz)
+            170 STORE_FAST              18 (m)
+
+ 75         172 LOAD_FAST                2 (e)
+            174 LOAD_FAST               18 (m)
+            176 LOAD_FAST               15 (vx)
+            178 LOAD_FAST               15 (vx)
+            180 BINARY_OP                5 (*)
+            184 LOAD_FAST               16 (vy)
+            186 LOAD_FAST               16 (vy)
+            188 BINARY_OP                5 (*)
+            192 BINARY_OP                0 (+)
+            196 LOAD_FAST               17 (vz)
+            198 LOAD_FAST               17 (vz)
+            200 BINARY_OP                5 (*)
+            204 BINARY_OP                0 (+)
+            208 BINARY_OP                5 (*)
+            212 LOAD_CONST               3 (2.0)
+            214 BINARY_OP               11 (/)
+            218 BINARY_OP               13 (+=)
+            222 STORE_FAST               2 (e)
+            224 JUMP_BACKWARD           38 (to 150)
+
+ 74     >>  226 END_FOR
+
+ 76         228 LOAD_FAST                2 (e)
+            230 RETURN_VALUE
+
+Disassembly of <code object offset_momentum at 0x7a64a649a130, file "bm_nbody_noperf.py", line 78>:
+ 78           0 RESUME                   0
+
+ 79           2 LOAD_CONST               1 (0.0)
+              4 COPY                     1
+              6 STORE_FAST               2 (px)
+              8 COPY                     1
+             10 STORE_FAST               3 (py)
+             12 STORE_FAST               4 (pz)
+
+ 80          14 LOAD_FAST                1 (bodies)
+             16 GET_ITER
+        >>   18 FOR_ITER                34 (to 90)
+             22 UNPACK_SEQUENCE          3
+             26 STORE_FAST               5 (_)
+             28 UNPACK_SEQUENCE          3
+             32 STORE_FAST               6 (vx)
+             34 STORE_FAST               7 (vy)
+             36 STORE_FAST               8 (vz)
+             38 STORE_FAST               9 (m)
+
+ 81          40 LOAD_FAST                2 (px)
+             42 LOAD_FAST                6 (vx)
+             44 LOAD_FAST                9 (m)
+             46 BINARY_OP                5 (*)
+             50 BINARY_OP               23 (-=)
+             54 STORE_FAST               2 (px)
+
+ 82          56 LOAD_FAST                3 (py)
+             58 LOAD_FAST                7 (vy)
+             60 LOAD_FAST                9 (m)
+             62 BINARY_OP                5 (*)
+             66 BINARY_OP               23 (-=)
+             70 STORE_FAST               3 (py)
+
+ 83          72 LOAD_FAST                4 (pz)
+             74 LOAD_FAST                8 (vz)
+             76 LOAD_FAST                9 (m)
+             78 BINARY_OP                5 (*)
+             82 BINARY_OP               23 (-=)
+             86 STORE_FAST               4 (pz)
+             88 JUMP_BACKWARD           36 (to 18)
+
+ 80     >>   90 END_FOR
+
+ 84          92 LOAD_FAST                0 (ref)
+             94 UNPACK_SEQUENCE          3
+             98 STORE_FAST              10 (r)
+            100 STORE_FAST              11 (v)
+            102 STORE_FAST               9 (m)
+
+ 85         104 LOAD_FAST                2 (px)
+            106 LOAD_FAST                9 (m)
+            108 BINARY_OP               11 (/)
+            112 LOAD_FAST               11 (v)
+            114 LOAD_CONST               2 (0)
+            116 STORE_SUBSCR
+
+ 86         120 LOAD_FAST                3 (py)
+            122 LOAD_FAST                9 (m)
+            124 BINARY_OP               11 (/)
+            128 LOAD_FAST               11 (v)
+            130 LOAD_CONST               3 (1)
+            132 STORE_SUBSCR
+
+ 87         136 LOAD_FAST                4 (pz)
+            138 LOAD_FAST                9 (m)
+            140 BINARY_OP               11 (/)
+            144 LOAD_FAST               11 (v)
+            146 LOAD_CONST               4 (2)
+            148 STORE_SUBSCR
+            152 RETURN_CONST             0 (None)
+
+STATIC OPCODE COUNTS (appearance in byte-code):
+LOAD_FAST            102 times
+BINARY_OP            80 times
+LOAD_CONST           61 times
+STORE_FAST           61 times
+LOAD_NAME            43 times
+COPY                 20 times
+SWAP                 18 times
+UNPACK_SEQUENCE      17 times
+CALL                 16 times
+STORE_NAME           15 times
+STORE_SUBSCR         12 times
+BUILD_LIST           11 times
+PUSH_NULL            11 times
+BINARY_SUBSCR        11 times
+BUILD_TUPLE          9 times
+GET_ITER             8 times
+FOR_ITER             8 times
+JUMP_BACKWARD        8 times
+END_FOR              8 times
+LIST_EXTEND          6 times
+POP_TOP              6 times
+RESUME               5 times
+MAKE_FUNCTION        4 times
+LOAD_ATTR            4 times
+RETURN_CONST         4 times
+LOAD_GLOBAL          3 times
+RETURN_VALUE         2 times
+IMPORT_NAME          1 times
+BUILD_CONST_KEY_MAP  1 times
+COMPARE_OP           1 times
+POP_JUMP_IF_FALSE    1 times
+FORMAT_VALUE         1 times
+BUILD_STRING         1 times
+BINARY_SLICE         1 times
+
+DYNAMIC EXECUTION COUNTS PER INSTRUCTION:
+  0              0 RESUME                                       | 0 times
+  1              2 LOAD_CONST          0                        | 0 times
+                 4 LOAD_CONST          None                     | 0 times
+                 6 IMPORT_NAME         time                     | 0 times
+                 8 STORE_NAME          time                     | 0 times
+  4             10 LOAD_CONST          3.141592653589793        | 0 times
+                12 STORE_NAME          PI                       | 0 times
+  5             14 LOAD_CONST          4                        | 0 times
+                16 LOAD_NAME           PI                       | 0 times
+                18 BINARY_OP           *                        | 0 times
+                22 LOAD_NAME           PI                       | 0 times
+                24 BINARY_OP           *                        | 0 times
+                28 STORE_NAME          SOLAR_MASS               | 0 times
+  6             30 LOAD_CONST          365.24                   | 0 times
+                32 STORE_NAME          DAYS_PER_YEAR            | 0 times
+  7             34 LOAD_CONST          20000                    | 0 times
+                36 STORE_NAME          DEFAULT_ITERATIONS       | 0 times
+  8             38 LOAD_CONST          'sun'                    | 0 times
+                40 STORE_NAME          DEFAULT_REFERENCE        | 0 times
+ 10             42 LOAD_CONST          <code object combinations at 0x7a64a64d6e20, file "bm_nbody_noperf.py", line 10> | 0 times
+                44 MAKE_FUNCTION                                | 0 times
+                46 STORE_NAME          combinations             | 0 times
+ 19             48 BUILD_LIST                                   | 0 times
+                50 LOAD_CONST          (0.0, 0.0, 0.0)          | 0 times
+                52 LIST_EXTEND                                  | 0 times
+                54 BUILD_LIST                                   | 0 times
+                56 LOAD_CONST          (0.0, 0.0, 0.0)          | 0 times
+                58 LIST_EXTEND                                  | 0 times
+                60 LOAD_NAME           SOLAR_MASS               | 0 times
+                62 BUILD_TUPLE                                  | 0 times
+ 20             64 BUILD_LIST                                   | 0 times
+                66 LOAD_CONST          (4.841431442464721, -1.1603200440274284, -0.10362204447112311) | 0 times
+                68 LIST_EXTEND                                  | 0 times
+ 21             70 LOAD_CONST          0.001660076642744037     | 0 times
+                72 LOAD_NAME           DAYS_PER_YEAR            | 0 times
+                74 BINARY_OP           *                        | 0 times
+ 22             78 LOAD_CONST          0.007699011184197404     | 0 times
+                80 LOAD_NAME           DAYS_PER_YEAR            | 0 times
+                82 BINARY_OP           *                        | 0 times
+ 23             86 LOAD_CONST          -6.90460016972063e-05    | 0 times
+                88 LOAD_NAME           DAYS_PER_YEAR            | 0 times
+                90 BINARY_OP           *                        | 0 times
+ 21             94 BUILD_LIST                                   | 0 times
+ 24             96 LOAD_CONST          0.0009547919384243266    | 0 times
+                98 LOAD_NAME           SOLAR_MASS               | 0 times
+               100 BINARY_OP           *                        | 0 times
+ 20            104 BUILD_TUPLE                                  | 0 times
+ 25            106 BUILD_LIST                                   | 0 times
+               108 LOAD_CONST          (8.34336671824458, 4.124798564124305, -0.4035234171143214) | 0 times
+               110 LIST_EXTEND                                  | 0 times
+ 26            112 LOAD_CONST          -0.002767425107268624    | 0 times
+               114 LOAD_NAME           DAYS_PER_YEAR            | 0 times
+               116 BINARY_OP           *                        | 0 times
+ 27            120 LOAD_CONST          0.004998528012349172     | 0 times
+               122 LOAD_NAME           DAYS_PER_YEAR            | 0 times
+               124 BINARY_OP           *                        | 0 times
+ 28            128 LOAD_CONST          2.3041729757376393e-05   | 0 times
+               130 LOAD_NAME           DAYS_PER_YEAR            | 0 times
+               132 BINARY_OP           *                        | 0 times
+ 26            136 BUILD_LIST                                   | 0 times
+ 29            138 LOAD_CONST          0.0002858859806661308    | 0 times
+               140 LOAD_NAME           SOLAR_MASS               | 0 times
+               142 BINARY_OP           *                        | 0 times
+ 25            146 BUILD_TUPLE                                  | 0 times
+ 30            148 BUILD_LIST                                   | 0 times
+               150 LOAD_CONST          (12.894369562139131, -15.111151401698631, -0.22330757889265573) | 0 times
+               152 LIST_EXTEND                                  | 0 times
+ 31            154 LOAD_CONST          0.002964601375647616     | 0 times
+               156 LOAD_NAME           DAYS_PER_YEAR            | 0 times
+               158 BINARY_OP           *                        | 0 times
+ 32            162 LOAD_CONST          0.0023784717395948095    | 0 times
+               164 LOAD_NAME           DAYS_PER_YEAR            | 0 times
+               166 BINARY_OP           *                        | 0 times
+ 33            170 LOAD_CONST          -2.9658956854023756e-05  | 0 times
+               172 LOAD_NAME           DAYS_PER_YEAR            | 0 times
+               174 BINARY_OP           *                        | 0 times
+ 31            178 BUILD_LIST                                   | 0 times
+ 34            180 LOAD_CONST          4.366244043351563e-05    | 0 times
+               182 LOAD_NAME           SOLAR_MASS               | 0 times
+               184 BINARY_OP           *                        | 0 times
+ 30            188 BUILD_TUPLE                                  | 0 times
+ 35            190 BUILD_LIST                                   | 0 times
+               192 LOAD_CONST          (15.379697114850917, -25.919314609987964, 0.17925877295037118) | 0 times
+               194 LIST_EXTEND                                  | 0 times
+ 36            196 LOAD_CONST          0.0026806777249038932    | 0 times
+               198 LOAD_NAME           DAYS_PER_YEAR            | 0 times
+               200 BINARY_OP           *                        | 0 times
+ 37            204 LOAD_CONST          0.001628241700382423     | 0 times
+               206 LOAD_NAME           DAYS_PER_YEAR            | 0 times
+               208 BINARY_OP           *                        | 0 times
+ 38            212 LOAD_CONST          -9.515922545197159e-05   | 0 times
+               214 LOAD_NAME           DAYS_PER_YEAR            | 0 times
+               216 BINARY_OP           *                        | 0 times
+ 36            220 BUILD_LIST                                   | 0 times
+ 39            222 LOAD_CONST          5.1513890204661145e-05   | 0 times
+               224 LOAD_NAME           SOLAR_MASS               | 0 times
+               226 BINARY_OP           *                        | 0 times
+ 35            230 BUILD_TUPLE                                  | 0 times
+ 18            232 LOAD_CONST          ('sun', 'jupiter', 'saturn', 'uranus', 'neptune') | 0 times
+               234 BUILD_CONST_KEY_MAP                          | 0 times
+               236 STORE_NAME          BODIES                   | 0 times
+ 42            238 PUSH_NULL                                    | 0 times
+               240 LOAD_NAME           list                     | 0 times
+               242 LOAD_NAME           BODIES                   | 0 times
+               244 LOAD_ATTR           NULL|self + values       | 0 times
+               264 CALL                                         | 0 times
+               272 CALL                                         | 0 times
+               280 STORE_NAME          SYSTEM                   | 0 times
+ 43            282 PUSH_NULL                                    | 0 times
+               284 LOAD_NAME           combinations             | 0 times
+               286 LOAD_NAME           SYSTEM                   | 0 times
+               288 CALL                                         | 0 times
+               296 STORE_NAME          PAIRS                    | 0 times
+ 45            298 LOAD_NAME           SYSTEM                   | 0 times
+               300 LOAD_NAME           PAIRS                    | 0 times
+               302 BUILD_TUPLE                                  | 0 times
+               304 LOAD_CONST          <code object advance at 0x1434db50, file "bm_nbody_noperf.py", line 45> | 0 times
+               306 MAKE_FUNCTION       defaults                 | 0 times
+               308 STORE_NAME          advance                  | 0 times
+ 66            310 LOAD_NAME           SYSTEM                   | 0 times
+               312 LOAD_NAME           PAIRS                    | 0 times
+               314 BUILD_TUPLE                                  | 0 times
+               316 LOAD_CONST          <code object report_energy at 0x7a64a6535980, file "bm_nbody_noperf.py", line 66> | 0 times
+               318 MAKE_FUNCTION       defaults                 | 0 times
+               320 STORE_NAME          report_energy            | 0 times
+ 78            322 LOAD_NAME           SYSTEM                   | 0 times
+               324 BUILD_TUPLE                                  | 0 times
+               326 LOAD_CONST          <code object offset_momentum at 0x7a64a649a290, file "bm_nbody_noperf.py", line 78> | 0 times
+               328 MAKE_FUNCTION       defaults                 | 0 times
+               330 STORE_NAME          offset_momentum          | 0 times
+ 89            332 LOAD_NAME           __name__                 | 0 times
+               334 LOAD_CONST          '__main__'               | 0 times
+               336 COMPARE_OP          ==                       | 0 times
+               340 POP_JUMP_IF_FALSE   to 540                   | 0 times
+ 90            342 PUSH_NULL                                    | 0 times
+               344 LOAD_NAME           offset_momentum          | 0 times
+               346 LOAD_NAME           BODIES                   | 0 times
+               348 LOAD_NAME           DEFAULT_REFERENCE        | 0 times
+               350 BINARY_SUBSCR                                | 0 times
+               354 CALL                                         | 0 times
+               362 POP_TOP                                      | 0 times
+ 92            364 PUSH_NULL                                    | 0 times
+               366 LOAD_NAME           print                    | 0 times
+               368 LOAD_CONST          'Initial energy:'        | 0 times
+               370 PUSH_NULL                                    | 0 times
+               372 LOAD_NAME           report_energy            | 0 times
+               374 CALL                                         | 0 times
+               382 CALL                                         | 0 times
+               390 POP_TOP                                      | 0 times
+ 93            392 PUSH_NULL                                    | 0 times
+               394 LOAD_NAME           time                     | 0 times
+               396 LOAD_ATTR           perf_counter             | 0 times
+               416 CALL                                         | 0 times
+               424 STORE_NAME          start                    | 0 times
+ 94            426 PUSH_NULL                                    | 0 times
+               428 LOAD_NAME           advance                  | 0 times
+               430 LOAD_CONST          0.01                     | 0 times
+               432 LOAD_NAME           DEFAULT_ITERATIONS       | 0 times
+               434 CALL                                         | 0 times
+               442 POP_TOP                                      | 0 times
+ 95            444 PUSH_NULL                                    | 0 times
+               446 LOAD_NAME           time                     | 0 times
+               448 LOAD_ATTR           perf_counter             | 0 times
+               468 CALL                                         | 0 times
+               476 LOAD_NAME           start                    | 0 times
+               478 BINARY_OP           -                        | 0 times
+               482 STORE_NAME          duration                 | 0 times
+ 96            484 PUSH_NULL                                    | 0 times
+               486 LOAD_NAME           print                    | 0 times
+               488 LOAD_CONST          'Final energy:  '        | 0 times
+               490 PUSH_NULL                                    | 0 times
+               492 LOAD_NAME           report_energy            | 0 times
+               494 CALL                                         | 0 times
+               502 CALL                                         | 0 times
+               510 POP_TOP                                      | 0 times
+ 97            512 PUSH_NULL                                    | 0 times
+               514 LOAD_NAME           print                    | 0 times
+               516 LOAD_CONST          'Elapsed time:  '        | 0 times
+               518 LOAD_NAME           duration                 | 0 times
+               520 LOAD_CONST          '.6f'                    | 0 times
+               522 FORMAT_VALUE        with format              | 0 times
+               524 LOAD_CONST          ' seconds'               | 0 times
+               526 BUILD_STRING                                 | 0 times
+               528 CALL                                         | 0 times
+               536 POP_TOP                                      | 0 times
+               538 RETURN_CONST        None                     | 0 times
+ 89            540 RETURN_CONST        None                     | 0 times
+ 10              0 RESUME                                       | 0 times
+ 11              2 BUILD_LIST                                   | 0 times
+                 4 STORE_FAST          result                   | 0 times
+ 12              6 LOAD_GLOBAL         NULL + range             | 0 times
+                16 LOAD_GLOBAL         NULL + len               | 0 times
+                26 LOAD_FAST           l                        | 0 times
+                28 CALL                                         | 0 times
+                36 LOAD_CONST          1                        | 0 times
+                38 BINARY_OP           -                        | 0 times
+                42 CALL                                         | 0 times
+                50 GET_ITER                                     | 0 times
+                52 FOR_ITER            to 134                   | 0 times
+                56 STORE_FAST          x                        | 0 times
+ 13             58 LOAD_FAST           l                        | 0 times
+                60 LOAD_FAST           x                        | 0 times
+                62 LOAD_CONST          1                        | 0 times
+                64 BINARY_OP           +                        | 0 times
+                68 LOAD_CONST          None                     | 0 times
+                70 BINARY_SLICE                                 | 0 times
+                72 STORE_FAST          ls                       | 0 times
+ 14             74 LOAD_FAST           ls                       | 0 times
+                76 GET_ITER                                     | 0 times
+                78 FOR_ITER            to 130                   | 0 times
+                82 STORE_FAST          y                        | 0 times
+ 15             84 LOAD_FAST           result                   | 0 times
+                86 LOAD_ATTR           NULL|self + append       | 0 times
+               106 LOAD_FAST           l                        | 0 times
+               108 LOAD_FAST           x                        | 0 times
+               110 BINARY_SUBSCR                                | 0 times
+               114 LOAD_FAST           y                        | 0 times
+               116 BUILD_TUPLE                                  | 0 times
+               118 CALL                                         | 0 times
+               126 POP_TOP                                      | 0 times
+               128 JUMP_BACKWARD       to 78                    | 0 times
+ 14            130 END_FOR                                      | 0 times
+               132 JUMP_BACKWARD       to 52                    | 0 times
+ 12            134 END_FOR                                      | 0 times
+ 16            136 LOAD_FAST           result                   | 0 times
+               138 RETURN_VALUE                                 | 0 times
+ 45              0 RESUME                                       | 0 times
+ 46              2 LOAD_GLOBAL         NULL + range             | 0 times
+                12 LOAD_FAST           n                        | 0 times
+                14 CALL                                         | 0 times
+                22 GET_ITER                                     | 0 times
+                24 FOR_ITER            to 498                   | 0 times
+                28 STORE_FAST          _                        | 0 times
+ 48             30 LOAD_FAST           pairs                    | 0 times
+ 47             32 GET_ITER                                     | 0 times
+                34 FOR_ITER            to 368                   | 0 times
+                38 UNPACK_SEQUENCE                              | 0 times
+                42 UNPACK_SEQUENCE                              | 0 times
+                46 UNPACK_SEQUENCE                              | 0 times
+                50 STORE_FAST          x1                       | 0 times
+                52 STORE_FAST          y1                       | 0 times
+                54 STORE_FAST          z1                       | 0 times
+                56 STORE_FAST          v1                       | 0 times
+                58 STORE_FAST          m1                       | 0 times
+ 48             60 UNPACK_SEQUENCE                              | 0 times
+                64 UNPACK_SEQUENCE                              | 0 times
+                68 STORE_FAST          x2                       | 0 times
+                70 STORE_FAST          y2                       | 0 times
+                72 STORE_FAST          z2                       | 0 times
+                74 STORE_FAST          v2                       | 0 times
+                76 STORE_FAST          m2                       | 0 times
+ 49             78 LOAD_FAST           x1                       | 0 times
+                80 LOAD_FAST           x2                       | 0 times
+                82 BINARY_OP           -                        | 0 times
+                86 STORE_FAST          dx                       | 0 times
+ 50             88 LOAD_FAST           y1                       | 0 times
+                90 LOAD_FAST           y2                       | 0 times
+                92 BINARY_OP           -                        | 0 times
+                96 STORE_FAST          dy                       | 0 times
+ 51             98 LOAD_FAST           z1                       | 0 times
+               100 LOAD_FAST           z2                       | 0 times
+               102 BINARY_OP           -                        | 0 times
+               106 STORE_FAST          dz                       | 0 times
+ 52            108 LOAD_FAST           dt                       | 0 times
+               110 LOAD_FAST           dx                       | 0 times
+               112 LOAD_FAST           dx                       | 0 times
+               114 BINARY_OP           *                        | 0 times
+               118 LOAD_FAST           dy                       | 0 times
+               120 LOAD_FAST           dy                       | 0 times
+               122 BINARY_OP           *                        | 0 times
+               126 BINARY_OP           +                        | 0 times
+               130 LOAD_FAST           dz                       | 0 times
+               132 LOAD_FAST           dz                       | 0 times
+               134 BINARY_OP           *                        | 0 times
+               138 BINARY_OP           +                        | 0 times
+               142 LOAD_CONST          -1.5                     | 0 times
+               144 BINARY_OP           **                       | 0 times
+               148 BINARY_OP           *                        | 0 times
+               152 STORE_FAST          mag                      | 0 times
+ 53            154 LOAD_FAST           m1                       | 0 times
+               156 LOAD_FAST           mag                      | 0 times
+               158 BINARY_OP           *                        | 0 times
+               162 STORE_FAST          b1m                      | 0 times
+ 54            164 LOAD_FAST           m2                       | 0 times
+               166 LOAD_FAST           mag                      | 0 times
+               168 BINARY_OP           *                        | 0 times
+               172 STORE_FAST          b2m                      | 0 times
+ 55            174 LOAD_FAST           v1                       | 0 times
+               176 LOAD_CONST          0                        | 0 times
+               178 COPY                                         | 0 times
+               180 COPY                                         | 0 times
+               182 BINARY_SUBSCR                                | 0 times
+               186 LOAD_FAST           dx                       | 0 times
+               188 LOAD_FAST           b2m                      | 0 times
+               190 BINARY_OP           *                        | 0 times
+               194 BINARY_OP           -=                       | 0 times
+               198 SWAP                                         | 0 times
+               200 SWAP                                         | 0 times
+               202 STORE_SUBSCR                                 | 0 times
+ 56            206 LOAD_FAST           v1                       | 0 times
+               208 LOAD_CONST          1                        | 0 times
+               210 COPY                                         | 0 times
+               212 COPY                                         | 0 times
+               214 BINARY_SUBSCR                                | 0 times
+               218 LOAD_FAST           dy                       | 0 times
+               220 LOAD_FAST           b2m                      | 0 times
+               222 BINARY_OP           *                        | 0 times
+               226 BINARY_OP           -=                       | 0 times
+               230 SWAP                                         | 0 times
+               232 SWAP                                         | 0 times
+               234 STORE_SUBSCR                                 | 0 times
+ 57            238 LOAD_FAST           v1                       | 0 times
+               240 LOAD_CONST          2                        | 0 times
+               242 COPY                                         | 0 times
+               244 COPY                                         | 0 times
+               246 BINARY_SUBSCR                                | 0 times
+               250 LOAD_FAST           dz                       | 0 times
+               252 LOAD_FAST           b2m                      | 0 times
+               254 BINARY_OP           *                        | 0 times
+               258 BINARY_OP           -=                       | 0 times
+               262 SWAP                                         | 0 times
+               264 SWAP                                         | 0 times
+               266 STORE_SUBSCR                                 | 0 times
+ 58            270 LOAD_FAST           v2                       | 0 times
+               272 LOAD_CONST          0                        | 0 times
+               274 COPY                                         | 0 times
+               276 COPY                                         | 0 times
+               278 BINARY_SUBSCR                                | 0 times
+               282 LOAD_FAST           dx                       | 0 times
+               284 LOAD_FAST           b1m                      | 0 times
+               286 BINARY_OP           *                        | 0 times
+               290 BINARY_OP           +=                       | 0 times
+               294 SWAP                                         | 0 times
+               296 SWAP                                         | 0 times
+               298 STORE_SUBSCR                                 | 0 times
+ 59            302 LOAD_FAST           v2                       | 0 times
+               304 LOAD_CONST          1                        | 0 times
+               306 COPY                                         | 0 times
+               308 COPY                                         | 0 times
+               310 BINARY_SUBSCR                                | 0 times
+               314 LOAD_FAST           dy                       | 0 times
+               316 LOAD_FAST           b1m                      | 0 times
+               318 BINARY_OP           *                        | 0 times
+               322 BINARY_OP           +=                       | 0 times
+               326 SWAP                                         | 0 times
+               328 SWAP                                         | 0 times
+               330 STORE_SUBSCR                                 | 0 times
+ 60            334 LOAD_FAST           v2                       | 0 times
+               336 LOAD_CONST          2                        | 0 times
+               338 COPY                                         | 0 times
+               340 COPY                                         | 0 times
+               342 BINARY_SUBSCR                                | 0 times
+               346 LOAD_FAST           dz                       | 0 times
+               348 LOAD_FAST           b1m                      | 0 times
+               350 BINARY_OP           *                        | 0 times
+               354 BINARY_OP           +=                       | 0 times
+               358 SWAP                                         | 0 times
+               360 SWAP                                         | 0 times
+               362 STORE_SUBSCR                                 | 0 times
+               366 JUMP_BACKWARD       to 34                    | 0 times
+ 47            368 END_FOR                                      | 0 times
+ 61            370 LOAD_FAST           bodies                   | 0 times
+               372 GET_ITER                                     | 0 times
+               374 FOR_ITER            to 494                   | 0 times
+               378 UNPACK_SEQUENCE                              | 0 times
+               382 STORE_FAST          r                        | 0 times
+               384 UNPACK_SEQUENCE                              | 0 times
+               388 STORE_FAST          vx                       | 0 times
+               390 STORE_FAST          vy                       | 0 times
+               392 STORE_FAST          vz                       | 0 times
+               394 STORE_FAST          _                        | 0 times
+ 62            396 LOAD_FAST           r                        | 0 times
+               398 LOAD_CONST          0                        | 0 times
+               400 COPY                                         | 0 times
+               402 COPY                                         | 0 times
+               404 BINARY_SUBSCR                                | 0 times
+               408 LOAD_FAST           dt                       | 0 times
+               410 LOAD_FAST           vx                       | 0 times
+               412 BINARY_OP           *                        | 0 times
+               416 BINARY_OP           +=                       | 0 times
+               420 SWAP                                         | 0 times
+               422 SWAP                                         | 0 times
+               424 STORE_SUBSCR                                 | 0 times
+ 63            428 LOAD_FAST           r                        | 0 times
+               430 LOAD_CONST          1                        | 0 times
+               432 COPY                                         | 0 times
+               434 COPY                                         | 0 times
+               436 BINARY_SUBSCR                                | 0 times
+               440 LOAD_FAST           dt                       | 0 times
+               442 LOAD_FAST           vy                       | 0 times
+               444 BINARY_OP           *                        | 0 times
+               448 BINARY_OP           +=                       | 0 times
+               452 SWAP                                         | 0 times
+               454 SWAP                                         | 0 times
+               456 STORE_SUBSCR                                 | 0 times
+ 64            460 LOAD_FAST           r                        | 0 times
+               462 LOAD_CONST          2                        | 0 times
+               464 COPY                                         | 0 times
+               466 COPY                                         | 0 times
+               468 BINARY_SUBSCR                                | 0 times
+               472 LOAD_FAST           dt                       | 0 times
+               474 LOAD_FAST           vz                       | 0 times
+               476 BINARY_OP           *                        | 0 times
+               480 BINARY_OP           +=                       | 0 times
+               484 SWAP                                         | 0 times
+               486 SWAP                                         | 0 times
+               488 STORE_SUBSCR                                 | 0 times
+               492 JUMP_BACKWARD       to 374                   | 0 times
+ 61            494 END_FOR                                      | 0 times
+               496 JUMP_BACKWARD       to 24                    | 0 times
+ 46            498 END_FOR                                      | 0 times
+               500 RETURN_CONST        None                     | 0 times
+ 66              0 RESUME                                       | 0 times
+ 67              2 LOAD_CONST          0.0                      | 0 times
+                 4 STORE_FAST          e                        | 0 times
+ 69              6 LOAD_FAST           pairs                    | 0 times
+ 68              8 GET_ITER                                     | 0 times
+                10 FOR_ITER            to 144                   | 0 times
+                14 UNPACK_SEQUENCE                              | 0 times
+                18 UNPACK_SEQUENCE                              | 0 times
+                22 UNPACK_SEQUENCE                              | 0 times
+                26 STORE_FAST          x1                       | 0 times
+                28 STORE_FAST          y1                       | 0 times
+                30 STORE_FAST          z1                       | 0 times
+                32 STORE_FAST          _                        | 0 times
+                34 STORE_FAST          m1                       | 0 times
+ 69             36 UNPACK_SEQUENCE                              | 0 times
+                40 UNPACK_SEQUENCE                              | 0 times
+                44 STORE_FAST          x2                       | 0 times
+                46 STORE_FAST          y2                       | 0 times
+                48 STORE_FAST          z2                       | 0 times
+                50 STORE_FAST          _                        | 0 times
+                52 STORE_FAST          m2                       | 0 times
+ 70             54 LOAD_FAST           x1                       | 0 times
+                56 LOAD_FAST           x2                       | 0 times
+                58 BINARY_OP           -                        | 0 times
+                62 STORE_FAST          dx                       | 0 times
+ 71             64 LOAD_FAST           y1                       | 0 times
+                66 LOAD_FAST           y2                       | 0 times
+                68 BINARY_OP           -                        | 0 times
+                72 STORE_FAST          dy                       | 0 times
+ 72             74 LOAD_FAST           z1                       | 0 times
+                76 LOAD_FAST           z2                       | 0 times
+                78 BINARY_OP           -                        | 0 times
+                82 STORE_FAST          dz                       | 0 times
+ 73             84 LOAD_FAST           e                        | 0 times
+                86 LOAD_FAST           m1                       | 0 times
+                88 LOAD_FAST           m2                       | 0 times
+                90 BINARY_OP           *                        | 0 times
+                94 LOAD_FAST           dx                       | 0 times
+                96 LOAD_FAST           dx                       | 0 times
+                98 BINARY_OP           *                        | 0 times
+               102 LOAD_FAST           dy                       | 0 times
+               104 LOAD_FAST           dy                       | 0 times
+               106 BINARY_OP           *                        | 0 times
+               110 BINARY_OP           +                        | 0 times
+               114 LOAD_FAST           dz                       | 0 times
+               116 LOAD_FAST           dz                       | 0 times
+               118 BINARY_OP           *                        | 0 times
+               122 BINARY_OP           +                        | 0 times
+               126 LOAD_CONST          0.5                      | 0 times
+               128 BINARY_OP           **                       | 0 times
+               132 BINARY_OP           /                        | 0 times
+               136 BINARY_OP           -=                       | 0 times
+               140 STORE_FAST          e                        | 0 times
+               142 JUMP_BACKWARD       to 10                    | 0 times
+ 68            144 END_FOR                                      | 0 times
+ 74            146 LOAD_FAST           bodies                   | 0 times
+               148 GET_ITER                                     | 0 times
+               150 FOR_ITER            to 226                   | 0 times
+               154 UNPACK_SEQUENCE                              | 0 times
+               158 STORE_FAST          _                        | 0 times
+               160 UNPACK_SEQUENCE                              | 0 times
+               164 STORE_FAST          vx                       | 0 times
+               166 STORE_FAST          vy                       | 0 times
+               168 STORE_FAST          vz                       | 0 times
+               170 STORE_FAST          m                        | 0 times
+ 75            172 LOAD_FAST           e                        | 0 times
+               174 LOAD_FAST           m                        | 0 times
+               176 LOAD_FAST           vx                       | 0 times
+               178 LOAD_FAST           vx                       | 0 times
+               180 BINARY_OP           *                        | 0 times
+               184 LOAD_FAST           vy                       | 0 times
+               186 LOAD_FAST           vy                       | 0 times
+               188 BINARY_OP           *                        | 0 times
+               192 BINARY_OP           +                        | 0 times
+               196 LOAD_FAST           vz                       | 0 times
+               198 LOAD_FAST           vz                       | 0 times
+               200 BINARY_OP           *                        | 0 times
+               204 BINARY_OP           +                        | 0 times
+               208 BINARY_OP           *                        | 0 times
+               212 LOAD_CONST          2.0                      | 0 times
+               214 BINARY_OP           /                        | 0 times
+               218 BINARY_OP           +=                       | 0 times
+               222 STORE_FAST          e                        | 0 times
+               224 JUMP_BACKWARD       to 150                   | 0 times
+ 74            226 END_FOR                                      | 0 times
+ 76            228 LOAD_FAST           e                        | 0 times
+               230 RETURN_VALUE                                 | 0 times
+ 78              0 RESUME                                       | 0 times
+ 79              2 LOAD_CONST          0.0                      | 0 times
+                 4 COPY                                         | 0 times
+                 6 STORE_FAST          px                       | 0 times
+                 8 COPY                                         | 0 times
+                10 STORE_FAST          py                       | 0 times
+                12 STORE_FAST          pz                       | 0 times
+ 80             14 LOAD_FAST           bodies                   | 0 times
+                16 GET_ITER                                     | 0 times
+                18 FOR_ITER            to 90                    | 0 times
+                22 UNPACK_SEQUENCE                              | 0 times
+                26 STORE_FAST          _                        | 0 times
+                28 UNPACK_SEQUENCE                              | 0 times
+                32 STORE_FAST          vx                       | 0 times
+                34 STORE_FAST          vy                       | 0 times
+                36 STORE_FAST          vz                       | 0 times
+                38 STORE_FAST          m                        | 0 times
+ 81             40 LOAD_FAST           px                       | 0 times
+                42 LOAD_FAST           vx                       | 0 times
+                44 LOAD_FAST           m                        | 0 times
+                46 BINARY_OP           *                        | 0 times
+                50 BINARY_OP           -=                       | 0 times
+                54 STORE_FAST          px                       | 0 times
+ 82             56 LOAD_FAST           py                       | 0 times
+                58 LOAD_FAST           vy                       | 0 times
+                60 LOAD_FAST           m                        | 0 times
+                62 BINARY_OP           *                        | 0 times
+                66 BINARY_OP           -=                       | 0 times
+                70 STORE_FAST          py                       | 0 times
+ 83             72 LOAD_FAST           pz                       | 0 times
+                74 LOAD_FAST           vz                       | 0 times
+                76 LOAD_FAST           m                        | 0 times
+                78 BINARY_OP           *                        | 0 times
+                82 BINARY_OP           -=                       | 0 times
+                86 STORE_FAST          pz                       | 0 times
+                88 JUMP_BACKWARD       to 18                    | 0 times
+ 80             90 END_FOR                                      | 0 times
+ 84             92 LOAD_FAST           ref                      | 0 times
+                94 UNPACK_SEQUENCE                              | 0 times
+                98 STORE_FAST          r                        | 0 times
+               100 STORE_FAST          v                        | 0 times
+               102 STORE_FAST          m                        | 0 times
+ 85            104 LOAD_FAST           px                       | 0 times
+               106 LOAD_FAST           m                        | 0 times
+               108 BINARY_OP           /                        | 0 times
+               112 LOAD_FAST           v                        | 0 times
+               114 LOAD_CONST          0                        | 0 times
+               116 STORE_SUBSCR                                 | 0 times
+ 86            120 LOAD_FAST           py                       | 0 times
+               122 LOAD_FAST           m                        | 0 times
+               124 BINARY_OP           /                        | 0 times
+               128 LOAD_FAST           v                        | 0 times
+               130 LOAD_CONST          1                        | 0 times
+               132 STORE_SUBSCR                                 | 0 times
+ 87            136 LOAD_FAST           pz                       | 0 times
+               138 LOAD_FAST           m                        | 0 times
+               140 BINARY_OP           /                        | 0 times
+               144 LOAD_FAST           v                        | 0 times
+               146 LOAD_CONST          2                        | 0 times
+               148 STORE_SUBSCR                                 | 0 times
+               152 RETURN_CONST        None                     | 0 times
+
+DYNAMIC OPCODE EXECUTION COUNTS:
+
+DYNAMIC SOURCE-LINE EXECUTION COUNTS:

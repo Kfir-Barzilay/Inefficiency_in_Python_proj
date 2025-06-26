@@ -1,0 +1,123 @@
+DYNAMIC OPCODE EXECUTION COUNTS:
+LOAD_FAST            7940497 times
+BINARY_OP            5400377 times
+STORE_FAST           3720407 times
+COPY                 3000002 times
+SWAP                 3000000 times
+LOAD_CONST           1700089 times
+BINARY_SUBSCR        1500015 times
+STORE_SUBSCR         1500003 times
+UNPACK_SEQUENCE      1200131 times
+FOR_ITER             340059 times
+JUMP_BACKWARD        300049 times
+GET_ITER             40011 times
+EXTENDED_ARG         40001 times
+LOAD_NAME            43 times
+PRECALL              25 times
+CALL                 25 times
+BUILD_TUPLE          18 times
+STORE_NAME           15 times
+POP_TOP              15 times
+BUILD_LIST           11 times
+PUSH_NULL            11 times
+LOAD_METHOD          11 times
+LIST_EXTEND          6 times
+RETURN_VALUE         6 times
+MAKE_FUNCTION        4 times
+BUILD_SLICE          4 times
+LOAD_GLOBAL          3 times
+LOAD_ATTR            2 times
+IMPORT_NAME          1 times
+BUILD_CONST_KEY_MAP  1 times
+COMPARE_OP           1 times
+POP_JUMP_FORWARD_IF_FALSE 1 times
+FORMAT_VALUE         1 times
+BUILD_STRING         1 times
+
+DYNAMIC SOURCE-LINE EXECUTION COUNTS:
+Line   1: executed      4 times | import time
+Line   4: executed      2 times | PI = 3.14159265358979323
+Line   5: executed      6 times | SOLAR_MASS = 4 * PI * PI
+Line   6: executed      2 times | DAYS_PER_YEAR = 365.24
+Line   7: executed      2 times | DEFAULT_ITERATIONS = 20000
+Line   8: executed      2 times | DEFAULT_REFERENCE = 'sun'
+Line  10: executed      3 times | def combinations(l):
+Line  11: executed      2 times |     result = []
+Line  12: executed     19 times |     for x in range(len(l) - 1):
+Line  13: executed     32 times |         ls = l[x + 1:]
+Line  14: executed     36 times |         for y in ls:
+Line  15: executed    110 times |             result.append((l[x], y))
+Line  16: executed      2 times |     return result
+Line  18: executed      3 times | BODIES = {
+Line  19: executed      8 times |     'sun': ([0.0, 0.0, 0.0], [0.0, 0.0, 0.0], SOLAR_MASS),
+Line  20: executed      4 times |     'jupiter': ([4.84143144246472090e+00, -1.16032004402742839e+00, -1.03622044471123109e-01],
+Line  21: executed      4 times |                 [1.66007664274403694e-03 * DAYS_PER_YEAR,
+Line  22: executed      3 times |                  7.69901118419740425e-03 * DAYS_PER_YEAR,
+Line  23: executed      3 times |                  -6.90460016972063023e-05 * DAYS_PER_YEAR],
+Line  24: executed      3 times |                 9.54791938424326609e-04 * SOLAR_MASS),
+Line  25: executed      4 times |     'saturn': ([8.34336671824457987e+00, 4.12479856412430479e+00, -4.03523417114321381e-01],
+Line  26: executed      4 times |                [-2.76742510726862411e-03 * DAYS_PER_YEAR,
+Line  27: executed      3 times |                 4.99852801234917238e-03 * DAYS_PER_YEAR,
+Line  28: executed      3 times |                 2.30417297573763929e-05 * DAYS_PER_YEAR],
+Line  29: executed      3 times |                2.85885980666130812e-04 * SOLAR_MASS),
+Line  30: executed      4 times |     'uranus': ([1.28943695621391310e+01, -1.51111514016986312e+01, -2.23307578892655734e-01],
+Line  31: executed      4 times |                [2.96460137564761618e-03 * DAYS_PER_YEAR,
+Line  32: executed      3 times |                 2.37847173959480950e-03 * DAYS_PER_YEAR,
+Line  33: executed      3 times |                 -2.96589568540237556e-05 * DAYS_PER_YEAR],
+Line  34: executed      3 times |                4.36624404335156298e-05 * SOLAR_MASS),
+Line  35: executed      4 times |     'neptune': ([1.53796971148509165e+01, -2.59193146099879641e+01, 1.79258772950371181e-01],
+Line  36: executed      4 times |                 [2.68067772490389322e-03 * DAYS_PER_YEAR,
+Line  37: executed      3 times |                  1.62824170038242295e-03 * DAYS_PER_YEAR,
+Line  38: executed      3 times |                  -9.51592254519715870e-05 * DAYS_PER_YEAR],
+Line  39: executed      3 times |                 5.15138902046611451e-05 * SOLAR_MASS)
+Line  42: executed      9 times | SYSTEM = list(BODIES.values())
+Line  43: executed      6 times | PAIRS = combinations(SYSTEM)
+Line  45: executed      6 times | def advance(dt, n, bodies=SYSTEM, pairs=PAIRS):
+Line  46: executed  40008 times |     for _ in range(n):
+Line  47: executed 1840000 times |         for (([x1, y1, z1], v1, m1),
+Line  48: executed 1420000 times |              ([x2, y2, z2], v2, m2)) in pairs:
+Line  49: executed 800000 times |             dx = x1 - x2
+Line  50: executed 800000 times |             dy = y1 - y2
+Line  51: executed 800000 times |             dz = z1 - z2
+Line  52: executed 3200000 times |             mag = dt * ((dx * dx + dy * dy + dz * dz) ** (-1.5))
+Line  53: executed 800000 times |             b1m = m1 * mag
+Line  54: executed 800000 times |             b2m = m2 * mag
+Line  55: executed 2400000 times |             v1[0] -= dx * b2m
+Line  56: executed 2400000 times |             v1[1] -= dy * b2m
+Line  57: executed 2400000 times |             v1[2] -= dz * b2m
+Line  58: executed 2400000 times |             v2[0] += dx * b1m
+Line  59: executed 2400000 times |             v2[1] += dy * b1m
+Line  60: executed 2600000 times |             v2[2] += dz * b1m
+Line  61: executed 880000 times |         for (r, [vx, vy, vz], _) in bodies:
+Line  62: executed 1200000 times |             r[0] += dt * vx
+Line  63: executed 1200000 times |             r[1] += dt * vy
+Line  64: executed 1300000 times |             r[2] += dt * vz
+Line  66: executed      6 times | def report_energy(bodies=SYSTEM, pairs=PAIRS):
+Line  67: executed      4 times |     e = 0.0
+Line  68: executed    184 times |     for (((x1, y1, z1), _, m1),
+Line  69: executed    142 times |          ((x2, y2, z2), _, m2)) in pairs:
+Line  70: executed     80 times |         dx = x1 - x2
+Line  71: executed     80 times |         dy = y1 - y2
+Line  72: executed     80 times |         dz = z1 - z2
+Line  73: executed    420 times |         e -= (m1 * m2) / ((dx * dx + dy * dy + dz * dz) ** 0.5)
+Line  74: executed     86 times |     for (_, [vx, vy, vz], m) in bodies:
+Line  75: executed    190 times |         e += m * (vx * vx + vy * vy + vz * vz) / 2.
+Line  76: executed      4 times |     return e
+Line  78: executed      5 times | def offset_momentum(ref, bodies=SYSTEM):
+Line  79: executed      6 times |     px = py = pz = 0.0
+Line  80: executed     43 times |     for (_, [vx, vy, vz], m) in bodies:
+Line  81: executed     30 times |         px -= vx * m
+Line  82: executed     30 times |         py -= vy * m
+Line  83: executed     35 times |         pz -= vz * m
+Line  84: executed      5 times |     (r, v, m) = ref
+Line  85: executed      6 times |     v[0] = px / m
+Line  86: executed      6 times |     v[1] = py / m
+Line  87: executed      8 times |     v[2] = pz / m
+Line  89: executed      4 times | if __name__ == "__main__":
+Line  90: executed      8 times |     offset_momentum(BODIES[DEFAULT_REFERENCE])
+Line  92: executed     10 times |     print("Initial energy:", report_energy())
+Line  93: executed      6 times |     start = time.perf_counter()
+Line  94: executed      7 times |     advance(0.01, DEFAULT_ITERATIONS)
+Line  95: executed      8 times |     duration = time.perf_counter() - start
+Line  96: executed     10 times |     print("Final energy:  ", report_energy())
+Line  97: executed     13 times |     print(f"Elapsed time:  {duration:.6f} seconds")

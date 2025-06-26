@@ -1,0 +1,451 @@
+FULL BYTECODE DISASSEMBLY:
+  0           0 RESUME                   0
+
+  1           2 LOAD_CONST               0 ('Simple, brute-force N-Queens solver.')
+              4 STORE_NAME               0 (__doc__)
+
+  3           6 LOAD_CONST               1 (0)
+              8 LOAD_CONST               2 (None)
+             10 IMPORT_NAME              1 (time)
+             12 STORE_NAME               1 (time)
+
+  5          14 LOAD_CONST               3 ('collinwinter@google.com (Collin Winter)')
+             16 STORE_NAME               2 (__author__)
+
+  8          18 LOAD_CONST              16 ((None,))
+             20 LOAD_CONST               4 (<code object permutations at 0x0000026D1130E120, file "bm_nqueens_noperf.py", line 8>)
+             22 MAKE_FUNCTION            1 (defaults)
+             24 STORE_NAME               3 (permutations)
+
+ 31          26 LOAD_CONST               5 (<code object n_queens at 0x0000026D110F6810, file "bm_nqueens_noperf.py", line 31>)
+             28 MAKE_FUNCTION            0
+             30 STORE_NAME               4 (n_queens)
+
+ 40          32 LOAD_CONST               6 (<code object bench_n_queens at 0x0000026D114BC830, file "bm_nqueens_noperf.py", line 40>)
+             34 MAKE_FUNCTION            0
+             36 STORE_NAME               5 (bench_n_queens)
+
+ 44          38 LOAD_NAME                6 (__name__)
+             40 LOAD_CONST               7 ('__main__')
+             42 COMPARE_OP               2 (==)
+             48 POP_JUMP_FORWARD_IF_FALSE   103 (to 256)
+
+ 45          50 LOAD_CONST               8 (8)
+             52 STORE_NAME               7 (queen_count)
+
+ 47          54 PUSH_NULL
+             56 LOAD_NAME                8 (print)
+             58 LOAD_CONST               9 ('Solving ')
+             60 LOAD_NAME                7 (queen_count)
+             62 FORMAT_VALUE             0
+             64 LOAD_CONST              10 ('-Queens problem...')
+             66 BUILD_STRING             3
+             68 PRECALL                  1
+             72 CALL                     1
+             82 POP_TOP
+
+ 48          84 PUSH_NULL
+             86 LOAD_NAME                1 (time)
+             88 LOAD_ATTR                9 (perf_counter)
+             98 PRECALL                  0
+            102 CALL                     0
+            112 STORE_NAME              10 (start)
+
+ 49         114 PUSH_NULL
+            116 LOAD_NAME                5 (bench_n_queens)
+            118 LOAD_NAME                7 (queen_count)
+            120 PRECALL                  1
+            124 CALL                     1
+            134 STORE_NAME              11 (solutions)
+
+ 50         136 PUSH_NULL
+            138 LOAD_NAME                1 (time)
+            140 LOAD_ATTR                9 (perf_counter)
+            150 PRECALL                  0
+            154 CALL                     0
+            164 LOAD_NAME               10 (start)
+            166 BINARY_OP               10 (-)
+            170 STORE_NAME              12 (duration)
+
+ 52         172 PUSH_NULL
+            174 LOAD_NAME                8 (print)
+            176 LOAD_CONST              11 ('Found ')
+            178 PUSH_NULL
+            180 LOAD_NAME               13 (len)
+            182 LOAD_NAME               11 (solutions)
+            184 PRECALL                  1
+            188 CALL                     1
+            198 FORMAT_VALUE             0
+            200 LOAD_CONST              12 (' solutions')
+            202 BUILD_STRING             3
+            204 PRECALL                  1
+            208 CALL                     1
+            218 POP_TOP
+
+ 53         220 PUSH_NULL
+            222 LOAD_NAME                8 (print)
+            224 LOAD_CONST              13 ('Elapsed time: ')
+            226 LOAD_NAME               12 (duration)
+            228 LOAD_CONST              14 ('.6f')
+            230 FORMAT_VALUE             4 (with format)
+            232 LOAD_CONST              15 (' seconds')
+            234 BUILD_STRING             3
+            236 PRECALL                  1
+            240 CALL                     1
+            250 POP_TOP
+            252 LOAD_CONST               2 (None)
+            254 RETURN_VALUE
+
+ 44     >>  256 LOAD_CONST               2 (None)
+            258 RETURN_VALUE
+
+Disassembly of <code object permutations at 0x0000026D1130E120, file "bm_nqueens_noperf.py", line 8>:
+              0 MAKE_CELL                7 (pool)
+
+  8           2 RETURN_GENERATOR
+              4 POP_TOP
+              6 RESUME                   0
+
+  9           8 LOAD_GLOBAL              1 (NULL + tuple)
+             20 LOAD_FAST                0 (iterable)
+             22 PRECALL                  1
+             26 CALL                     1
+             36 STORE_DEREF              7 (pool)
+
+ 10          38 LOAD_GLOBAL              3 (NULL + len)
+             50 LOAD_DEREF               7 (pool)
+             52 PRECALL                  1
+             56 CALL                     1
+             66 STORE_FAST               2 (n)
+
+ 11          68 LOAD_FAST                1 (r)
+             70 POP_JUMP_FORWARD_IF_NOT_NONE     2 (to 76)
+
+ 12          72 LOAD_FAST                2 (n)
+             74 STORE_FAST               1 (r)
+
+ 13     >>   76 LOAD_GLOBAL              5 (NULL + list)
+             88 LOAD_GLOBAL              7 (NULL + range)
+            100 LOAD_FAST                2 (n)
+            102 PRECALL                  1
+            106 CALL                     1
+            116 PRECALL                  1
+            120 CALL                     1
+            130 STORE_FAST               3 (indices)
+
+ 14         132 LOAD_GLOBAL              5 (NULL + list)
+            144 LOAD_GLOBAL              7 (NULL + range)
+            156 LOAD_FAST                2 (n)
+            158 LOAD_FAST                1 (r)
+            160 BINARY_OP               10 (-)
+            164 LOAD_CONST               1 (1)
+            166 BINARY_OP                0 (+)
+            170 LOAD_FAST                2 (n)
+            172 LOAD_CONST               1 (1)
+            174 BINARY_OP                0 (+)
+            178 PRECALL                  2
+            182 CALL                     2
+            192 PRECALL                  1
+            196 CALL                     1
+            206 LOAD_CONST               0 (None)
+            208 LOAD_CONST               0 (None)
+            210 LOAD_CONST               2 (-1)
+            212 BUILD_SLICE              3
+            214 BINARY_SUBSCR
+            224 STORE_FAST               4 (cycles)
+
+ 15         226 LOAD_GLOBAL              1 (NULL + tuple)
+            238 LOAD_CLOSURE             7 (pool)
+            240 BUILD_TUPLE              1
+            242 LOAD_CONST               3 (<code object <genexpr> at 0x0000026D11116410, file "bm_nqueens_noperf.py", line 15>)
+            244 MAKE_FUNCTION            8 (closure)
+            246 LOAD_FAST                3 (indices)
+            248 LOAD_CONST               0 (None)
+            250 LOAD_FAST                1 (r)
+            252 BUILD_SLICE              2
+            254 BINARY_SUBSCR
+            264 GET_ITER
+            266 PRECALL                  0
+            270 CALL                     0
+            280 PRECALL                  1
+            284 CALL                     1
+            294 YIELD_VALUE
+            296 RESUME                   1
+            298 POP_TOP
+
+ 16         300 LOAD_FAST                2 (n)
+            302 POP_JUMP_FORWARD_IF_FALSE   177 (to 658)
+
+ 17     >>  304 LOAD_GLOBAL              9 (NULL + reversed)
+            316 LOAD_GLOBAL              7 (NULL + range)
+            328 LOAD_FAST                1 (r)
+            330 PRECALL                  1
+            334 CALL                     1
+            344 PRECALL                  1
+            348 CALL                     1
+            358 GET_ITER
+        >>  360 FOR_ITER               142 (to 646)
+            362 STORE_FAST               5 (i)
+
+ 18         364 LOAD_FAST                4 (cycles)
+            366 LOAD_FAST                5 (i)
+            368 COPY                     2
+            370 COPY                     2
+            372 BINARY_SUBSCR
+            382 LOAD_CONST               1 (1)
+            384 BINARY_OP               23 (-=)
+            388 SWAP                     3
+            390 SWAP                     2
+            392 STORE_SUBSCR
+
+ 19         396 LOAD_FAST                4 (cycles)
+            398 LOAD_FAST                5 (i)
+            400 BINARY_SUBSCR
+            410 LOAD_CONST               4 (0)
+            412 COMPARE_OP               2 (==)
+            418 POP_JUMP_FORWARD_IF_FALSE    41 (to 502)
+
+ 20         420 LOAD_FAST                3 (indices)
+            422 LOAD_FAST                5 (i)
+            424 LOAD_CONST               1 (1)
+            426 BINARY_OP                0 (+)
+            430 LOAD_CONST               0 (None)
+            432 BUILD_SLICE              2
+            434 BINARY_SUBSCR
+            444 LOAD_FAST                3 (indices)
+            446 LOAD_FAST                5 (i)
+            448 LOAD_FAST                5 (i)
+            450 LOAD_CONST               1 (1)
+            452 BINARY_OP                0 (+)
+            456 BUILD_SLICE              2
+            458 BINARY_SUBSCR
+            468 BINARY_OP                0 (+)
+            472 LOAD_FAST                3 (indices)
+            474 LOAD_FAST                5 (i)
+            476 LOAD_CONST               0 (None)
+            478 BUILD_SLICE              2
+            480 STORE_SUBSCR
+
+ 21         484 LOAD_FAST                2 (n)
+            486 LOAD_FAST                5 (i)
+            488 BINARY_OP               10 (-)
+            492 LOAD_FAST                4 (cycles)
+            494 LOAD_FAST                5 (i)
+            496 STORE_SUBSCR
+            500 JUMP_BACKWARD           71 (to 360)
+
+ 23     >>  502 LOAD_FAST                4 (cycles)
+            504 LOAD_FAST                5 (i)
+            506 BINARY_SUBSCR
+            516 STORE_FAST               6 (j)
+
+ 24         518 LOAD_FAST                3 (indices)
+            520 LOAD_FAST                6 (j)
+            522 UNARY_NEGATIVE
+            524 BINARY_SUBSCR
+            534 LOAD_FAST                3 (indices)
+            536 LOAD_FAST                5 (i)
+            538 BINARY_SUBSCR
+            548 SWAP                     2
+            550 LOAD_FAST                3 (indices)
+            552 LOAD_FAST                5 (i)
+            554 STORE_SUBSCR
+            558 LOAD_FAST                3 (indices)
+            560 LOAD_FAST                6 (j)
+            562 UNARY_NEGATIVE
+            564 STORE_SUBSCR
+
+ 25         568 LOAD_GLOBAL              1 (NULL + tuple)
+            580 LOAD_CLOSURE             7 (pool)
+            582 BUILD_TUPLE              1
+            584 LOAD_CONST               5 (<code object <genexpr> at 0x0000026D111AD610, file "bm_nqueens_noperf.py", line 25>)
+            586 MAKE_FUNCTION            8 (closure)
+            588 LOAD_FAST                3 (indices)
+            590 LOAD_CONST               0 (None)
+            592 LOAD_FAST                1 (r)
+            594 BUILD_SLICE              2
+            596 BINARY_SUBSCR
+            606 GET_ITER
+            608 PRECALL                  0
+            612 CALL                     0
+            622 PRECALL                  1
+            626 CALL                     1
+            636 YIELD_VALUE
+            638 RESUME                   1
+            640 POP_TOP
+
+ 26         642 POP_TOP
+            644 JUMP_FORWARD             2 (to 650)
+
+ 28     >>  646 LOAD_CONST               0 (None)
+            648 RETURN_VALUE
+
+ 16     >>  650 LOAD_FAST                2 (n)
+            652 POP_JUMP_BACKWARD_IF_TRUE   175 (to 304)
+            654 LOAD_CONST               0 (None)
+            656 RETURN_VALUE
+        >>  658 LOAD_CONST               0 (None)
+            660 RETURN_VALUE
+
+Disassembly of <code object <genexpr> at 0x0000026D11116410, file "bm_nqueens_noperf.py", line 15>:
+              0 COPY_FREE_VARS           1
+
+ 15           2 RETURN_GENERATOR
+              4 POP_TOP
+              6 RESUME                   0
+              8 LOAD_FAST                0 (.0)
+        >>   10 FOR_ITER                12 (to 36)
+             12 STORE_FAST               1 (i)
+             14 LOAD_DEREF               2 (pool)
+             16 LOAD_FAST                1 (i)
+             18 BINARY_SUBSCR
+             28 YIELD_VALUE
+             30 RESUME                   1
+             32 POP_TOP
+             34 JUMP_BACKWARD           13 (to 10)
+        >>   36 LOAD_CONST               0 (None)
+             38 RETURN_VALUE
+
+Disassembly of <code object <genexpr> at 0x0000026D111AD610, file "bm_nqueens_noperf.py", line 25>:
+              0 COPY_FREE_VARS           1
+
+ 25           2 RETURN_GENERATOR
+              4 POP_TOP
+              6 RESUME                   0
+              8 LOAD_FAST                0 (.0)
+        >>   10 FOR_ITER                12 (to 36)
+             12 STORE_FAST               1 (i)
+             14 LOAD_DEREF               2 (pool)
+             16 LOAD_FAST                1 (i)
+             18 BINARY_SUBSCR
+             28 YIELD_VALUE
+             30 RESUME                   1
+             32 POP_TOP
+             34 JUMP_BACKWARD           13 (to 10)
+        >>   36 LOAD_CONST               0 (None)
+             38 RETURN_VALUE
+
+Disassembly of <code object n_queens at 0x0000026D110F6810, file "bm_nqueens_noperf.py", line 31>:
+              0 MAKE_CELL                2 (vec)
+
+ 31           2 RETURN_GENERATOR
+              4 POP_TOP
+              6 RESUME                   0
+
+ 33           8 LOAD_GLOBAL              1 (NULL + range)
+             20 LOAD_FAST                0 (queen_count)
+             22 PRECALL                  1
+             26 CALL                     1
+             36 STORE_FAST               1 (cols)
+
+ 34          38 LOAD_GLOBAL              3 (NULL + permutations)
+             50 LOAD_FAST                1 (cols)
+             52 PRECALL                  1
+             56 CALL                     1
+             66 GET_ITER
+        >>   68 FOR_ITER                98 (to 266)
+             70 STORE_DEREF              2 (vec)
+
+ 35          72 LOAD_FAST                0 (queen_count)
+             74 LOAD_GLOBAL              5 (NULL + len)
+             86 LOAD_GLOBAL              7 (NULL + set)
+             98 LOAD_CLOSURE             2 (vec)
+            100 BUILD_TUPLE              1
+            102 LOAD_CONST               1 (<code object <genexpr> at 0x0000026D1111DF20, file "bm_nqueens_noperf.py", line 35>)
+            104 MAKE_FUNCTION            8 (closure)
+            106 LOAD_FAST                1 (cols)
+            108 GET_ITER
+            110 PRECALL                  0
+            114 CALL                     0
+            124 PRECALL                  1
+            128 CALL                     1
+            138 PRECALL                  1
+            142 CALL                     1
+            152 SWAP                     2
+            154 COPY                     2
+            156 COMPARE_OP               2 (==)
+            162 POP_JUMP_FORWARD_IF_FALSE    44 (to 252)
+
+ 36         164 LOAD_GLOBAL              5 (NULL + len)
+            176 LOAD_GLOBAL              7 (NULL + set)
+            188 LOAD_CLOSURE             2 (vec)
+            190 BUILD_TUPLE              1
+            192 LOAD_CONST               2 (<code object <genexpr> at 0x0000026D1111E010, file "bm_nqueens_noperf.py", line 36>)
+            194 MAKE_FUNCTION            8 (closure)
+            196 LOAD_FAST                1 (cols)
+            198 GET_ITER
+            200 PRECALL                  0
+            204 CALL                     0
+            214 PRECALL                  1
+            218 CALL                     1
+            228 PRECALL                  1
+            232 CALL                     1
+
+ 35         242 COMPARE_OP               2 (==)
+            248 POP_JUMP_FORWARD_IF_FALSE     7 (to 264)
+            250 JUMP_FORWARD             2 (to 256)
+        >>  252 POP_TOP
+            254 JUMP_BACKWARD           94 (to 68)
+
+ 37     >>  256 LOAD_DEREF               2 (vec)
+            258 YIELD_VALUE
+            260 RESUME                   1
+            262 POP_TOP
+        >>  264 JUMP_BACKWARD           99 (to 68)
+
+ 34     >>  266 LOAD_CONST               3 (None)
+            268 RETURN_VALUE
+
+Disassembly of <code object <genexpr> at 0x0000026D1111DF20, file "bm_nqueens_noperf.py", line 35>:
+              0 COPY_FREE_VARS           1
+
+ 35           2 RETURN_GENERATOR
+              4 POP_TOP
+              6 RESUME                   0
+              8 LOAD_FAST                0 (.0)
+        >>   10 FOR_ITER                15 (to 42)
+             12 STORE_FAST               1 (i)
+             14 LOAD_DEREF               2 (vec)
+             16 LOAD_FAST                1 (i)
+             18 BINARY_SUBSCR
+             28 LOAD_FAST                1 (i)
+             30 BINARY_OP                0 (+)
+             34 YIELD_VALUE
+             36 RESUME                   1
+             38 POP_TOP
+             40 JUMP_BACKWARD           16 (to 10)
+        >>   42 LOAD_CONST               0 (None)
+             44 RETURN_VALUE
+
+Disassembly of <code object <genexpr> at 0x0000026D1111E010, file "bm_nqueens_noperf.py", line 36>:
+              0 COPY_FREE_VARS           1
+
+ 36           2 RETURN_GENERATOR
+              4 POP_TOP
+              6 RESUME                   0
+              8 LOAD_FAST                0 (.0)
+        >>   10 FOR_ITER                15 (to 42)
+             12 STORE_FAST               1 (i)
+             14 LOAD_DEREF               2 (vec)
+             16 LOAD_FAST                1 (i)
+             18 BINARY_SUBSCR
+             28 LOAD_FAST                1 (i)
+             30 BINARY_OP               10 (-)
+             34 YIELD_VALUE
+             36 RESUME                   1
+             38 POP_TOP
+             40 JUMP_BACKWARD           16 (to 10)
+        >>   42 LOAD_CONST               0 (None)
+             44 RETURN_VALUE
+
+Disassembly of <code object bench_n_queens at 0x0000026D114BC830, file "bm_nqueens_noperf.py", line 40>:
+ 40           0 RESUME                   0
+
+ 41           2 LOAD_GLOBAL              1 (NULL + list)
+             14 LOAD_GLOBAL              3 (NULL + n_queens)
+             26 LOAD_FAST                0 (queen_count)
+             28 PRECALL                  1
+             32 CALL                     1
+             42 PRECALL                  1
+             46 CALL                     1
+             56 RETURN_VALUE

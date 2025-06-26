@@ -1,0 +1,534 @@
+DYNAMIC EXECUTION COUNTS PER INSTRUCTION:
+  0              0 RESUME                                       | 0 times
+  2              2 LOAD_CONST          '\nStandalone version of the regex-dna benchmark from\nThe Computer Language Benchmarks Game.\n' | 1 times
+                 4 STORE_NAME          __doc__                  | 1 times
+  7              6 LOAD_CONST          0                        | 1 times
+                 8 LOAD_CONST          None                     | 1 times
+                10 IMPORT_NAME         bisect                   | 1 times
+                12 STORE_NAME          bisect                   | 1 times
+  8             14 LOAD_CONST          0                        | 1 times
+                16 LOAD_CONST          None                     | 1 times
+                18 IMPORT_NAME         re                       | 1 times
+                20 STORE_NAME          re                       | 1 times
+  9             22 LOAD_CONST          0                        | 1 times
+                24 LOAD_CONST          None                     | 1 times
+                26 IMPORT_NAME         time                     | 1 times
+                28 STORE_NAME          time                     | 1 times
+ 11             30 LOAD_CONST          100000                   | 1 times
+                32 STORE_NAME          DEFAULT_INIT_LEN         | 1 times
+ 12             34 LOAD_CONST          42                       | 1 times
+                36 STORE_NAME          DEFAULT_RNG_SEED         | 1 times
+ 15             38 LOAD_CONST          'GGCCGGGCGCGGTGGCTCACGCCTGTAATCCCAGCACTTTGGGAGGCCGAGGCGGGCGGATCACCTGAGGTCAGGAGTTCGAGACCAGCCTGGCCAACATGGTGAAACCCCGTCTCTACTAAAAATACAAAAATTAGCCGGGCGTGGTGGCGCGCGCCTGTAATCCCAGCTACTCGGGAGGCTGAGGCAGGAGAATCGCTTGAACCCGGGAGGCGGAGGTTGCAGTGAGCCGAGATCGCGCCACTGCACTCCAGCCTGGGCGACAGAGCGAGACTCCGTCTCAAAAA' | 1 times
+ 14             40 STORE_NAME          ALU                      | 1 times
+ 24             42 PUSH_NULL                                    | 1 times
+                44 LOAD_NAME           list                     | 1 times
+                46 PUSH_NULL                                    | 1 times
+                48 LOAD_NAME           zip                      | 1 times
+                50 LOAD_CONST          'acgtBDHKMNRSVWY'        | 1 times
+                52 BUILD_LIST                                   | 1 times
+                54 LOAD_CONST          (0.27, 0.12, 0.12, 0.27) | 1 times
+                56 LIST_EXTEND                                  | 1 times
+                58 LOAD_CONST          0.02                     | 1 times
+                60 BUILD_LIST                                   | 1 times
+                62 LOAD_CONST          11                       | 1 times
+                64 BINARY_OP           *                        | 1 times
+                68 BINARY_OP           +                        | 1 times
+                72 PRECALL                                      | 1 times
+                76 CALL                                         | 1 times
+                86 PRECALL                                      | 1 times
+                90 CALL                                         | 1 times
+               100 STORE_NAME          IUB                      | 1 times
+ 26            102 BUILD_LIST                                   | 1 times
+               104 LOAD_CONST          (('a', 0.302954942668), ('c', 0.1979883004921), ('g', 0.1975473066391), ('t', 0.3015094502008)) | 1 times
+               106 LIST_EXTEND                                  | 1 times
+               108 STORE_NAME          HOMOSAPIENS              | 1 times
+ 34            110 LOAD_CONST          <code object make_cumulative at 0x000001B6E185ED90, file "bm_regex_dna_noperf.py", line 34> | 1 times
+               112 MAKE_FUNCTION                                | 1 times
+               114 STORE_NAME          make_cumulative          | 1 times
+ 44            116 LOAD_CONST          <code object repeat_fasta at 0x000001B6E1C0F6E0, file "bm_regex_dna_noperf.py", line 44> | 1 times
+               118 MAKE_FUNCTION                                | 1 times
+               120 STORE_NAME          repeat_fasta             | 1 times
+ 52            122 LOAD_CONST          <code object random_fasta at 0x000001B6E1E1D0F0, file "bm_regex_dna_noperf.py", line 52> | 1 times
+               124 MAKE_FUNCTION                                | 1 times
+               126 STORE_NAME          random_fasta             | 1 times
+ 79            128 LOAD_CONST          <code object init_benchmarks at 0x000001B6E1792790, file "bm_regex_dna_noperf.py", line 79> | 1 times
+               130 MAKE_FUNCTION                                | 1 times
+               132 STORE_NAME          init_benchmarks          | 1 times
+ 95            134 LOAD_CONST          (b'agggtaaa|tttaccct', b'[cgt]gggtaaa|tttaccc[acg]', b'a[act]ggtaaa|tttacc[agt]t', b'ag[act]gtaaa|tttac[agt]ct', b'agg[act]taaa|ttta[agt]cct', b'aggg[acg]aaa|ttt[cgt]ccct', b'agggt[cgt]aa|tt[acg]accct', b'agggta[cgt]a|t[acg]taccct', b'agggtaa[cgt]|[acg]ttaccct') | 1 times
+               136 STORE_NAME          VARIANTS                 | 1 times
+107            138 LOAD_CONST          ((b'B', b'(c|g|t)'), (b'D', b'(a|g|t)'), (b'H', b'(a|c|t)'), (b'K', b'(g|t)'), (b'M', b'(a|c)'), (b'N', b'(a|c|g|t)'), (b'R', b'(a|g)'), (b'S', b'(c|g)'), (b'V', b'(a|c|g)'), (b'W', b'(a|t)'), (b'Y', b'(c|t)')) | 1 times
+               140 STORE_NAME          SUBST                    | 1 times
+115            142 LOAD_CONST          <code object run_benchmarks at 0x000001B6E1816F70, file "bm_regex_dna_noperf.py", line 115> | 1 times
+               144 MAKE_FUNCTION                                | 1 times
+               146 STORE_NAME          run_benchmarks           | 1 times
+128            148 LOAD_CONST          <code object main at 0x000001B6E1E0B250, file "bm_regex_dna_noperf.py", line 128> | 1 times
+               150 MAKE_FUNCTION                                | 1 times
+               152 STORE_NAME          main                     | 1 times
+150            154 LOAD_NAME           __name__                 | 1 times
+               156 LOAD_CONST          '__main__'               | 1 times
+               158 COMPARE_OP          ==                       | 1 times
+               164 POP_JUMP_FORWARD_IF_FALSEto 190                   | 1 times
+151            166 PUSH_NULL                                    | 1 times
+               168 LOAD_NAME           main                     | 1 times
+               170 PRECALL                                      | 1 times
+               174 CALL                                         | 1 times
+               184 POP_TOP                                      | 1 times
+               186 LOAD_CONST          None                     | 1 times
+               188 RETURN_VALUE                                 | 1 times
+150            190 LOAD_CONST          None                     | 0 times
+               192 RETURN_VALUE                                 | 0 times
+ 34              0 RESUME                                       | 0 times
+ 35              2 BUILD_LIST                                   | 2 times
+                 4 BUILD_LIST                                   | 2 times
+                 6 STORE_FAST          chars                    | 2 times
+                 8 STORE_FAST          probs                    | 2 times
+ 36             10 LOAD_CONST          0.0                      | 2 times
+                12 STORE_FAST          total                    | 2 times
+ 37             14 LOAD_FAST           table                    | 2 times
+                16 GET_ITER                                     | 2 times
+                18 FOR_ITER            to 150                   | 21 times
+                20 UNPACK_SEQUENCE                              | 19 times
+                24 STORE_FAST          char                     | 19 times
+                26 STORE_FAST          p                        | 19 times
+ 38             28 LOAD_FAST           total                    | 19 times
+                30 LOAD_FAST           p                        | 19 times
+                32 BINARY_OP           +=                       | 19 times
+                36 STORE_FAST          total                    | 19 times
+ 39             38 LOAD_FAST           probs                    | 19 times
+                40 LOAD_METHOD         append                   | 19 times
+                62 LOAD_FAST           total                    | 19 times
+                64 PRECALL                                      | 19 times
+                68 CALL                                         | 19 times
+                78 POP_TOP                                      | 19 times
+ 40             80 LOAD_FAST           chars                    | 19 times
+                82 LOAD_METHOD         append                   | 19 times
+               104 LOAD_GLOBAL         NULL + ord               | 19 times
+               116 LOAD_FAST           char                     | 19 times
+               118 PRECALL                                      | 19 times
+               122 CALL                                         | 19 times
+               132 PRECALL                                      | 19 times
+               136 CALL                                         | 19 times
+               146 POP_TOP                                      | 19 times
+               148 JUMP_BACKWARD       to 18                    | 19 times
+ 41            150 LOAD_FAST           probs                    | 2 times
+               152 LOAD_FAST           chars                    | 2 times
+               154 BUILD_TUPLE                                  | 2 times
+               156 RETURN_VALUE                                 | 2 times
+ 44              0 RESUME                                       | 0 times
+ 45              2 LOAD_CONST          60                       | 1 times
+                 4 STORE_FAST          width                    | 1 times
+ 46              6 LOAD_GLOBAL         NULL + len               | 1 times
+                18 LOAD_FAST           src                      | 1 times
+                20 PRECALL                                      | 1 times
+                24 CALL                                         | 1 times
+                34 STORE_FAST          line_len                 | 1 times
+ 47             36 LOAD_FAST           src                      | 1 times
+                38 LOAD_FAST           n                        | 1 times
+                40 LOAD_FAST           line_len                 | 1 times
+                42 BINARY_OP           //                       | 1 times
+                46 LOAD_CONST          2                        | 1 times
+                48 BINARY_OP           +                        | 1 times
+                52 BINARY_OP           *                        | 1 times
+                56 LOAD_CONST          None                     | 1 times
+                58 LOAD_FAST           n                        | 1 times
+                60 BUILD_SLICE                                  | 1 times
+                62 BINARY_SUBSCR                                | 1 times
+                72 STORE_FAST          extended                 | 1 times
+ 48             74 LOAD_GLOBAL         NULL + range             | 1 times
+                86 LOAD_CONST          0                        | 1 times
+                88 LOAD_FAST           n                        | 1 times
+                90 LOAD_FAST           width                    | 1 times
+                92 PRECALL                                      | 1 times
+                96 CALL                                         | 1 times
+               106 GET_ITER                                     | 1 times
+               108 FOR_ITER            to 202                   | 3335 times
+               110 STORE_FAST          i                        | 3334 times
+ 49            112 PUSH_NULL                                    | 3334 times
+               114 LOAD_FAST           nprint                   | 3334 times
+               116 LOAD_FAST           extended                 | 3334 times
+               118 LOAD_FAST           i                        | 3334 times
+               120 LOAD_FAST           i                        | 3334 times
+               122 LOAD_FAST           width                    | 3334 times
+               124 BINARY_OP           +                        | 3334 times
+               128 BUILD_SLICE                                  | 3334 times
+               130 BINARY_SUBSCR                                | 3334 times
+               140 LOAD_METHOD         encode                   | 3334 times
+               162 LOAD_CONST          'ascii'                  | 3334 times
+               164 PRECALL                                      | 3334 times
+               168 CALL                                         | 3334 times
+               178 LOAD_CONST          b'\n'                    | 3334 times
+               180 BINARY_OP           +                        | 3334 times
+               184 PRECALL                                      | 3334 times
+               188 CALL                                         | 3334 times
+               198 POP_TOP                                      | 3334 times
+               200 JUMP_BACKWARD       to 108                   | 3334 times
+ 48            202 LOAD_CONST          None                     | 1 times
+               204 RETURN_VALUE                                 | 1 times
+ 52              0 RESUME                                       | 0 times
+ 53              2 LOAD_CONST          60                       | 2 times
+                 4 STORE_FAST          width                    | 2 times
+ 54              6 LOAD_GLOBAL         NULL + make_cumulative   | 2 times
+                18 LOAD_FAST           table                    | 2 times
+                20 PRECALL                                      | 2 times
+                24 CALL                                         | 2 times
+                34 UNPACK_SEQUENCE                              | 2 times
+                38 STORE_FAST          probs                    | 2 times
+                40 STORE_FAST          chars                    | 2 times
+ 55             42 LOAD_GLOBAL         NULL + bytearray         | 2 times
+                54 LOAD_FAST           width                    | 2 times
+                56 LOAD_CONST          1                        | 2 times
+                58 BINARY_OP           +                        | 2 times
+                62 PRECALL                                      | 2 times
+                66 CALL                                         | 2 times
+                76 STORE_FAST          line                     | 2 times
+ 56             78 LOAD_CONST          139968.0                 | 2 times
+                80 STORE_FAST          im                       | 2 times
+ 57             82 LOAD_GLOBAL         NULL + float             | 2 times
+                94 LOAD_FAST           seed                     | 2 times
+                96 PRECALL                                      | 2 times
+               100 CALL                                         | 2 times
+               110 STORE_FAST          seed                     | 2 times
+ 59            112 LOAD_FAST           n                        | 2 times
+               114 LOAD_FAST           width                    | 2 times
+               116 BINARY_OP           //                       | 2 times
+               120 STORE_FAST          full_lines               | 2 times
+ 60            122 LOAD_FAST           n                        | 2 times
+               124 LOAD_FAST           width                    | 2 times
+               126 BINARY_OP           %                        | 2 times
+               130 STORE_FAST          leftover                 | 2 times
+ 61            132 LOAD_GLOBAL         bisect                   | 2 times
+               144 LOAD_ATTR           bisect                   | 2 times
+               154 STORE_FAST          bb                       | 2 times
+ 63            156 LOAD_GLOBAL         NULL + range             | 2 times
+               168 LOAD_FAST           full_lines               | 2 times
+               170 PRECALL                                      | 2 times
+               174 CALL                                         | 2 times
+               184 GET_ITER                                     | 2 times
+               186 FOR_ITER            to 330                   | 13335 times
+               188 STORE_FAST          _                        | 13333 times
+ 64            190 LOAD_GLOBAL         NULL + range             | 13333 times
+               202 LOAD_FAST           width                    | 13333 times
+               204 PRECALL                                      | 13333 times
+               208 CALL                                         | 13333 times
+               218 GET_ITER                                     | 13333 times
+               220 FOR_ITER            to 296                   | 813313 times
+               222 STORE_FAST          i                        | 799980 times
+ 65            224 LOAD_FAST           seed                     | 799980 times
+               226 LOAD_CONST          3877.0                   | 799980 times
+               228 BINARY_OP           *                        | 799980 times
+               232 LOAD_CONST          29573.0                  | 799980 times
+               234 BINARY_OP           +                        | 799980 times
+               238 LOAD_FAST           im                       | 799980 times
+               240 BINARY_OP           %                        | 799980 times
+               244 STORE_FAST          seed                     | 799980 times
+ 66            246 LOAD_FAST           chars                    | 799980 times
+               248 PUSH_NULL                                    | 799980 times
+               250 LOAD_FAST           bb                       | 799980 times
+               252 LOAD_FAST           probs                    | 799980 times
+               254 LOAD_FAST           seed                     | 799980 times
+               256 LOAD_FAST           im                       | 799980 times
+               258 BINARY_OP           /                        | 799980 times
+               262 PRECALL                                      | 799980 times
+               266 CALL                                         | 799980 times
+               276 BINARY_SUBSCR                                | 799980 times
+               286 LOAD_FAST           line                     | 799980 times
+               288 LOAD_FAST           i                        | 799980 times
+               290 STORE_SUBSCR                                 | 799980 times
+               294 JUMP_BACKWARD       to 220                   | 799980 times
+ 67            296 LOAD_CONST          10                       | 13333 times
+               298 LOAD_FAST           line                     | 13333 times
+               300 LOAD_CONST          60                       | 13333 times
+               302 STORE_SUBSCR                                 | 13333 times
+ 68            306 PUSH_NULL                                    | 13333 times
+               308 LOAD_FAST           nprint                   | 13333 times
+               310 LOAD_FAST           line                     | 13333 times
+               312 PRECALL                                      | 13333 times
+               316 CALL                                         | 13333 times
+               326 POP_TOP                                      | 13333 times
+               328 JUMP_BACKWARD       to 186                   | 13333 times
+ 70            330 LOAD_FAST           leftover                 | 2 times
+               332 POP_JUMP_FORWARD_IF_FALSEto 484                   | 2 times
+ 71            334 LOAD_GLOBAL         NULL + range             | 1 times
+               346 LOAD_FAST           leftover                 | 1 times
+               348 PRECALL                                      | 1 times
+               352 CALL                                         | 1 times
+               362 GET_ITER                                     | 1 times
+               364 FOR_ITER            to 440                   | 21 times
+               366 STORE_FAST          i                        | 20 times
+ 72            368 LOAD_FAST           seed                     | 20 times
+               370 LOAD_CONST          3877.0                   | 20 times
+               372 BINARY_OP           *                        | 20 times
+               376 LOAD_CONST          29573.0                  | 20 times
+               378 BINARY_OP           +                        | 20 times
+               382 LOAD_FAST           im                       | 20 times
+               384 BINARY_OP           %                        | 20 times
+               388 STORE_FAST          seed                     | 20 times
+ 73            390 LOAD_FAST           chars                    | 20 times
+               392 PUSH_NULL                                    | 20 times
+               394 LOAD_FAST           bb                       | 20 times
+               396 LOAD_FAST           probs                    | 20 times
+               398 LOAD_FAST           seed                     | 20 times
+               400 LOAD_FAST           im                       | 20 times
+               402 BINARY_OP           /                        | 20 times
+               406 PRECALL                                      | 20 times
+               410 CALL                                         | 20 times
+               420 BINARY_SUBSCR                                | 20 times
+               430 LOAD_FAST           line                     | 20 times
+               432 LOAD_FAST           i                        | 20 times
+               434 STORE_SUBSCR                                 | 20 times
+               438 JUMP_BACKWARD       to 364                   | 20 times
+ 74            440 PUSH_NULL                                    | 1 times
+               442 LOAD_FAST           nprint                   | 1 times
+               444 LOAD_FAST           line                     | 1 times
+               446 LOAD_CONST          None                     | 1 times
+               448 LOAD_FAST           leftover                 | 1 times
+               450 BUILD_SLICE                                  | 1 times
+               452 BINARY_SUBSCR                                | 1 times
+               462 LOAD_CONST          b'\n'                    | 1 times
+               464 BINARY_OP           +                        | 1 times
+               468 PRECALL                                      | 1 times
+               472 CALL                                         | 1 times
+               482 POP_TOP                                      | 1 times
+ 76            484 LOAD_FAST           seed                     | 2 times
+               486 RETURN_VALUE                                 | 2 times
+ 79              0 RESUME                                       | 0 times
+ 80              2 LOAD_GLOBAL         NULL + bytearray         | 1 times
+                14 PRECALL                                      | 1 times
+                18 CALL                                         | 1 times
+                28 STORE_FAST          output                   | 1 times
+ 81             30 LOAD_FAST           output                   | 1 times
+                32 LOAD_ATTR           extend                   | 1 times
+                42 STORE_FAST          out                      | 1 times
+ 83             44 PUSH_NULL                                    | 1 times
+                46 LOAD_FAST           out                      | 1 times
+                48 LOAD_CONST          b'>ONE Homo sapiens alu\n' | 1 times
+                50 PRECALL                                      | 1 times
+                54 CALL                                         | 1 times
+                64 POP_TOP                                      | 1 times
+ 84             66 LOAD_GLOBAL         NULL + repeat_fasta      | 1 times
+                78 LOAD_GLOBAL         ALU                      | 1 times
+                90 LOAD_FAST           n                        | 1 times
+                92 LOAD_CONST          2                        | 1 times
+                94 BINARY_OP           *                        | 1 times
+                98 LOAD_FAST           out                      | 1 times
+               100 PRECALL                                      | 1 times
+               104 CALL                                         | 1 times
+               114 POP_TOP                                      | 1 times
+ 86            116 PUSH_NULL                                    | 1 times
+               118 LOAD_FAST           out                      | 1 times
+               120 LOAD_CONST          b'>TWO IUB ambiguity codes\n' | 1 times
+               122 PRECALL                                      | 1 times
+               126 CALL                                         | 1 times
+               136 POP_TOP                                      | 1 times
+ 87            138 LOAD_GLOBAL         NULL + random_fasta      | 1 times
+               150 LOAD_GLOBAL         IUB                      | 1 times
+               162 LOAD_FAST           n                        | 1 times
+               164 LOAD_CONST          3                        | 1 times
+               166 BINARY_OP           *                        | 1 times
+               170 LOAD_FAST           rng_seed                 | 1 times
+               172 LOAD_FAST           out                      | 1 times
+               174 PRECALL                                      | 1 times
+               178 CALL                                         | 1 times
+               188 STORE_FAST          seed                     | 1 times
+ 89            190 PUSH_NULL                                    | 1 times
+               192 LOAD_FAST           out                      | 1 times
+               194 LOAD_CONST          b'>THREE Homo sapiens frequency\n' | 1 times
+               196 PRECALL                                      | 1 times
+               200 CALL                                         | 1 times
+               210 POP_TOP                                      | 1 times
+ 90            212 LOAD_GLOBAL         NULL + random_fasta      | 1 times
+               224 LOAD_GLOBAL         HOMOSAPIENS              | 1 times
+               236 LOAD_FAST           n                        | 1 times
+               238 LOAD_CONST          5                        | 1 times
+               240 BINARY_OP           *                        | 1 times
+               244 LOAD_FAST           seed                     | 1 times
+               246 LOAD_FAST           out                      | 1 times
+               248 PRECALL                                      | 1 times
+               252 CALL                                         | 1 times
+               262 POP_TOP                                      | 1 times
+ 92            264 LOAD_GLOBAL         NULL + bytes             | 1 times
+               276 LOAD_FAST           output                   | 1 times
+               278 PRECALL                                      | 1 times
+               282 CALL                                         | 1 times
+               292 RETURN_VALUE                                 | 1 times
+                 0 MAKE_CELL           seq                      | 0 times
+115              2 RESUME                                       | 0 times
+116              4 LOAD_GLOBAL         NULL + len               | 1 times
+                16 LOAD_DEREF          seq                      | 1 times
+                18 PRECALL                                      | 1 times
+                22 CALL                                         | 1 times
+                32 STORE_FAST          initial_len              | 1 times
+117             34 LOAD_GLOBAL         NULL + re                | 1 times
+                46 LOAD_ATTR           sub                      | 1 times
+                56 LOAD_CONST          b'>.*\n|\n'              | 1 times
+                58 LOAD_CONST          b''                      | 1 times
+                60 LOAD_DEREF          seq                      | 1 times
+                62 PRECALL                                      | 1 times
+                66 CALL                                         | 1 times
+                76 STORE_DEREF         seq                      | 1 times
+118             78 LOAD_GLOBAL         NULL + len               | 1 times
+                90 LOAD_DEREF          seq                      | 1 times
+                92 PRECALL                                      | 1 times
+                96 CALL                                         | 1 times
+               106 STORE_FAST          cleaned_len              | 1 times
+120            108 LOAD_CLOSURE        seq                      | 1 times
+               110 BUILD_TUPLE                                  | 1 times
+               112 LOAD_CONST          <code object <listcomp> at 0x000001B6E1C1E230, file "bm_regex_dna_noperf.py", line 120> | 1 times
+               114 MAKE_FUNCTION       closure                  | 1 times
+               116 LOAD_GLOBAL         VARIANTS                 | 1 times
+               128 GET_ITER                                     | 1 times
+               130 PRECALL                                      | 1 times
+               134 CALL                                         | 1 times
+               144 STORE_FAST          results                  | 1 times
+122            146 LOAD_GLOBAL         SUBST                    | 1 times
+               158 GET_ITER                                     | 1 times
+               160 FOR_ITER            to 216                   | 12 times
+               162 UNPACK_SEQUENCE                              | 11 times
+               166 STORE_FAST          f                        | 11 times
+               168 STORE_FAST          r                        | 11 times
+123            170 LOAD_GLOBAL         NULL + re                | 11 times
+               182 LOAD_ATTR           sub                      | 11 times
+               192 LOAD_FAST           f                        | 11 times
+               194 LOAD_FAST           r                        | 11 times
+               196 LOAD_DEREF          seq                      | 11 times
+               198 PRECALL                                      | 11 times
+               202 CALL                                         | 11 times
+               212 STORE_DEREF         seq                      | 11 times
+               214 JUMP_BACKWARD       to 160                   | 11 times
+125            216 LOAD_FAST           results                  | 1 times
+               218 LOAD_FAST           initial_len              | 1 times
+               220 LOAD_FAST           cleaned_len              | 1 times
+               222 LOAD_GLOBAL         NULL + len               | 1 times
+               234 LOAD_DEREF          seq                      | 1 times
+               236 PRECALL                                      | 1 times
+               240 CALL                                         | 1 times
+               250 BUILD_TUPLE                                  | 1 times
+               252 RETURN_VALUE                                 | 1 times
+                 0 COPY_FREE_VARS                               | 0 times
+120              2 RESUME                                       | 0 times
+                 4 BUILD_LIST                                   | 1 times
+                 6 LOAD_FAST           .0                       | 1 times
+                 8 FOR_ITER            to 82                    | 10 times
+                10 STORE_FAST          pat                      | 9 times
+                12 LOAD_GLOBAL         NULL + len               | 9 times
+                24 LOAD_GLOBAL         NULL + re                | 9 times
+                36 LOAD_ATTR           findall                  | 9 times
+                46 LOAD_FAST           pat                      | 9 times
+                48 LOAD_DEREF          seq                      | 9 times
+                50 PRECALL                                      | 9 times
+                54 CALL                                         | 9 times
+                64 PRECALL                                      | 9 times
+                68 CALL                                         | 9 times
+                78 LIST_APPEND                                  | 9 times
+                80 JUMP_BACKWARD       to 8                     | 9 times
+                82 RETURN_VALUE                                 | 1 times
+128              0 RESUME                                       | 0 times
+129              2 LOAD_GLOBAL         DEFAULT_INIT_LEN         | 1 times
+                14 STORE_FAST          fasta_length             | 1 times
+130             16 LOAD_GLOBAL         DEFAULT_RNG_SEED         | 1 times
+                28 STORE_FAST          rng_seed                 | 1 times
+132             30 LOAD_GLOBAL         NULL + print             | 1 times
+                42 LOAD_CONST          'Generating FASTA input with length ' | 1 times
+                44 LOAD_FAST           fasta_length             | 1 times
+                46 FORMAT_VALUE                                 | 1 times
+                48 LOAD_CONST          '...'                    | 1 times
+                50 BUILD_STRING                                 | 1 times
+                52 PRECALL                                      | 1 times
+                56 CALL                                         | 1 times
+                66 POP_TOP                                      | 1 times
+133             68 LOAD_GLOBAL         NULL + init_benchmarks   | 1 times
+                80 LOAD_FAST           fasta_length             | 1 times
+                82 LOAD_FAST           rng_seed                 | 1 times
+                84 PRECALL                                      | 1 times
+                88 CALL                                         | 1 times
+                98 STORE_FAST          seq                      | 1 times
+135            100 LOAD_GLOBAL         NULL + print             | 1 times
+               112 LOAD_CONST          'Running regex DNA benchmark...' | 1 times
+               114 PRECALL                                      | 1 times
+               118 CALL                                         | 1 times
+               128 POP_TOP                                      | 1 times
+136            130 LOAD_GLOBAL         NULL + time              | 1 times
+               142 LOAD_ATTR           perf_counter             | 1 times
+               152 PRECALL                                      | 1 times
+               156 CALL                                         | 1 times
+               166 STORE_FAST          start                    | 1 times
+137            168 LOAD_GLOBAL         NULL + run_benchmarks    | 1 times
+               180 LOAD_FAST           seq                      | 1 times
+               182 PRECALL                                      | 1 times
+               186 CALL                                         | 1 times
+               196 UNPACK_SEQUENCE                              | 1 times
+               200 STORE_FAST          results                  | 1 times
+               202 STORE_FAST          ilen                     | 1 times
+               204 STORE_FAST          clen                     | 1 times
+               206 STORE_FAST          final_len                | 1 times
+138            208 LOAD_GLOBAL         NULL + time              | 1 times
+               220 LOAD_ATTR           perf_counter             | 1 times
+               230 PRECALL                                      | 1 times
+               234 CALL                                         | 1 times
+               244 LOAD_FAST           start                    | 1 times
+               246 BINARY_OP           -                        | 1 times
+               250 STORE_FAST          duration                 | 1 times
+140            252 LOAD_GLOBAL         NULL + print             | 1 times
+               264 LOAD_CONST          '\nResults:'             | 1 times
+               266 PRECALL                                      | 1 times
+               270 CALL                                         | 1 times
+               280 POP_TOP                                      | 1 times
+141            282 LOAD_GLOBAL         NULL + enumerate         | 1 times
+               294 LOAD_FAST           results                  | 1 times
+               296 LOAD_CONST          1                        | 1 times
+               298 PRECALL                                      | 1 times
+               302 CALL                                         | 1 times
+               312 GET_ITER                                     | 1 times
+               314 FOR_ITER            to 370                   | 10 times
+               316 UNPACK_SEQUENCE                              | 9 times
+               320 STORE_FAST          i                        | 9 times
+               322 STORE_FAST          count                    | 9 times
+142            324 LOAD_GLOBAL         NULL + print             | 9 times
+               336 LOAD_CONST          '  Pattern '             | 9 times
+               338 LOAD_FAST           i                        | 9 times
+               340 FORMAT_VALUE                                 | 9 times
+               342 LOAD_CONST          ': '                     | 9 times
+               344 LOAD_FAST           count                    | 9 times
+               346 FORMAT_VALUE                                 | 9 times
+               348 LOAD_CONST          ' matches'               | 9 times
+               350 BUILD_STRING                                 | 9 times
+               352 PRECALL                                      | 9 times
+               356 CALL                                         | 9 times
+               366 POP_TOP                                      | 9 times
+               368 JUMP_BACKWARD       to 314                   | 9 times
+144            370 LOAD_GLOBAL         NULL + print             | 1 times
+               382 LOAD_CONST          '\nInitial FASTA length : ' | 1 times
+               384 LOAD_FAST           ilen                     | 1 times
+               386 FORMAT_VALUE                                 | 1 times
+               388 BUILD_STRING                                 | 1 times
+               390 PRECALL                                      | 1 times
+               394 CALL                                         | 1 times
+               404 POP_TOP                                      | 1 times
+145            406 LOAD_GLOBAL         NULL + print             | 1 times
+               418 LOAD_CONST          'Stripped input length: ' | 1 times
+               420 LOAD_FAST           clen                     | 1 times
+               422 FORMAT_VALUE                                 | 1 times
+               424 BUILD_STRING                                 | 1 times
+               426 PRECALL                                      | 1 times
+               430 CALL                                         | 1 times
+               440 POP_TOP                                      | 1 times
+146            442 LOAD_GLOBAL         NULL + print             | 1 times
+               454 LOAD_CONST          'Final expanded length: ' | 1 times
+               456 LOAD_FAST           final_len                | 1 times
+               458 FORMAT_VALUE                                 | 1 times
+               460 BUILD_STRING                                 | 1 times
+               462 PRECALL                                      | 1 times
+               466 CALL                                         | 1 times
+               476 POP_TOP                                      | 1 times
+147            478 LOAD_GLOBAL         NULL + print             | 1 times
+               490 LOAD_CONST          'Elapsed time         : ' | 1 times
+               492 LOAD_FAST           duration                 | 1 times
+               494 LOAD_CONST          '.6f'                    | 1 times
+               496 FORMAT_VALUE        with format              | 1 times
+               498 LOAD_CONST          ' seconds'               | 1 times
+               500 BUILD_STRING                                 | 1 times
+               502 PRECALL                                      | 1 times
+               506 CALL                                         | 1 times
+               516 POP_TOP                                      | 1 times
+               518 LOAD_CONST          None                     | 1 times
+               520 RETURN_VALUE                                 | 1 times

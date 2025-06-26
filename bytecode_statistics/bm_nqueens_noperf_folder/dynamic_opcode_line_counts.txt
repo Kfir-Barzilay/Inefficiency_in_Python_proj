@@ -1,0 +1,77 @@
+DYNAMIC OPCODE EXECUTION COUNTS:
+LOAD_FAST            2931965 times
+BINARY_SUBSCR        1181064 times
+FOR_ITER             894699 times
+STORE_FAST           811948 times
+POP_TOP              780965 times
+JUMP_BACKWARD        771625 times
+BINARY_OP            726192 times
+YIELD_VALUE          702436 times
+LOAD_CONST           702175 times
+LOAD_DEREF           662117 times
+STORE_SUBSCR         328800 times
+SWAP                 299839 times
+PRECALL              288596 times
+CALL                 288596 times
+COPY                 259520 times
+BUILD_SLICE          248164 times
+LOAD_GLOBAL          205836 times
+POP_JUMP_FORWARD_IF_FALSE 152035 times
+COMPARE_OP           152034 times
+GET_ITER             123074 times
+RETURN_VALUE         82757 times
+MAKE_FUNCTION        82756 times
+LOAD_CLOSURE         82753 times
+BUILD_TUPLE          82753 times
+UNARY_NEGATIVE       80638 times
+JUMP_FORWARD         40411 times
+STORE_DEREF          40321 times
+POP_JUMP_BACKWARD_IF_TRUE 40319 times
+LOAD_NAME            13 times
+STORE_NAME           10 times
+PUSH_NULL            7 times
+FORMAT_VALUE         3 times
+BUILD_STRING         3 times
+LOAD_ATTR            2 times
+IMPORT_NAME          1 times
+POP_JUMP_FORWARD_IF_NOT_NONE 1 times
+
+DYNAMIC SOURCE-LINE EXECUTION COUNTS:
+Line   1: executed      2 times | """Simple, brute-force N-Queens solver."""
+Line   3: executed      4 times | import time
+Line   5: executed      2 times | __author__ = "collinwinter@google.com (Collin Winter)"
+Line   8: executed      4 times | def permutations(iterable, r=None):
+Line   9: executed      5 times |     pool = tuple(iterable)
+Line  10: executed      5 times |     n = len(pool)
+Line  11: executed      2 times |     if r is None:
+Line  12: executed      2 times |         r = n
+Line  13: executed      8 times |     indices = list(range(n))
+Line  14: executed     20 times |     cycles = list(range(n - r + 1, n + 1))[::-1]
+Line  15: executed     85 times |     yield tuple(pool[i] for i in indices[:r])
+Line  16: executed  80640 times |     while n:
+Line  17: executed 541761 times |         for i in reversed(range(r)):
+Line  18: executed 1096000 times |             cycles[i] -= 1
+Line  19: executed 657600 times |             if cycles[i] == 0:
+Line  20: executed 1385620 times |                 indices[i:] = indices[i + 1:] + indices[i:i + 1]
+Line  21: executed 484967 times |                 cycles[i] = n - i
+Line  23: executed 161276 times |                 j = cycles[i]
+Line  24: executed 604785 times |                 indices[i], indices[-j] = indices[-j], indices[i]
+Line  25: executed 3427115 times |                 yield tuple(pool[i] for i in indices[:r])
+Line  26: executed  80638 times |                 break
+Line  28: executed      2 times |             return
+Line  31: executed      3 times | def n_queens(queen_count):
+Line  33: executed      5 times |     cols = range(queen_count)
+Line  34: executed  80648 times |     for vec in permutations(cols):
+Line  35: executed 4233692 times |         if (queen_count == len(set(vec[i] + i for i in cols))
+Line  36: executed 207074 times |                         == len(set(vec[i] - i for i in cols))):
+Line  37: executed    276 times |             yield vec
+Line  40: executed      3 times | def bench_n_queens(queen_count):
+Line  41: executed      8 times |     return list(n_queens(queen_count))
+Line  44: executed      4 times | if __name__ == "__main__":
+Line  45: executed      2 times |     queen_count = 8
+Line  47: executed     10 times |     print(f"Solving {queen_count}-Queens problem...")
+Line  48: executed      6 times |     start = time.perf_counter()
+Line  49: executed      6 times |     solutions = bench_n_queens(queen_count)
+Line  50: executed      8 times |     duration = time.perf_counter() - start
+Line  52: executed     14 times |     print(f"Found {len(solutions)} solutions")
+Line  53: executed     13 times |     print(f"Elapsed time: {duration:.6f} seconds")
