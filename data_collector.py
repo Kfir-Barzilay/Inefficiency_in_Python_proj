@@ -84,8 +84,6 @@ def get_perf_stats(path_to_bm):
     "ITLB": ["iTLB-loads", "iTLB-load-misses", "iTLB-misses"],
     "ICache": [
         "L1-icache-load-misses" #cpu/L1-icache-load-misses/
-       # "iTLB-loads", # OR cpu/iTLB-loads/
-       # "iTLB-load-misses" # OR cpu/iTLB-load-misses/
     ],
     "Libraries": []
 }
