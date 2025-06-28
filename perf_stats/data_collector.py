@@ -98,7 +98,7 @@ def get_perf_stats(path_to_bm):
 
     command = [
         "sudo", "perf", "stat",
-        "-e", perf_events,
+        "-e", perf_events,"--no-multiplex",
         "python3", path_to_bm
     ]
 
