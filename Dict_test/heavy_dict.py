@@ -36,4 +36,9 @@ def foo():
         val += my_dict[key]  # XOR   
     print (val)
 
-dis.dis(foo)
+
+def main():
+    foo
+
+if __name__ == '__main__':
+    main()
