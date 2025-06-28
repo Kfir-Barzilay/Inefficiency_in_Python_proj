@@ -1,0 +1,389 @@
+DYNAMIC EXECUTION COUNTS PER INSTRUCTION:
+  0              0 RESUME                                       | 0 times
+  1              2 LOAD_CONST          'Simple, brute-force N-Queens solver.' | 1 times
+                 4 STORE_NAME          __doc__                  | 1 times
+  3              6 LOAD_CONST          0                        | 1 times
+                 8 LOAD_CONST          None                     | 1 times
+                10 IMPORT_NAME         time                     | 1 times
+                12 STORE_NAME          time                     | 1 times
+  5             14 LOAD_CONST          'collinwinter@google.com (Collin Winter)' | 1 times
+                16 STORE_NAME          __author__               | 1 times
+  8             18 LOAD_CONST          (None,)                  | 1 times
+                20 LOAD_CONST          <code object permutations at 0x0000026D1132FEF0, file "bm_nqueens_noperf.py", line 8> | 1 times
+                22 MAKE_FUNCTION       defaults                 | 1 times
+                24 STORE_NAME          permutations             | 1 times
+ 31             26 LOAD_CONST          <code object n_queens at 0x0000026D110F69E0, file "bm_nqueens_noperf.py", line 31> | 1 times
+                28 MAKE_FUNCTION                                | 1 times
+                30 STORE_NAME          n_queens                 | 1 times
+ 40             32 LOAD_CONST          <code object bench_n_queens at 0x0000026D114BCB30, file "bm_nqueens_noperf.py", line 40> | 1 times
+                34 MAKE_FUNCTION                                | 1 times
+                36 STORE_NAME          bench_n_queens           | 1 times
+ 44             38 LOAD_NAME           __name__                 | 1 times
+                40 LOAD_CONST          '__main__'               | 1 times
+                42 COMPARE_OP          ==                       | 1 times
+                48 POP_JUMP_FORWARD_IF_FALSEto 256                   | 1 times
+ 45             50 LOAD_CONST          8                        | 1 times
+                52 STORE_NAME          queen_count              | 1 times
+ 47             54 PUSH_NULL                                    | 1 times
+                56 LOAD_NAME           print                    | 1 times
+                58 LOAD_CONST          'Solving '               | 1 times
+                60 LOAD_NAME           queen_count              | 1 times
+                62 FORMAT_VALUE                                 | 1 times
+                64 LOAD_CONST          '-Queens problem...'     | 1 times
+                66 BUILD_STRING                                 | 1 times
+                68 PRECALL                                      | 1 times
+                72 CALL                                         | 1 times
+                82 POP_TOP                                      | 1 times
+ 48             84 PUSH_NULL                                    | 1 times
+                86 LOAD_NAME           time                     | 1 times
+                88 LOAD_ATTR           perf_counter             | 1 times
+                98 PRECALL                                      | 1 times
+               102 CALL                                         | 1 times
+               112 STORE_NAME          start                    | 1 times
+ 49            114 PUSH_NULL                                    | 1 times
+               116 LOAD_NAME           bench_n_queens           | 1 times
+               118 LOAD_NAME           queen_count              | 1 times
+               120 PRECALL                                      | 1 times
+               124 CALL                                         | 1 times
+               134 STORE_NAME          solutions                | 1 times
+ 50            136 PUSH_NULL                                    | 1 times
+               138 LOAD_NAME           time                     | 1 times
+               140 LOAD_ATTR           perf_counter             | 1 times
+               150 PRECALL                                      | 1 times
+               154 CALL                                         | 1 times
+               164 LOAD_NAME           start                    | 1 times
+               166 BINARY_OP           -                        | 1 times
+               170 STORE_NAME          duration                 | 1 times
+ 52            172 PUSH_NULL                                    | 1 times
+               174 LOAD_NAME           print                    | 1 times
+               176 LOAD_CONST          'Found '                 | 1 times
+               178 PUSH_NULL                                    | 1 times
+               180 LOAD_NAME           len                      | 1 times
+               182 LOAD_NAME           solutions                | 1 times
+               184 PRECALL                                      | 1 times
+               188 CALL                                         | 1 times
+               198 FORMAT_VALUE                                 | 1 times
+               200 LOAD_CONST          ' solutions'             | 1 times
+               202 BUILD_STRING                                 | 1 times
+               204 PRECALL                                      | 1 times
+               208 CALL                                         | 1 times
+               218 POP_TOP                                      | 1 times
+ 53            220 PUSH_NULL                                    | 1 times
+               222 LOAD_NAME           print                    | 1 times
+               224 LOAD_CONST          'Elapsed time: '         | 1 times
+               226 LOAD_NAME           duration                 | 1 times
+               228 LOAD_CONST          '.6f'                    | 1 times
+               230 FORMAT_VALUE        with format              | 1 times
+               232 LOAD_CONST          ' seconds'               | 1 times
+               234 BUILD_STRING                                 | 1 times
+               236 PRECALL                                      | 1 times
+               240 CALL                                         | 1 times
+               250 POP_TOP                                      | 1 times
+               252 LOAD_CONST          None                     | 1 times
+               254 RETURN_VALUE                                 | 1 times
+ 44            256 LOAD_CONST          None                     | 0 times
+               258 RETURN_VALUE                                 | 0 times
+                 0 MAKE_CELL           pool                     | 0 times
+  8              2 RETURN_GENERATOR                             | 0 times
+                 4 POP_TOP                                      | 0 times
+                 6 RESUME                                       | 0 times
+  9              8 LOAD_GLOBAL         NULL + tuple             | 1 times
+                20 LOAD_FAST           iterable                 | 1 times
+                22 PRECALL                                      | 1 times
+                26 CALL                                         | 1 times
+                36 STORE_DEREF         pool                     | 1 times
+ 10             38 LOAD_GLOBAL         NULL + len               | 1 times
+                50 LOAD_DEREF          pool                     | 1 times
+                52 PRECALL                                      | 1 times
+                56 CALL                                         | 1 times
+                66 STORE_FAST          n                        | 1 times
+ 11             68 LOAD_FAST           r                        | 1 times
+                70 POP_JUMP_FORWARD_IF_NOT_NONEto 76                    | 1 times
+ 12             72 LOAD_FAST           n                        | 1 times
+                74 STORE_FAST          r                        | 1 times
+ 13             76 LOAD_GLOBAL         NULL + list              | 1 times
+                88 LOAD_GLOBAL         NULL + range             | 1 times
+               100 LOAD_FAST           n                        | 1 times
+               102 PRECALL                                      | 1 times
+               106 CALL                                         | 1 times
+               116 PRECALL                                      | 1 times
+               120 CALL                                         | 1 times
+               130 STORE_FAST          indices                  | 1 times
+ 14            132 LOAD_GLOBAL         NULL + list              | 1 times
+               144 LOAD_GLOBAL         NULL + range             | 1 times
+               156 LOAD_FAST           n                        | 1 times
+               158 LOAD_FAST           r                        | 1 times
+               160 BINARY_OP           -                        | 1 times
+               164 LOAD_CONST          1                        | 1 times
+               166 BINARY_OP           +                        | 1 times
+               170 LOAD_FAST           n                        | 1 times
+               172 LOAD_CONST          1                        | 1 times
+               174 BINARY_OP           +                        | 1 times
+               178 PRECALL                                      | 1 times
+               182 CALL                                         | 1 times
+               192 PRECALL                                      | 1 times
+               196 CALL                                         | 1 times
+               206 LOAD_CONST          None                     | 1 times
+               208 LOAD_CONST          None                     | 1 times
+               210 LOAD_CONST          -1                       | 1 times
+               212 BUILD_SLICE                                  | 1 times
+               214 BINARY_SUBSCR                                | 1 times
+               224 STORE_FAST          cycles                   | 1 times
+ 15            226 LOAD_GLOBAL         NULL + tuple             | 1 times
+               238 LOAD_CLOSURE        pool                     | 1 times
+               240 BUILD_TUPLE                                  | 1 times
+               242 LOAD_CONST          <code object <genexpr> at 0x0000026D111ADA70, file "bm_nqueens_noperf.py", line 15> | 1 times
+               244 MAKE_FUNCTION       closure                  | 1 times
+               246 LOAD_FAST           indices                  | 1 times
+               248 LOAD_CONST          None                     | 1 times
+               250 LOAD_FAST           r                        | 1 times
+               252 BUILD_SLICE                                  | 1 times
+               254 BINARY_SUBSCR                                | 1 times
+               264 GET_ITER                                     | 1 times
+               266 PRECALL                                      | 1 times
+               270 CALL                                         | 1 times
+               280 PRECALL                                      | 1 times
+               284 CALL                                         | 1 times
+               294 YIELD_VALUE                                  | 1 times
+               296 RESUME                                       | 0 times
+               298 POP_TOP                                      | 1 times
+ 16            300 LOAD_FAST           n                        | 1 times
+               302 POP_JUMP_FORWARD_IF_FALSEto 658                   | 1 times
+ 17            304 LOAD_GLOBAL         NULL + reversed          | 40320 times
+               316 LOAD_GLOBAL         NULL + range             | 40320 times
+               328 LOAD_FAST           r                        | 40320 times
+               330 PRECALL                                      | 40320 times
+               334 CALL                                         | 40320 times
+               344 PRECALL                                      | 40320 times
+               348 CALL                                         | 40320 times
+               358 GET_ITER                                     | 40320 times
+               360 FOR_ITER            to 646                   | 109601 times
+               362 STORE_FAST          i                        | 109600 times
+ 18            364 LOAD_FAST           cycles                   | 109600 times
+               366 LOAD_FAST           i                        | 109600 times
+               368 COPY                                         | 109600 times
+               370 COPY                                         | 109600 times
+               372 BINARY_SUBSCR                                | 109600 times
+               382 LOAD_CONST          1                        | 109600 times
+               384 BINARY_OP           -=                       | 109600 times
+               388 SWAP                                         | 109600 times
+               390 SWAP                                         | 109600 times
+               392 STORE_SUBSCR                                 | 109600 times
+ 19            396 LOAD_FAST           cycles                   | 109600 times
+               398 LOAD_FAST           i                        | 109600 times
+               400 BINARY_SUBSCR                                | 109600 times
+               410 LOAD_CONST          0                        | 109600 times
+               412 COMPARE_OP          ==                       | 109600 times
+               418 POP_JUMP_FORWARD_IF_FALSEto 502                   | 109600 times
+ 20            420 LOAD_FAST           indices                  | 69281 times
+               422 LOAD_FAST           i                        | 69281 times
+               424 LOAD_CONST          1                        | 69281 times
+               426 BINARY_OP           +                        | 69281 times
+               430 LOAD_CONST          None                     | 69281 times
+               432 BUILD_SLICE                                  | 69281 times
+               434 BINARY_SUBSCR                                | 69281 times
+               444 LOAD_FAST           indices                  | 69281 times
+               446 LOAD_FAST           i                        | 69281 times
+               448 LOAD_FAST           i                        | 69281 times
+               450 LOAD_CONST          1                        | 69281 times
+               452 BINARY_OP           +                        | 69281 times
+               456 BUILD_SLICE                                  | 69281 times
+               458 BINARY_SUBSCR                                | 69281 times
+               468 BINARY_OP           +                        | 69281 times
+               472 LOAD_FAST           indices                  | 69281 times
+               474 LOAD_FAST           i                        | 69281 times
+               476 LOAD_CONST          None                     | 69281 times
+               478 BUILD_SLICE                                  | 69281 times
+               480 STORE_SUBSCR                                 | 69281 times
+ 21            484 LOAD_FAST           n                        | 69281 times
+               486 LOAD_FAST           i                        | 69281 times
+               488 BINARY_OP           -                        | 69281 times
+               492 LOAD_FAST           cycles                   | 69281 times
+               494 LOAD_FAST           i                        | 69281 times
+               496 STORE_SUBSCR                                 | 69281 times
+               500 JUMP_BACKWARD       to 360                   | 69281 times
+ 23            502 LOAD_FAST           cycles                   | 40319 times
+               504 LOAD_FAST           i                        | 40319 times
+               506 BINARY_SUBSCR                                | 40319 times
+               516 STORE_FAST          j                        | 40319 times
+ 24            518 LOAD_FAST           indices                  | 40319 times
+               520 LOAD_FAST           j                        | 40319 times
+               522 UNARY_NEGATIVE                               | 40319 times
+               524 BINARY_SUBSCR                                | 40319 times
+               534 LOAD_FAST           indices                  | 40319 times
+               536 LOAD_FAST           i                        | 40319 times
+               538 BINARY_SUBSCR                                | 40319 times
+               548 SWAP                                         | 40319 times
+               550 LOAD_FAST           indices                  | 40319 times
+               552 LOAD_FAST           i                        | 40319 times
+               554 STORE_SUBSCR                                 | 40319 times
+               558 LOAD_FAST           indices                  | 40319 times
+               560 LOAD_FAST           j                        | 40319 times
+               562 UNARY_NEGATIVE                               | 40319 times
+               564 STORE_SUBSCR                                 | 40319 times
+ 25            568 LOAD_GLOBAL         NULL + tuple             | 40319 times
+               580 LOAD_CLOSURE        pool                     | 40319 times
+               582 BUILD_TUPLE                                  | 40319 times
+               584 LOAD_CONST          <code object <genexpr> at 0x0000026D111AD530, file "bm_nqueens_noperf.py", line 25> | 40319 times
+               586 MAKE_FUNCTION       closure                  | 40319 times
+               588 LOAD_FAST           indices                  | 40319 times
+               590 LOAD_CONST          None                     | 40319 times
+               592 LOAD_FAST           r                        | 40319 times
+               594 BUILD_SLICE                                  | 40319 times
+               596 BINARY_SUBSCR                                | 40319 times
+               606 GET_ITER                                     | 40319 times
+               608 PRECALL                                      | 40319 times
+               612 CALL                                         | 40319 times
+               622 PRECALL                                      | 40319 times
+               626 CALL                                         | 40319 times
+               636 YIELD_VALUE                                  | 40319 times
+               638 RESUME                                       | 0 times
+               640 POP_TOP                                      | 40319 times
+ 26            642 POP_TOP                                      | 40319 times
+               644 JUMP_FORWARD        to 650                   | 40319 times
+ 28            646 LOAD_CONST          None                     | 1 times
+               648 RETURN_VALUE                                 | 1 times
+ 16            650 LOAD_FAST           n                        | 40319 times
+               652 POP_JUMP_BACKWARD_IF_TRUEto 304                   | 40319 times
+               654 LOAD_CONST          None                     | 0 times
+               656 RETURN_VALUE                                 | 0 times
+               658 LOAD_CONST          None                     | 0 times
+               660 RETURN_VALUE                                 | 0 times
+                 0 COPY_FREE_VARS                               | 0 times
+ 15              2 RETURN_GENERATOR                             | 0 times
+                 4 POP_TOP                                      | 0 times
+                 6 RESUME                                       | 0 times
+                 8 LOAD_FAST           .0                       | 1 times
+                10 FOR_ITER            to 36                    | 9 times
+                12 STORE_FAST          i                        | 8 times
+                14 LOAD_DEREF          pool                     | 8 times
+                16 LOAD_FAST           i                        | 8 times
+                18 BINARY_SUBSCR                                | 8 times
+                28 YIELD_VALUE                                  | 8 times
+                30 RESUME                                       | 0 times
+                32 POP_TOP                                      | 8 times
+                34 JUMP_BACKWARD       to 10                    | 8 times
+                36 LOAD_CONST          None                     | 1 times
+                38 RETURN_VALUE                                 | 1 times
+                 0 COPY_FREE_VARS                               | 0 times
+ 25              2 RETURN_GENERATOR                             | 0 times
+                 4 POP_TOP                                      | 0 times
+                 6 RESUME                                       | 0 times
+                 8 LOAD_FAST           .0                       | 40319 times
+                10 FOR_ITER            to 36                    | 362871 times
+                12 STORE_FAST          i                        | 322552 times
+                14 LOAD_DEREF          pool                     | 322552 times
+                16 LOAD_FAST           i                        | 322552 times
+                18 BINARY_SUBSCR                                | 322552 times
+                28 YIELD_VALUE                                  | 322552 times
+                30 RESUME                                       | 0 times
+                32 POP_TOP                                      | 322552 times
+                34 JUMP_BACKWARD       to 10                    | 322552 times
+                36 LOAD_CONST          None                     | 40319 times
+                38 RETURN_VALUE                                 | 40319 times
+                 0 MAKE_CELL           vec                      | 0 times
+ 31              2 RETURN_GENERATOR                             | 0 times
+                 4 POP_TOP                                      | 0 times
+                 6 RESUME                                       | 0 times
+ 33              8 LOAD_GLOBAL         NULL + range             | 1 times
+                20 LOAD_FAST           queen_count              | 1 times
+                22 PRECALL                                      | 1 times
+                26 CALL                                         | 1 times
+                36 STORE_FAST          cols                     | 1 times
+ 34             38 LOAD_GLOBAL         NULL + permutations      | 1 times
+                50 LOAD_FAST           cols                     | 1 times
+                52 PRECALL                                      | 1 times
+                56 CALL                                         | 1 times
+                66 GET_ITER                                     | 1 times
+                68 FOR_ITER            to 266                   | 40321 times
+                70 STORE_DEREF         vec                      | 40320 times
+ 35             72 LOAD_FAST           queen_count              | 40320 times
+                74 LOAD_GLOBAL         NULL + len               | 40320 times
+                86 LOAD_GLOBAL         NULL + set               | 40320 times
+                98 LOAD_CLOSURE        vec                      | 40320 times
+               100 BUILD_TUPLE                                  | 40320 times
+               102 LOAD_CONST          <code object <genexpr> at 0x0000026D1119D2F0, file "bm_nqueens_noperf.py", line 35> | 40320 times
+               104 MAKE_FUNCTION       closure                  | 40320 times
+               106 LOAD_FAST           cols                     | 40320 times
+               108 GET_ITER                                     | 40320 times
+               110 PRECALL                                      | 40320 times
+               114 CALL                                         | 40320 times
+               124 PRECALL                                      | 40320 times
+               128 CALL                                         | 40320 times
+               138 PRECALL                                      | 40320 times
+               142 CALL                                         | 40320 times
+               152 SWAP                                         | 40320 times
+               154 COPY                                         | 40320 times
+               156 COMPARE_OP          ==                       | 40320 times
+               162 POP_JUMP_FORWARD_IF_FALSEto 252                   | 40320 times
+ 36            164 LOAD_GLOBAL         NULL + len               | 2113 times
+               176 LOAD_GLOBAL         NULL + set               | 2113 times
+               188 LOAD_CLOSURE        vec                      | 2113 times
+               190 BUILD_TUPLE                                  | 2113 times
+               192 LOAD_CONST          <code object <genexpr> at 0x0000026D1119D4D0, file "bm_nqueens_noperf.py", line 36> | 2113 times
+               194 MAKE_FUNCTION       closure                  | 2113 times
+               196 LOAD_FAST           cols                     | 2113 times
+               198 GET_ITER                                     | 2113 times
+               200 PRECALL                                      | 2113 times
+               204 CALL                                         | 2113 times
+               214 PRECALL                                      | 2113 times
+               218 CALL                                         | 2113 times
+               228 PRECALL                                      | 2113 times
+               232 CALL                                         | 2113 times
+ 35            242 COMPARE_OP          ==                       | 2113 times
+               248 POP_JUMP_FORWARD_IF_FALSEto 264                   | 2113 times
+               250 JUMP_FORWARD        to 256                   | 92 times
+               252 POP_TOP                                      | 38207 times
+               254 JUMP_BACKWARD       to 68                    | 38207 times
+ 37            256 LOAD_DEREF          vec                      | 92 times
+               258 YIELD_VALUE                                  | 92 times
+               260 RESUME                                       | 0 times
+               262 POP_TOP                                      | 92 times
+               264 JUMP_BACKWARD       to 68                    | 2113 times
+ 34            266 LOAD_CONST          None                     | 1 times
+               268 RETURN_VALUE                                 | 1 times
+                 0 COPY_FREE_VARS                               | 0 times
+ 35              2 RETURN_GENERATOR                             | 0 times
+                 4 POP_TOP                                      | 0 times
+                 6 RESUME                                       | 0 times
+                 8 LOAD_FAST           .0                       | 40320 times
+                10 FOR_ITER            to 42                    | 362880 times
+                12 STORE_FAST          i                        | 322560 times
+                14 LOAD_DEREF          vec                      | 322560 times
+                16 LOAD_FAST           i                        | 322560 times
+                18 BINARY_SUBSCR                                | 322560 times
+                28 LOAD_FAST           i                        | 322560 times
+                30 BINARY_OP           +                        | 322560 times
+                34 YIELD_VALUE                                  | 322560 times
+                36 RESUME                                       | 0 times
+                38 POP_TOP                                      | 322560 times
+                40 JUMP_BACKWARD       to 10                    | 322560 times
+                42 LOAD_CONST          None                     | 40320 times
+                44 RETURN_VALUE                                 | 40320 times
+                 0 COPY_FREE_VARS                               | 0 times
+ 36              2 RETURN_GENERATOR                             | 0 times
+                 4 POP_TOP                                      | 0 times
+                 6 RESUME                                       | 0 times
+                 8 LOAD_FAST           .0                       | 2113 times
+                10 FOR_ITER            to 42                    | 19017 times
+                12 STORE_FAST          i                        | 16904 times
+                14 LOAD_DEREF          vec                      | 16904 times
+                16 LOAD_FAST           i                        | 16904 times
+                18 BINARY_SUBSCR                                | 16904 times
+                28 LOAD_FAST           i                        | 16904 times
+                30 BINARY_OP           -                        | 16904 times
+                34 YIELD_VALUE                                  | 16904 times
+                36 RESUME                                       | 0 times
+                38 POP_TOP                                      | 16904 times
+                40 JUMP_BACKWARD       to 10                    | 16904 times
+                42 LOAD_CONST          None                     | 2113 times
+                44 RETURN_VALUE                                 | 2113 times
+ 40              0 RESUME                                       | 0 times
+ 41              2 LOAD_GLOBAL         NULL + list              | 1 times
+                14 LOAD_GLOBAL         NULL + n_queens          | 1 times
+                26 LOAD_FAST           queen_count              | 1 times
+                28 PRECALL                                      | 1 times
+                32 CALL                                         | 1 times
+                42 PRECALL                                      | 1 times
+                46 CALL                                         | 1 times
+                56 RETURN_VALUE                                 | 1 times

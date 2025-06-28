@@ -1,0 +1,668 @@
+DYNAMIC OPCODE EXECUTION COUNTS:
+LOAD_FAST            7288733 times
+BINARY_OP            3208298 times
+LOAD_CONST           1637882 times
+STORE_FAST           1622468 times
+PRECALL              838460 times
+CALL                 838460 times
+FOR_ITER             830772 times
+PUSH_NULL            818348 times
+JUMP_BACKWARD        817445 times
+STORE_SUBSCR         813506 times
+BINARY_SUBSCR        804751 times
+LOAD_GLOBAL          19317 times
+POP_TOP              18610 times
+GET_ITER             13701 times
+LOAD_METHOD          4566 times
+POP_JUMP_FORWARD_IF_FALSE 4166 times
+BUILD_SLICE          3521 times
+LOAD_ATTR            3162 times
+RETURN_VALUE         2132 times
+EXTENDED_ARG         1485 times
+IS_OP                1127 times
+COMPARE_OP           1087 times
+STORE_ATTR           989 times
+CONTAINS_OP          911 times
+UNPACK_SEQUENCE      840 times
+JUMP_FORWARD         653 times
+NOP                  628 times
+BUILD_TUPLE          524 times
+POP_JUMP_FORWARD_IF_TRUE 466 times
+LOAD_DEREF           453 times
+POP_JUMP_FORWARD_IF_NOT_NONE 448 times
+BUILD_LIST           393 times
+LIST_APPEND          169 times
+POP_JUMP_FORWARD_IF_NONE 112 times
+JUMP_IF_TRUE_OR_POP  74 times
+UNARY_NOT            65 times
+LOAD_CLOSURE         51 times
+BUILD_MAP            49 times
+MAKE_FUNCTION        48 times
+COPY                 46 times
+PUSH_EXC_INFO        44 times
+CHECK_EXC_MATCH      44 times
+POP_EXCEPT           44 times
+JUMP_IF_FALSE_OR_POP 35 times
+POP_JUMP_BACKWARD_IF_FALSE 32 times
+STORE_DEREF          28 times
+STORE_NAME           24 times
+FORMAT_VALUE         23 times
+KW_NAMES             18 times
+UNARY_NEGATIVE       16 times
+BUILD_STRING         14 times
+BEFORE_WITH          13 times
+SWAP                 11 times
+DICT_MERGE           7 times
+CALL_FUNCTION_EX     7 times
+BUILD_CONST_KEY_MAP  6 times
+LOAD_NAME            6 times
+IMPORT_NAME          4 times
+DELETE_SUBSCR        4 times
+YIELD_VALUE          4 times
+LIST_EXTEND          3 times
+LIST_TO_TUPLE        1 times
+IMPORT_STAR          1 times
+
+DYNAMIC SOURCE-LINE EXECUTION COUNTS:
+Line   1: executed      2 times | #!/usr/bin/env python3
+Line   2: executed      2 times | """
+Line   4: executed      7 times | The Computer Language Benchmarks Game.
+Line   7: executed      4 times | import bisect
+Line   8: executed      4 times | import re
+Line   9: executed      4 times | import time
+Line  11: executed      2 times | DEFAULT_INIT_LEN = 100_000
+Line  12: executed      2 times | DEFAULT_RNG_SEED = 42
+Line  14: executed      1 times | ALU = (
+Line  15: executed      1 times |     'GGCCGGGCGCGGTGGCTCACGCCTGTAATCCCAGCACTTTGG'
+Line  19: executed      7 times |     'GCTACTCGGGAGGCTGAGGCAGGAGAATCGCTTGAACCCGGG'
+Line  24: executed     18 times | IUB = list(zip('acgtBDHKMNRSVWY', [0.27, 0.12, 0.12, 0.27] + [0.02] * 11))
+Line  26: executed      4 times | HOMOSAPIENS = [
+Line  34: executed      3 times | def make_cumulative(table):
+Line  35: executed      8 times |     probs, chars = [], []
+Line  36: executed      4 times |     total = 0.0
+Line  37: executed     82 times |     for char, p in table:
+Line  38: executed     76 times |         total += p
+Line  39: executed    240 times |         probs.append(total)
+Line  40: executed    274 times |         chars.append(ord(char))
+Line  41: executed     92 times |     return probs, chars
+Line  42: executed     84 times | 
+Line  43: executed     84 times | 
+Line  44: executed     87 times | def repeat_fasta(src, n, nprint):
+Line  45: executed     86 times |     width = 60
+Line  46: executed     89 times |     line_len = len(src)
+Line  47: executed     96 times |     extended = (src * ((n // line_len) + 2))[:n]
+Line  48: executed   6846 times |     for i in range(0, n, width):
+Line  49: executed  63355 times |         nprint(extended[i:i + width].encode('ascii') + b'\n')
+Line  52: executed      3 times | def random_fasta(table, n, seed, nprint):
+Line  53: executed     11 times |     width = 60
+Line  54: executed     14 times |     probs, chars = make_cumulative(table)
+Line  55: executed     14 times |     line = bytearray(width + 1)
+Line  56: executed    894 times |     im = 139968.0
+Line  57: executed    690 times |     seed = float(seed)
+Line  58: executed    568 times | 
+Line  59: executed    860 times |     full_lines = n // width
+Line  60: executed   1002 times |     leftover = n % width
+Line  61: executed      6 times |     bb = bisect.bisect
+Line  63: executed  26678 times |     for _ in range(full_lines):
+Line  64: executed 1679958 times |         for i in range(width):
+Line  65: executed 6399840 times |             seed = (seed * 3877.0 + 29573.0) % im
+Line  66: executed 11199720 times |             line[i] = chars[bb(probs, seed / im)]
+Line  67: executed  53332 times |         line[60] = 10
+Line  68: executed  93338 times |         nprint(line)
+Line  69: executed     30 times | 
+Line  70: executed      4 times |     if leftover:
+Line  71: executed     46 times |         for i in range(leftover):
+Line  72: executed    172 times |             seed = (seed * 3877.0 + 29573.0) % im
+Line  73: executed    292 times |             line[i] = chars[bb(probs, seed / im)]
+Line  74: executed     81 times |         nprint(line[:leftover] + b'\n')
+Line  75: executed     69 times | 
+Line  76: executed     94 times |     return seed
+Line  77: executed     73 times | 
+Line  78: executed    105 times | 
+Line  79: executed      3 times | def init_benchmarks(n, rng_seed):
+Line  80: executed      4 times |     output = bytearray()
+Line  81: executed    255 times |     out = output.extend
+Line  83: executed      6 times |     out(b'>ONE Homo sapiens alu\n')
+Line  84: executed      9 times |     repeat_fasta(ALU, n * 2, out)
+Line  85: executed    112 times | 
+Line  86: executed    187 times |     out(b'>TWO IUB ambiguity codes\n')
+Line  87: executed     95 times |     seed = random_fasta(IUB, n * 3, rng_seed, out)
+Line  89: executed     38 times |     out(b'>THREE Homo sapiens frequency\n')
+Line  90: executed    122 times |     random_fasta(HOMOSAPIENS, n * 5, seed, out)
+Line  92: executed      9 times |     return bytes(output)
+Line  95: executed    216 times | VARIANTS = (
+Line  96: executed    132 times |     b'agggtaaa|tttaccct',
+Line  97: executed    186 times |     b'[cgt]gggtaaa|tttaccc[acg]',
+Line  98: executed     78 times |     b'a[act]ggtaaa|tttacc[agt]t',
+Line  99: executed      4 times |     b'ag[act]gtaaa|tttac[agt]ct',
+Line 100: executed    105 times |     b'agg[act]taaa|ttta[agt]cct',
+Line 102: executed     37 times |     b'agggt[cgt]aa|tt[acg]accct',
+Line 103: executed     75 times |     b'agggta[cgt]a|t[acg]taccct',
+Line 104: executed    257 times |     b'agggtaa[cgt]|[acg]ttaccct',
+Line 105: executed    384 times | )
+Line 106: executed    122 times | 
+Line 107: executed    110 times | SUBST = (
+Line 108: executed    116 times |     (b'B', b'(c|g|t)'), (b'D', b'(a|g|t)'), (b'H', b'(a|c|t)'),
+Line 109: executed     12 times |     (b'K', b'(g|t)'), (b'M', b'(a|c)'), (b'N', b'(a|c|g|t)'),
+Line 110: executed    158 times |     (b'R', b'(a|g)'), (b'S', b'(c|g)'), (b'V', b'(a|c|g)'),
+Line 111: executed    103 times |     (b'W', b'(a|t)'), (b'Y', b'(c|t)'),
+Line 112: executed     94 times | )
+Line 113: executed    151 times | 
+Line 114: executed    212 times | 
+Line 115: executed      3 times | def run_benchmarks(seq):
+Line 116: executed      5 times |     initial_len = len(seq)
+Line 117: executed     76 times |     seq = re.sub(b'>.*\n|\n', b'', seq)
+Line 118: executed    124 times |     cleaned_len = len(seq)
+Line 119: executed    517 times | 
+Line 120: executed    235 times |     results = [len(re.findall(pat, seq)) for pat in VARIANTS]
+Line 122: executed     87 times |     for f, r in SUBST:
+Line 123: executed    229 times |         seq = re.sub(f, r, seq)
+Line 125: executed      9 times |     return results, initial_len, cleaned_len, len(seq)
+Line 126: executed     10 times | 
+Line 127: executed     24 times | 
+Line 128: executed     13 times | def main():
+Line 129: executed      2 times |     fasta_length = DEFAULT_INIT_LEN
+Line 130: executed     12 times |     rng_seed = DEFAULT_RNG_SEED
+Line 131: executed     14 times | 
+Line 132: executed     59 times |     print(f"Generating FASTA input with length {fasta_length}...")
+Line 133: executed     12 times |     seq = init_benchmarks(fasta_length, rng_seed)
+Line 134: executed     78 times | 
+Line 135: executed     13 times |     print("Running regex DNA benchmark...")
+Line 136: executed      5 times |     start = time.perf_counter()
+Line 137: executed     37 times |     results, ilen, clen, final_len = run_benchmarks(seq)
+Line 138: executed      7 times |     duration = time.perf_counter() - start
+Line 140: executed      5 times |     print(f"\nResults:")
+Line 141: executed     43 times |     for i, count in enumerate(results, 1):
+Line 142: executed    117 times |         print(f"  Pattern {i}: {count} matches")
+Line 143: executed     40 times | 
+Line 144: executed      8 times |     print(f"\nInitial FASTA length : {ilen}")
+Line 145: executed     48 times |     print(f"Stripped input length: {clen}")
+Line 146: executed      8 times |     print(f"Final expanded length: {final_len}")
+Line 147: executed     42 times |     print(f"Elapsed time         : {duration:.6f} seconds")
+Line 150: executed      4 times | if __name__ == "__main__":
+Line 151: executed      7 times |     main()
+Line 152: executed      1 times | 
+Line 153: executed      6 times | 
+Line 156: executed      7 times | 
+Line 158: executed     40 times | 
+Line 159: executed    498 times | 
+Line 161: executed      6 times | 
+Line 163: executed   2238 times | 
+Line 164: executed     10 times | 
+Line 165: executed   1839 times | 
+Line 166: executed      6 times | 
+Line 167: executed     57 times | 
+Line 168: executed     60 times | 
+Line 169: executed     20 times | 
+Line 170: executed     44 times | 
+Line 171: executed   1627 times | 
+Line 172: executed    240 times | 
+Line 174: executed    284 times | 
+Line 175: executed    120 times | 
+Line 176: executed    501 times | 
+Line 177: executed   1087 times | 
+Line 178: executed    740 times | 
+Line 179: executed    120 times | 
+Line 180: executed    240 times | 
+Line 181: executed     90 times | 
+Line 182: executed    140 times | 
+Line 183: executed    120 times | 
+Line 184: executed    140 times | 
+Line 185: executed    194 times | 
+Line 186: executed     52 times | 
+Line 187: executed    642 times | 
+Line 188: executed      6 times | 
+Line 189: executed      8 times | 
+Line 190: executed      8 times | 
+Line 191: executed    640 times | 
+Line 192: executed      4 times | 
+Line 193: executed      4 times | 
+Line 195: executed    640 times | 
+Line 196: executed     19 times | 
+Line 197: executed      8 times | 
+Line 198: executed     19 times | 
+Line 199: executed    646 times | 
+Line 200: executed    638 times | 
+Line 201: executed    795 times | 
+Line 204: executed     16 times | 
+Line 205: executed      6 times | 
+Line 207: executed     14 times | 
+Line 209: executed     18 times | 
+Line 211: executed     12 times | 
+Line 213: executed      4 times | 
+Line 216: executed    162 times | 
+Line 217: executed    200 times | 
+Line 218: executed    822 times | 
+Line 219: executed    254 times | 
+Line 221: executed    128 times | 
+Line 222: executed    112 times | 
+Line 223: executed    275 times | 
+Line 224: executed     63 times | 
+Line 225: executed     63 times | 
+Line 226: executed    190 times | 
+Line 227: executed    175 times | 
+Line 228: executed     63 times | 
+Line 229: executed     63 times | 
+Line 230: executed    147 times | 
+Line 232: executed    765 times | 
+Line 233: executed    255 times | 
+Line 234: executed   1488 times | 
+Line 235: executed     84 times | 
+Line 236: executed     63 times | 
+Line 237: executed     63 times | 
+Line 238: executed    936 times | 
+Line 239: executed    192 times | 
+Line 241: executed     32 times | 
+Line 243: executed     48 times | 
+Line 244: executed     48 times | 
+Line 245: executed   1290 times | 
+Line 246: executed   1354 times | 
+Line 247: executed    328 times | 
+Line 248: executed    549 times | 
+Line 249: executed    114 times | 
+Line 250: executed    276 times | 
+Line 251: executed    302 times | 
+Line 253: executed    672 times | 
+Line 254: executed   1120 times | 
+Line 255: executed    453 times | 
+Line 258: executed      7 times | 
+Line 260: executed    320 times | 
+Line 274: executed    126 times | 
+Line 276: executed     21 times | 
+Line 277: executed    189 times | 
+Line 278: executed     84 times | 
+Line 279: executed     42 times | 
+Line 280: executed    126 times | 
+Line 285: executed    506 times | 
+Line 287: executed     84 times | 
+Line 294: executed    147 times | 
+Line 295: executed     84 times | 
+Line 296: executed    147 times | 
+Line 302: executed    210 times | 
+Line 303: executed     42 times | 
+Line 304: executed     64 times | 
+Line 307: executed     48 times | 
+Line 308: executed     48 times | 
+Line 309: executed     72 times | 
+Line 310: executed    504 times | 
+Line 311: executed    288 times | 
+Line 312: executed      8 times | 
+Line 313: executed    448 times | 
+Line 314: executed     32 times | 
+Line 315: executed     16 times | 
+Line 316: executed    336 times | 
+Line 317: executed    192 times | 
+Line 320: executed    384 times | 
+Line 321: executed     48 times | 
+Line 323: executed     88 times | 
+Line 324: executed     96 times | 
+Line 325: executed    144 times | 
+Line 328: executed     32 times | 
+Line 330: executed     96 times | 
+Line 333: executed     32 times | 
+Line 336: executed    112 times | 
+Line 337: executed     80 times | 
+Line 338: executed    128 times | 
+Line 339: executed     64 times | 
+Line 340: executed     64 times | 
+Line 359: executed      6 times | 
+Line 360: executed      6 times | 
+Line 361: executed      6 times | 
+Line 362: executed      6 times | 
+Line 363: executed     10 times | 
+Line 364: executed      6 times | 
+Line 367: executed      6 times | 
+Line 368: executed     10 times | 
+Line 385: executed    176 times | 
+Line 386: executed   2144 times | 
+Line 387: executed    288 times | 
+Line 394: executed      6 times | 
+Line 395: executed      6 times | 
+Line 396: executed      2 times | 
+Line 398: executed     15 times | 
+Line 399: executed      6 times | 
+Line 400: executed      6 times | 
+Line 401: executed      4 times | 
+Line 403: executed      4 times | 
+Line 408: executed      6 times | 
+Line 409: executed     18 times | 
+Line 414: executed     88 times | 
+Line 415: executed    116 times | 
+Line 424: executed     24 times | 
+Line 427: executed    126 times | 
+Line 428: executed     62 times | 
+Line 436: executed     42 times | 
+Line 437: executed     63 times | 
+Line 438: executed     44 times | 
+Line 439: executed    111 times | 
+Line 440: executed    159 times | 
+Line 441: executed     91 times | 
+Line 442: executed     22 times | 
+Line 444: executed     77 times | 
+Line 445: executed    184 times | 
+Line 448: executed      9 times | 
+Line 450: executed     42 times | 
+Line 451: executed     63 times | 
+Line 452: executed     63 times | 
+Line 453: executed    105 times | 
+Line 454: executed     31 times | 
+Line 455: executed    438 times | 
+Line 456: executed    155 times | 
+Line 457: executed    186 times | 
+Line 458: executed     21 times | 
+Line 459: executed     20 times | 
+Line 460: executed     70 times | 
+Line 462: executed    214 times | 
+Line 463: executed    108 times | 
+Line 464: executed     18 times | 
+Line 465: executed     58 times | 
+Line 466: executed     14 times | 
+Line 467: executed     30 times | 
+Line 468: executed     34 times | 
+Line 469: executed     94 times | 
+Line 470: executed    112 times | 
+Line 471: executed     56 times | 
+Line 473: executed     40 times | 
+Line 474: executed     60 times | 
+Line 475: executed     68 times | 
+Line 476: executed     20 times | 
+Line 477: executed     50 times | 
+Line 478: executed     40 times | 
+Line 479: executed     12 times | 
+Line 480: executed      6 times | 
+Line 482: executed     40 times | 
+Line 483: executed     20 times | 
+Line 484: executed     40 times | 
+Line 485: executed     86 times | 
+Line 486: executed     38 times | 
+Line 487: executed     20 times | 
+Line 488: executed    154 times | 
+Line 489: executed    180 times | 
+Line 490: executed    173 times | 
+Line 492: executed      6 times | 
+Line 493: executed     16 times | 
+Line 497: executed     18 times | 
+Line 503: executed     18 times | 
+Line 504: executed    106 times | 
+Line 505: executed     38 times | 
+Line 509: executed    155 times | 
+Line 512: executed     93 times | 
+Line 513: executed    240 times | 
+Line 514: executed    177 times | 
+Line 515: executed     62 times | 
+Line 516: executed    146 times | 
+Line 518: executed    191 times | 
+Line 520: executed    615 times | 
+Line 521: executed    424 times | 
+Line 522: executed     63 times | 
+Line 523: executed    764 times | 
+Line 524: executed     10 times | 
+Line 525: executed    989 times | 
+Line 526: executed      2 times | 
+Line 527: executed    370 times | 
+Line 528: executed     60 times | 
+Line 531: executed     18 times | 
+Line 532: executed      2 times | 
+Line 533: executed     10 times | 
+Line 534: executed     63 times | 
+Line 535: executed    126 times | 
+Line 536: executed    231 times | 
+Line 537: executed      2 times | 
+Line 538: executed   1010 times | 
+Line 539: executed     42 times | 
+Line 540: executed     22 times | 
+Line 541: executed     44 times | 
+Line 542: executed    702 times | 
+Line 543: executed   1872 times | 
+Line 544: executed     32 times | 
+Line 545: executed    198 times | 
+Line 546: executed    112 times | 
+Line 547: executed     84 times | 
+Line 548: executed    179 times | 
+Line 549: executed     48 times | 
+Line 550: executed      6 times | 
+Line 551: executed      9 times | 
+Line 552: executed    291 times | 
+Line 553: executed      5 times | 
+Line 554: executed     42 times | 
+Line 555: executed     99 times | 
+Line 556: executed     22 times | 
+Line 557: executed     64 times | 
+Line 558: executed    165 times | 
+Line 559: executed     67 times | 
+Line 560: executed     69 times | 
+Line 561: executed    430 times | 
+Line 562: executed    148 times | 
+Line 563: executed     60 times | 
+Line 564: executed     16 times | 
+Line 565: executed    344 times | 
+Line 566: executed    247 times | 
+Line 567: executed    288 times | 
+Line 568: executed      9 times | 
+Line 569: executed    341 times | 
+Line 570: executed    243 times | 
+Line 573: executed    142 times | 
+Line 574: executed     42 times | 
+Line 577: executed    151 times | 
+Line 578: executed      6 times | 
+Line 579: executed     12 times | 
+Line 580: executed    172 times | 
+Line 581: executed    384 times | 
+Line 582: executed    414 times | 
+Line 584: executed     42 times | 
+Line 600: executed      2 times | 
+Line 602: executed      5 times | 
+Line 605: executed     13 times | 
+Line 615: executed    288 times | 
+Line 617: executed    288 times | 
+Line 619: executed     80 times | 
+Line 621: executed    128 times | 
+Line 628: executed     32 times | 
+Line 632: executed    144 times | 
+Line 634: executed      8 times | 
+Line 636: executed      5 times | 
+Line 637: executed      4 times | 
+Line 639: executed      4 times | 
+Line 640: executed      5 times | 
+Line 658: executed      6 times | 
+Line 659: executed      4 times | 
+Line 663: executed      7 times | 
+Line 667: executed      9 times | 
+Line 668: executed      6 times | 
+Line 669: executed      4 times | 
+Line 670: executed     14 times | 
+Line 672: executed      2 times | 
+Line 676: executed     10 times | 
+Line 677: executed      2 times | 
+Line 678: executed      7 times | 
+Line 681: executed     16 times | 
+Line 682: executed      2 times | 
+Line 683: executed     12 times | 
+Line 684: executed     10 times | 
+Line 685: executed      6 times | 
+Line 687: executed      8 times | 
+Line 690: executed     14 times | 
+Line 691: executed      6 times | 
+Line 694: executed     19 times | 
+Line 698: executed      2 times | 
+Line 699: executed     25 times | 
+Line 701: executed     20 times | 
+Line 702: executed     21 times | 
+Line 703: executed     18 times | 
+Line 705: executed      8 times | 
+Line 707: executed      4 times | 
+Line 710: executed     84 times | 
+Line 711: executed    294 times | 
+Line 729: executed      6 times | 
+Line 730: executed      6 times | 
+Line 731: executed      7 times | 
+Line 732: executed      2 times | 
+Line 733: executed      7 times | 
+Line 734: executed      2 times | 
+Line 741: executed    105 times | 
+Line 742: executed     42 times | 
+Line 743: executed    168 times | 
+Line 747: executed    126 times | 
+Line 749: executed     84 times | 
+Line 750: executed     12 times | 
+Line 751: executed      9 times | 
+Line 753: executed      2 times | 
+Line 754: executed     84 times | 
+Line 755: executed    147 times | 
+Line 756: executed    126 times | 
+Line 759: executed    105 times | 
+Line 760: executed    147 times | 
+Line 761: executed    105 times | 
+Line 762: executed    105 times | 
+Line 773: executed      6 times | 
+Line 776: executed      7 times | 
+Line 781: executed      9 times | 
+Line 790: executed      2 times | 
+Line 799: executed      2 times | 
+Line 802: executed      6 times | 
+Line 803: executed      5 times | 
+Line 815: executed      9 times | 
+Line 816: executed      3 times | 
+Line 819: executed      2 times | 
+Line 829: executed      4 times | 
+Line 840: executed      3 times | 
+Line 841: executed      5 times | 
+Line 846: executed      2 times | 
+Line 885: executed    752 times | 
+Line 886: executed    954 times | 
+Line 887: executed    636 times | 
+Line 892: executed     62 times | 
+Line 922: executed      7 times | 
+Line 923: executed      2 times | 
+Line 924: executed      2 times | 
+Line 931: executed      2 times | 
+Line 936: executed      7 times | 
+Line 937: executed      2 times | 
+Line 940: executed     11 times | 
+Line 956: executed    126 times | 
+Line 964: executed     84 times | 
+Line 966: executed     84 times | 
+Line 968: executed     42 times | 
+Line 973: executed    105 times | 
+Line 975: executed     42 times | 
+Line 976: executed     84 times | 
+Line 977: executed     63 times | 
+Line 978: executed     63 times | 
+Line 980: executed    210 times | 
+Line 981: executed    210 times | 
+Line 983: executed     63 times | 
+Line 987: executed    105 times | 
+Line 992: executed     84 times | 
+Line 995: executed     42 times | 
+Line 1014: executed      6 times | 
+Line 1015: executed      2 times | 
+Line 1016: executed      2 times | 
+Line 1017: executed      2 times | 
+Line 1018: executed      2 times | 
+Line 1019: executed      2 times | 
+Line 1020: executed      1 times | 
+Line 1021: executed      5 times | 
+Line 1025: executed      1 times | 
+Line 1026: executed      6 times | 
+Line 1028: executed     42 times | 
+Line 1030: executed      7 times | 
+Line 1031: executed      1 times | 
+Line 1032: executed     48 times | 
+Line 1036: executed      3 times | 
+Line 1037: executed      1 times | 
+Line 1038: executed      1 times | 
+Line 1040: executed      1 times | 
+Line 1041: executed      7 times | 
+Line 1042: executed      9 times | 
+Line 1043: executed      6 times | 
+Line 1044: executed      2 times | 
+Line 1056: executed      6 times | 
+Line 1057: executed      8 times | 
+Line 1058: executed      1 times | 
+Line 1059: executed      1 times | 
+Line 1060: executed      3 times | 
+Line 1061: executed      1 times | 
+Line 1062: executed      5 times | 
+Line 1067: executed      7 times | 
+Line 1068: executed     11 times | 
+Line 1069: executed     23 times | 
+Line 1070: executed     73 times | 
+Line 1071: executed      7 times | 
+Line 1072: executed     18 times | 
+Line 1078: executed     54 times | 
+Line 1079: executed     16 times | 
+Line 1081: executed     14 times | 
+Line 1095: executed    294 times | 
+Line 1096: executed      8 times | 
+Line 1100: executed     45 times | 
+Line 1101: executed    215 times | 
+Line 1121: executed      4 times | 
+Line 1122: executed     16 times | 
+Line 1123: executed      4 times | 
+Line 1124: executed      4 times | 
+Line 1125: executed      3 times | 
+Line 1129: executed      8 times | 
+Line 1130: executed     18 times | 
+Line 1131: executed      4 times | 
+Line 1138: executed     12 times | 
+Line 1139: executed      4 times | 
+Line 1142: executed      4 times | 
+Line 1146: executed      2 times | 
+Line 1147: executed     10 times | 
+Line 1148: executed      5 times | 
+Line 1149: executed     11 times | 
+Line 1151: executed      4 times | 
+Line 1159: executed      4 times | 
+Line 1170: executed     16 times | 
+Line 1171: executed      8 times | 
+Line 1173: executed     28 times | 
+Line 1174: executed     16 times | 
+Line 1175: executed      8 times | 
+Line 1176: executed     10 times | 
+Line 1429: executed     16 times | 
+Line 1436: executed      4 times | 
+Line 1437: executed     24 times | 
+Line 1441: executed      8 times | 
+Line 1469: executed      2 times | 
+Line 1470: executed     10 times | 
+Line 1471: executed     24 times | 
+Line 1473: executed     24 times | 
+Line 1474: executed      8 times | 
+Line 1475: executed     18 times | 
+Line 1476: executed     24 times | 
+Line 1479: executed      6 times | 
+Line 1480: executed      2 times | 
+Line 1481: executed      3 times | 
+Line 1482: executed      4 times | 
+Line 1502: executed      2 times | 
+Line 1503: executed      3 times | 
+Line 1504: executed      8 times | 
+Line 1505: executed      2 times | 
+Line 1507: executed      3 times | 
+Line 1516: executed    294 times | 
+Line 1518: executed    506 times | 
+Line 1519: executed    126 times | 
+Line 1522: executed    126 times | 
+Line 1523: executed    336 times | 
+Line 1600: executed      7 times | 
+Line 1601: executed      8 times | 
+Line 1602: executed      1 times | 
+Line 1609: executed      6 times | 
+Line 1610: executed     24 times | 
+Line 1611: executed      3 times | 
+Line 1612: executed     27 times | 
+Line 1615: executed     15 times | 
+Line 1619: executed     12 times | 
+Line 1623: executed      9 times | 
+Line 1624: executed      6 times | 
+Line 1626: executed     12 times | 
+Line 1638: executed     63 times | 
+Line 1639: executed     13 times | 
+Line 1640: executed    130 times | 
+Line 1643: executed    117 times | 
+Line 1644: executed     78 times | 
+Line 1645: executed      5 times | 
+Line 1646: executed     10 times | 
+Line 1647: executed      2 times | 
+Line 1648: executed      4 times | 
+Line 1653: executed      4 times | 
