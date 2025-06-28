@@ -122,7 +122,6 @@ def get_perf_stats(path_to_bm):
             for line in stderr.splitlines():
                 line = line.strip()
                 if event in line:
-                    print(f"🔍 Scanning line for event '{event}': {line}")
                     match = regex.search(line)
                     if match:
                         value_str = match.group(1).replace(',', '')
@@ -134,11 +133,11 @@ def get_perf_stats(path_to_bm):
                             except ValueError:
                                 value = None
                         results[group][event] = value
-                        print(f"✅ Parsed {event}: {value}")
+                        print(f"Parsed {event}: {value}")
                         found = True
                         break
             if not found:
-                print(f"⚠️  Event '{event}' not found or could not be parsed.")
+                print(f" Event '{event}' not found or could not be parsed.")
 
     return results
 
@@ -149,7 +148,7 @@ if __name__ == "__main__":
         str = "bm_nbody"
     else:
         str = sys.argv[1]
-    benchmark_script = "pyperformance/benchmarks/" + str + "/run_benchmark.py"
+    benchmark_script = "../pyperformance/benchmarks/" + str + "/run_benchmark.py"
     perf_results = get_perf_stats(benchmark_script)
     for group, metrics in perf_results.items():
         print(f"{group} events:")
