@@ -124,7 +124,9 @@ def get_perf_stats(path_to_bm):
                 if event in line:
                     match = regex.search(line)
                     if match:
-                        value_str = match.group(1).replace(',', '')
+                        value_str = match.group(1).
+                        
+                        lace(',', '')
                         try:
                             value = int(value_str)
                         except ValueError:
