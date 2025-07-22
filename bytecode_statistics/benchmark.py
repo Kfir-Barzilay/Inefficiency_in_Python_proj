@@ -1,3 +1,4 @@
+import dis
 # benchmark.py
 # A sample script with various data types to be analyzed.
 
@@ -22,10 +23,12 @@ def sample_function(a, b):
     return result
 
 # Using the function
-c = sample_function(integer_val, 50)
-d = sample_function(float_val, 2.86)
+def foo():
+    c = sample_function(integer_val, 50)
+    d = sample_function(float_val, 2.86)
 
-print("Benchmark script has run.")
-print(f"List: {list_val}")
-print(f"Dictionary: {dict_val}")
+    print("Benchmark script has run.")
+    print(f"List: {list_val}")
+    print(f"Dictionary: {dict_val}")
 
+dis.dis(foo)
