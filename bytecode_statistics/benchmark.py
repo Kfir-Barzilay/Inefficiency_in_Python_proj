@@ -30,5 +30,4 @@ def foo():
     print("Benchmark script has run.")
     print(f"List: {list_val}")
     print(f"Dictionary: {dict_val}")
-
-dis.dis(foo)
+foo()
