@@ -23,15 +23,21 @@ def find_all_constants_recursively(code_obj, counts, source_name):
 # Global state for the tracer to store its findings
 dynamic_type_counts = defaultdict(int)
 seen_object_ids = set()
+# Global list to hold the source code lines of the script being analyzed
+g_script_lines = []
 
 def dynamic_tracer(frame, event, arg):
     """
     A trace function to be used with sys.settrace.
     It inspects local variables on each line execution to find the types of
-    objects created at runtime.
+    objects created at runtime and prints the source line.
     """
     # We are interested in the 'line' event, which fires before a line is executed.
     if event == 'line':
+        lineno = frame.f_lineno
+        # Get the current line of code from the global list
+        line_content = g_script_lines[lineno - 1].strip() if 0 < lineno <= len(g_script_lines) else "[source not available]"
+        
         # Check all variables in the current local scope
         for var_name, var_value in frame.f_locals.items():
             obj_id = id(var_value)
@@ -41,7 +47,8 @@ def dynamic_tracer(frame, event, arg):
                 type_name = type(var_value).__name__
                 dynamic_type_counts[type_name] += 1
                 seen_object_ids.add(obj_id)
-                print(f"DEBUG (Dynamic): Found new object for '{var_name}' of type '{type_name}'")
+                # Print the line of code and the type of the new object found
+                print(f"the current line is: {line_content} type {type_name} was inserted")
     # Return the tracer function to continue tracing
     return dynamic_tracer
 
@@ -58,8 +65,11 @@ def element_counter(script_path):
         return
 
     print(f"Found '{script_path}'. Reading the script content.")
+    global g_script_lines
     with open(script_path, 'r') as f:
         script_content = f.read()
+        # Store script lines globally for the tracer to access
+        g_script_lines = script_content.splitlines()
 
     print("Compiling the script into a code object.")
     try:
